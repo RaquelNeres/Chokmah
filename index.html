@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'lobster': ['Lobster', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Chokmah (חָכְמָה)</title>
+</head>
+
+<body class="-apple-system bg-[#131217] text-base">
+
+    <div class="max-w-[1070px] mx-auto flex justify-between items-start">
+        <!-- Navbar -->
+        <nav class="max-w-[330px] w-full mx-auto top-0 ml-2 h-[960px] 
+            border-r border-[rgba(255,193,7,0.5)] py-[5%]">
+
+            <img 
+                class="rounded-full ml-9 mb-9 h-[200px]"
+                src="img/blue.jpg" 
+                alt="Portugal, Madeira, Porto santo image"
+            />
+            
+            <div class="text-left px-4 mb-1">
+                <h1 class="font-lobster text-[#d9d7e0] text-[36px] transition-all duration-300 ease-in-out hover:text-[#3c3c3c] hover:scale-105">
+                    Chokmah (חָכְמָה)
+                </h1>
+            </div>
+            
+            <p class="text-[#ffffff] ml-2.5 text-right mr-7 mb-10 mt-5">
+                O Chokmah foi criado com o objetivo  de servir como um segundo cerebro; armazenando alguns elementos de cada assunto que eu gostaria de ter de facil acesso. 
+            </p>
+            
+            <div class="flex flex-col items-start text-left w-full">
+                <a href="how.html" class="text-[#d9d7e0] no-underline text-xl 
+                py-5 px-4 transition-all duration-300 ease-in-out w-full hover:border-l-4 hover:border-l-[#FFC107] hover:border-t-0">
+                    Frontend
+                </a>
+                
+                <a href="xp.html" class="text-[#d9d7e0] no-underline text-xl 
+                py-5 px-4 transition-all duration-300 ease-in-out w-full hover:border-l-4 hover:border-l-[#FFC107] hover:border-t-0">
+                    Backend
+                </a>
+                
+                <div class="relative inline-block w-full group">
+                    <a id="aulas" href="#" class="text-[#D9D7E0] no-underline text-xl py-5 px-4 transition-all duration-300 ease-in-out w-full block hover:border-l-4 hover:border-l-[#FFC107] hover:border-t-0">
+                        Conteudo
+                    </a>
+                    
+                    <div class="hidden group-hover:block absolute top-0 left-full min-w-40 bg-white shadow-[0px_8px_16px_0px_rgba(0,0,0,0.2)] z-10">
+                        <a href="#" class="block text-[#3D3D3D] no-underline py-3 px-4 hover:bg-gray-100">
+                            Opção 1
+                        </a>
+                        <a href="#" class="block text-[#3D3D3D] no-underline py-3 px-4 hover:bg-gray-100">
+                            Opção 2
+                        </a>
+                        <a href="#" class="block text-[#3D3D3D] no-underline py-3 px-4 hover:bg-gray-100">
+                            Opção 3
+                        </a>
+                    </div>
+                </div>
+    
+                <a href="index.html" class="text-[#D9D7E0] no-underline text-xl 
+                py-5 px-4 transition-all duration-300 ease-in-out w-full hover:border-l-4 hover:border-l-[#FFC107] hover:border-t-0">
+                    Cursos
+                </a>
+
+                <div class="flex gap-5 ml-4 mt-3">
+                    <a href="https://github.com/RaquelNeres">
+                        <img src="img/github.png" alt="visitar pagina github">
+                    </a>
+                    <a href="https://www.linkedin.com/in/raqueneres/">
+                        <img src="img/linkedind.png" alt="visitar pagina linkedin">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    
+        <div class="text-[#D9D7E0] text-justify items-start h-full 
+                    grid gap-7 justify-between
+                    w-full max-w-[703px] mx-auto px-5 ml-8        
+                ">
+            <h1 class="mt-16 text-[50px]">
+                Home
+            </h1>
+            <p class="mt-10 mb-3">
+                Seja muito bem-vindo,
+            </p>
+            <p>
+                Meu nome é Raquel Neres, sou estudante de sistema de informação. Interessada pela criação da "vida" por meio da programação, estudo no Ifes Serra, onde me dediquei como pesquisadora durante um ano no campo de Machile Learning.
+            </p>
+
+            <p><b>Conhecimentos</b></p>
+            <ul>
+                <li><strong>Linguagens:</strong> HTML, CSS, JavaScript, C, Java, Python, SQL;</li>
+                <li><strong>Bibliotecas e Frameworks:</strong> Bootstrap, Tailwind, Flask, Pandas, Scikit-Learn, Keras, Matplotlib;</li>
+                <li><strong>Ferramentas:</strong> Command Line Interface, Visual Studio, Git, Docker,  IntelliJ IDEA, Microsoft Excel;</li>
+                <li><strong>Sistemas Operacionais:</strong> Ubuntu, Windows Systems;</li>
+                <li><strong>Campos de Interesse:</strong> Desenvolvimento de Software, Inteligência Artificial, Ciência de Dados, Games;</li>
+            </ul>
+
+            <p><b>Projeto</b></p>
+            <p>Chokmah é a palavra hebraica para "sabedoria" (חכמה), representando a segunda sephirah na Árvore da Vida da Cabala, situada no topo do pilar da força/masculino. É o intelecto celestial primordial, o ponto inicial de sabedoria divina que emana da vontade de Deus antes de ser moldado pela compreensão (Binah).  </p>
+
+            <img src="img/peixe.png" alt="peixes">
+
+            <p class="mb-20" >01000100 01100101 01110101 01110011 00100000 01110011 01110000 01100101 01110011 00100000 01101110 01101111 01110011 01110100 01110010 01100001</p>
+        </div>
+    </div>
+
+</body>
+</html>
