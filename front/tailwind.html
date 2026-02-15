@@ -3,47 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/nav.css">
-    <link rel="stylesheet" href="styles/index.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'lobster': ['Lobster', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Chokmah (חָכְמָה)</title>
 </head>
-<body>
-    <aside>
-        <nav class="navbar">
-            <div class="logo">
-                <h1>Chokmah (חָכְמָה)</h1>
-            </div>
 
-            <p>
-                O Chokmah foi criado com o objetivo de explorar a Ciência da Computação e compartilhar conhecimento; Através das linguagens de programação e seus infinitos potenciais. Seja bem-vindo!
-            </p>
+<body class="bg-[#131217] text-[#D9D7E0] text-base">
 
-            <div class="menu">
-                <a href="how.html">Quem sou</a>
-                <a href="xp.html">Experiencia</a>
-                
-                <!-- NOVO CONTAINER PARA O DROPDOWN -->
-                <div class="dropdown">
-                    <a id="aulas" href="#">Conteudo</a>
-                    
-                    <!-- O MENU OCULTO EM SI -->
-                    <div class="dropdown-content">
-                        <a href="#">Opção 1</a>
-                        <a href="#">Opção 2</a>
-                        <a href="#">Opção 3</a>
+    <div class="min-h-screen flex flex-col items-center py-10">
+        <a class="self-start ml-10 text-white py-2 px-6
+                border border-white rounded-full
+                hover:bg-white hover:text-black transition-colors duration-300"
+        href="../frontend.html">
+           FrontEnd
+        </a>
+
+        <div class="mt-10 max-w-[945px] px-6 text-justify ml-[10%] mr-[10%]">
+            <a target="_blank" href="https://tailwindcss.com/docs/installation/using-vite">
+                <h1 class="font-bold text-[50px] text-center">
+                    Tailwind
+                </h1>
+            </a>
+
+            <ul class="space-y-5 mt-10">
+
+                <li class="b p-6">
+                    <h3 class="text-xl font-bold mb-4">1. Estilo Visual (Texto & Cores)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-2 text-sm">
+                            <p><code class="text-pink-400">text-{cor}-{tom}</code>: Muda a cor da fonte.</p>
+                            <p><code class="text-pink-400">text-{size}</code>: Tamanho (xs, sm, base, lg, xl, 2xl...).</p>
+                            <p><code class="text-pink-400">text-{align}</code>: Direção (left, center, right, justify).</p>
+                            <p><code class="text-pink-400">bg-{cor}-{tom}</code>: Cor de fundo.</p>
+                            <p><code class="text-pink-400">hover:</code>: Efeito ao passar o mouse.</p>
+                        </div>
+                        
+                        <div class="flex flex-col items-center justify-center p-4 border-gray-600 rounded bg-[#131217]">
+                            <button class="bg-blue-600 text-white font-bold py-2 px-6 rounded hover:bg-blue-400 hover:text-black transition-all">
+                                Passe o mouse aqui
+                            </button>
+                            <span class="text-xs text-gray-500 mt-2">hover:bg-blue-400</span>
+                        </div>
                     </div>
-                </div>
-    
-                <a id="botao" href="index.html">Home</a>
-            </div>
-        </nav>
-    </aside>
+                </li>
 
-    <h1>
-        Sobre
-    </h1>
+                <li class="b p-6">
+                    <h3 class="text-xl font-bold mb-4">2. Espaçamento & Dimensões</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-2 text-sm">
+                            <p><code class="text-pink-400">m- / my- / mx-</code>: Margem (externa).</p>
+                            <p><code class="text-pink-400">p- / py- / px-</code>: Padding (interno).</p>
+                            <p><code class="text-pink-400">w-{size}</code>: Largura (w-full, w-1/2, w-[100px]).</p>
+                            <p><code class="text-pink-400">h-{size}</code>: Altura (h-screen, h-full, h-10).</p>
+                            <p><code class="text-pink-400">rounded-full</code>: Borda totalmente redonda.</p>
+                        </div>
 
-    
+                        <div class="flex items-center justify-center border-gray-600 rounded bg-[#131217] p-4">
+                            <div class="bg-green-900 border-green-500 p-4 rounded-full w-24 h-24 flex items-center justify-center text-center text-xs">
+                                p-4<br>rounded-full
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="b p-6">
+                    <h3 class="text-xl font-bold mb-4">3. Layout (Flex & Grid)</h3>
+                    <div class="space-y-4">
+                        <div class="text-sm space-y-1">
+                            <p><code class="text-pink-400">flex</code>: Alinha elementos em 1 eixo.</p>
+                            <p><code class="text-pink-400">gap-{size}</code>: Espaço entre elementos.</p>
+                            <p><code class="text-pink-400">grid grid-cols-{n}</code>: Cria uma grade de N colunas.</p>
+                            <p><code class="text-pink-400">col-span-{n}</code>: Estica o elemento por N colunas.</p>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-2 p-2 bg-[#131217] border-gray-600 rounded">
+                            <div class="bg-purple-900/50 p-2 text-center text-xs border-purple-500 rounded">01</div>
+                            <div class="bg-purple-900/50 p-2 text-center text-xs border-purple-500 rounded">02</div>
+                            <div class="bg-purple-900/50 p-2 text-center text-xs border-purple-500 rounded">03</div>
+                            <div class="col-span-3 bg-purple-600 text-white p-2 text-center text-xs font-bold rounded">
+                                col-span-3 (Ocupa tudo)
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="b p-6 overflow-hidden">
+                    <h3 class="text-xl font-bold mb-4">4. Breakpoints (Telas)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm text-gray-400">
+                            <thead class="text-gray-200 uppercase bg-gray-700/50 text-xs">
+                                <tr>
+                                    <th class="px-4 py-3">Prefixo</th>
+                                    <th class="px-4 py-3">Mínimo</th>
+                                    <th class="px-4 py-3">Uso Comum</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-700">
+                                <tr class="hover:bg-gray-700/30">
+                                    <td class="px-4 py-3 font-mono text-white">(Base)</td>
+                                    <td class="px-4 py-3">0px</td>
+                                    <td class="px-4 py-3">Celular (Padrão)</td>
+                                </tr>
+                                <tr class="hover:bg-gray-700/30">
+                                    <td class="px-4 py-3 font-mono text-yellow-400">sm:</td>
+                                    <td class="px-4 py-3">640px</td>
+                                    <td class="px-4 py-3">Celular Deitado</td>
+                                </tr>
+                                <tr class="hover:bg-gray-700/30">
+                                    <td class="px-4 py-3 font-mono text-yellow-400">md:</td>
+                                    <td class="px-4 py-3">768px</td>
+                                    <td class="px-4 py-3">Tablets / iPads</td>
+                                </tr>
+                                <tr class="hover:bg-gray-700/30">
+                                    <td class="px-4 py-3 font-mono text-yellow-400">lg:</td>
+                                    <td class="px-4 py-3">1024px</td>
+                                    <td class="px-4 py-3">Laptops</td>
+                                </tr>
+                                <tr class="hover:bg-gray-700/30">
+                                    <td class="px-4 py-3 font-mono text-yellow-400">xl:</td>
+                                    <td class="px-4 py-3">1280px</td>
+                                    <td class="px-4 py-3">Desktops</td>
+                                </tr>
+                                <tr class="hover:bg-gray-700/30">
+                                    <td class="px-4 py-3 font-mono text-yellow-400">2xl:</td>
+                                    <td class="px-4 py-3">1536px</td>
+                                    <td class="px-4 py-3">Telas Gigantes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
 </body>
 </html>

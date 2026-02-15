@@ -22,9 +22,19 @@
 <body class="-apple-system bg-[#131217] text-base">
 
     <div class="max-w-[1070px] mx-auto flex justify-between items-start">
+
+        <img 
+            id="menu-btn"
+            class="fixed top-2 left-2 z-50 block md:hidden p-2 cursor-pointer bg-[#131217] hover:bg-gray-800"
+            src="img/opcao.png" 
+            alt="abrir barra lateral"
+        >
         <!-- Navbar -->
-        <nav class="max-w-[330px] w-full mx-auto top-0 ml-2 h-[960px] 
-            border-r border-[rgba(255,193,7,0.5)] py-[5%]">
+        <nav id="sidebar" class="
+            hidden md:block pl-5
+            fixed inset-y-0 left-0 z-40 w-[85%] max-w-[330px] h-full bg-[#131217] overflow-y-auto
+            md:relative md:h-[960px] md:ml-10 md:w-full md:bg-transparent md:overflow-visible
+            border-r border-[rgba(255,193,7,0.5)] py-[5%] shadow-2xl md:shadow-none transition-all duration-300">
 
             <img 
                 class="rounded-full ml-9 mb-9 h-[200px]"
@@ -91,9 +101,10 @@
             </div>
         </nav>
     
+
         <div class="text-[#D9D7E0] text-justify 
                     grid gap-7 justify-between
-                    w-full max-w-[703px] mx-auto px-5 ml-8        
+                    w-full max-w-[703px] mx-auto px-5 ml-8 mr-5        
                 ">
             <h1 class="mt-16 text-[50px]">
                 Home
@@ -106,7 +117,7 @@
             </p>
 
             <p><b>Conhecimentos</b></p>
-            <ul>
+            <ul class="list-disc pl-10 space-y-1">
                 <li><strong>Linguagens:</strong> HTML, CSS, JavaScript, C, Java, Python, SQL;</li>
                 <li><strong>Bibliotecas e Frameworks:</strong> Bootstrap, Tailwind, Flask, Pandas, Scikit-Learn, Keras, Matplotlib;</li>
                 <li><strong>Ferramentas:</strong> Command Line Interface, Visual Studio, Git, Docker,  IntelliJ IDEA, Microsoft Excel;</li>
@@ -123,5 +134,14 @@
         </div>
     </div>
 
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

@@ -22,9 +22,19 @@
 <body class="-apple-system bg-[#131217] text-base">
 
     <div class="max-w-[1070px] mx-auto flex justify-between items-start">
+
+        <img 
+            id="menu-btn"
+            class="fixed top-2 left-2 z-50 block md:hidden p-2 cursor-pointer bg-[#131217] hover:bg-gray-800"
+            src="img/opcao.png" 
+            alt="abrir barra lateral"
+        >
         <!-- Navbar -->
-        <nav class="max-w-[330px] w-full mx-auto top-0 ml-2 h-[960px] 
-            border-r border-[rgba(255,193,7,0.5)] py-[5%]">
+        <nav id="sidebar" class="
+            hidden md:block pl-5
+            fixed inset-y-0 left-0 z-40 w-[85%] max-w-[330px] h-full bg-[#131217] overflow-y-auto
+            md:relative md:h-[960px] md:ml-10 md:w-full md:bg-transparent md:overflow-visible
+            border-r border-[rgba(255,193,7,0.5)] py-[5%] shadow-2xl md:shadow-none transition-all duration-300">
 
             <img 
                 class="rounded-full ml-9 mb-9 h-[200px]"
@@ -103,53 +113,39 @@
             <div class="bg-[#070808] p-5 
             border-2 border-solid rounded-xl">
                 <p class="text-[12px] mb-1">
-                    JANEIRO 2026
+                    FEVEREIRO 2026
                 </p>
-                <a class="flex" target="_blank" href="front/tailwind.html">
-                    <h2 class="text-[24px] mb-5">Python</h2>
-                    <img class="h-4 ml-2 mt-1" src="img/tailwindcss.png" alt="">
+                <a class="flex" target="_blank" href="https://cs50.harvard.edu/x/2025/">
+                    <h2 class="text-[24px] mb-5">CS50</h2>
+                    <img class="h-4 ml-2 mt-1" src="img/cs50.png" alt="">
                 </a>
                 <p class="text-[14px]">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit nihil u
+                    Pra mim o melhor curso introdutorio que tem na area da programação, consegue unir uma base boa e solida de tanto do frontend quanto do backend e ainda por cima de dados.
                 </p>
             </div>
             <div class="bg-[#070808] p-5 
             border-2 border-solid rounded-xl">
                 <p class="text-[12px] mb-1">
-                    JANEIRO 2026
+                    FEVEREIRO 2026
                 </p>
-                <a class="flex" target="_blank" href="">
-                    <h2 class="text-[24px] mb-5">C</h2>
-                    <img class="h-4 ml-2 mt-1" src="img/typescript.png" alt="">
+                <a class="flex" target="_blank" href="https://www.udemy.com/share/10dVHR3@GRZlZDlPvIN8_P_Z3cTPVX64RaZF8LSxqRxEyqhsddlXeEHO8mGJIa_RGk6SNI0lBQ==/">
+                    <h2 class="text-[24px] mb-5">Python Automatico</h2>
+                    <img class="h-4 ml-2 mt-1" src="img/py.png" alt="">
                 </a>
                 <p class="text-[14px]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, voluptatum voluptatibus! Sunt voluptates minus est, voluptatum nostrum architecto blanditiis repudiandae facilis iste deleniti quibusdam sequi mollitia modi ex quis dolorum!
+                    Curso pago (valor simbolico) mas que tem muito a agragar, possui diversos projetos interessantes para por no seu curriculo.
                 </p>
             </div>
             <div class="bg-[#070808] p-5 
             border-2 border-solid rounded-xl">
                 <p class="text-[12px] mb-1">
-                    JANEIRO 2026
+                    FEVEREIRO 2026
                 </p>
-                <a class="flex" target="_blank" href="">
-                    <h2 class="text-[24px] mb-5">Flask</h2>
-                    <img class="h-4 ml-2 mt-1" src="img/tailwindcss.png" alt="">
+                <a class="flex" target="_blank" href="https://www.freecodecamp.org/portuguese/news/como-criar-uma-aplicacao-da-web-usando-o-flask-e-implanta-la-na-nuvem/">
+                    <h2 class="text-[24px] mb-5">Como criar uma aplicação da web usando o Flask e implantá-la na nuvem</h2>
                 </a>
                 <p class="text-[14px]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quis tempora doloribus quam voluptatibus enim asperiores. Accusamus fugiat rem aliquid deserunt reiciendis fugit non, nesciunt aspernatur doloremque eum maiores. Provident?
-                </p>
-            </div>
-            <div class="bg-[#070808] p-5 
-            border-2 border-solid rounded-xl">
-                <p class="text-[12px] mb-1">
-                    JANEIRO 2026
-                </p>
-                <a class="flex" target="_blank" href="">
-                    <h2 class="text-[24px] mb-5">Java</h2>
-                    <img class="h-4 ml-2 mt-1" src="img/tailwindcss.png" alt="">
-                </a>
-                <p class="text-[14px]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quis tempora doloribus quam voluptatibus enim asperiores. Accusamus fugiat rem aliquid deserunt reiciendis fugit non, nesciunt aspernatur doloremque eum maiores. Provident?
+                    Um simples tutorial inicial de Flask, possui uma dinamica/didatica bem instigante onde nem ve a hora passar.
                 </p>
             </div>
 
@@ -165,5 +161,13 @@
        </div>
     </div>
 
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
