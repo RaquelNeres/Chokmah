@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'lobster': ['Lobster', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Docker</title>
+    <style>
+        details {
+            margin-bottom: 10px;
+        }
+        details summary {
+            cursor: pointer;
+            padding: 0.75rem;
+            background-color: #1e1b29;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s;
+        }
+        details summary:hover {
+            background-color: #2a2738;
+        }
+        details[open] summary {
+            margin-bottom: 10px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        details[open] {
+            background-color: #1e1b29;
+            border-radius: 0.5rem;
+            padding: 0;
+        }
+        details[open] > div {
+            padding: 1rem;
+        }
+        pre {
+            background-color: #0d0b12;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 0.5rem 0;
+        }
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #2a2738;
+        }
+        th {
+            background-color: #1e1b29;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #1e1b29;
+        }
+    </style>
+</head>
+
+<body class="-apple-system bg-[#131217] text-base">
+    <div class="min-h-screen w-full flex flex-col items-center py-10">
+
+        <a class="self-start ml-10 text-white py-2 px-6 
+                border border-white rounded-full 
+                hover:bg-white hover:text-black transition-colors duration-300" 
+        href="../ferramentas.html">
+            Voltar
+        </a>
+
+        <div class="mt-10 max-w-[945px] px-6 text-[#D9D7E0]">
+
+            <h1 class="text-[50px] text-center mb-6">
+                Docker
+            </h1>
+
+            <div class="text-center mb-10">
+                <a class="text-blue-400 hover:text-blue-300 underline" 
+                   href="https://docs.google.com/document/d/11v1xJlNWkaNXs13waCgGLo2iN7b844Vm/edit?usp=sharing&ouid=103977033836862708162&rtpof=true&sd=true" 
+                   target="_blank">
+                    Aula completa
+                </a>
+            </div>
+
+            <!-- Referência Rápida -->
+            <section class="mb-12">
+                <h2 class="text-3xl mb-6 text-white">Referência Rápida</h2>
+                
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Comando</th>
+                                <th>O que faz</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="#DockerRun">
+                                        <code>docker run -d -p 8080:80 --name c nginx</code></td>
+                                    </a>
+                                <td>Criar e iniciar container</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#container">
+                                        <code>docker ps / docker ps -a</code></td>
+                                    </a>
+                                <td>Listar containers rodando / todos</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker stop / start / restart c</code></td>
+                                <td>Parar / iniciar / reiniciar container</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker rm -f c</code></td>
+                                <td>Forçar remoção de container</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker logs -f c</code></td>
+                                <td>Seguir logs em tempo real</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker exec -it c bash</code></td>
+                                <td>Abrir terminal no container</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#img">
+                                        <code>docker images</code></td>
+                                    </a>
+                                <td>Listar imagens locais</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker pull nginx:alpine</code></td>
+                                <td>Baixar imagem do Docker Hub</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker build -t app:1.0 .</code></td>
+                                <td>Construir imagem do Dockerfile</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker rmi nginx</code></td>
+                                <td>Remover imagem</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker volume ls / rm / prune</code></td>
+                                <td>Listar / remover / limpar volumes</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker network ls / create / rm</code></td>
+                                <td>Gerenciar redes</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker compose up -d</code></td>
+                                <td>Subir todos os serviços</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker compose down</code></td>
+                                <td>Derrubar todos os serviços</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker compose logs -f app</code></td>
+                                <td>Logs de um serviço</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker compose exec db psql ...</code></td>
+                                <td>Executar comando em serviço</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker system df</code></td>
+                                <td>Espaço usado pelo Docker</td>
+                            </tr>
+                            <tr>
+                                <td><code>docker system prune -a</code></td>
+                                <td>Limpeza geral</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Resumo -->
+            <section class="mb-4">
+                <h2 class="text-3xl mb-6 text-white">Resumo</h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-blue-300">Docker</h3>
+                        <p>Empacotador de aplicação</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-blue-300">Imagem</h3>
+                        <p>'Molde' de um container, define a estrutura uma vez e usa quantas vezes quiser facilmente (sem ter que construir) - armazena na sua máquina ou no hub.docker.com</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-blue-300">Container</h3>
+                        <p>Instância rodando uma imagem, o processo/execução no sistema (pode ter vários processos originários de uma mesma imagem) - não armazena os dados (quando desliga a máquina tudo se perde)</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-blue-300">
+                            <a href="#File">
+                                Dockerfile
+                            </a>
+                        </h3>
+                        <p>Arquivo que contém as instruções da construção da imagem, substitui a escrita/poluição no cmd</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-blue-300">Volume</h3>
+                        <p>Onde persiste os dados em Docker, armazena os dados fora do container</p>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tipos Volume -->
+            <section>
+                <details>
+                    <summary class="text-xl font-semibold text-white">Tipos Volume</summary>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tipo</th>
+                                    <th>Quando usar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Named Volume</strong> (recomendado)</td>
+                                    <td>Gerenciado pelo Docker. Fica em /var/lib/docker/volumes/. Melhor para bancos de dados.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bind Mount</strong></td>
+                                    <td>Conecta pasta específica do host ao container. Ideal para desenvolvimento (ver mudanças ao vivo).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>tmpfs Mount</strong></td>
+                                    <td>Armazenamento em memória RAM. Temporário, muito rápido. Para dados sensíveis em memória.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Named Volumes -->
+            <section class="mb-7">
+                <details>
+                    <summary class="text-xl font-semibold text-white">Named Volumes na Prática</summary>
+                    <div>
+<pre><code># Criar um volume manualmente
+docker volume create dados-postgres
+
+# Listar volumes
+docker volume ls
+
+# Inspecionar um volume (ver localização física, etc)
+docker volume inspect dados-postgres
+
+# Usar o volume no container
+docker run -d \
+  --name postgres \
+  -v dados-postgres:/var/lib/postgresql/data \
+  -e POSTGRES_PASSWORD=senha \
+  postgres:15
+
+# Se remover e recriar o container, os dados persistem!
+docker rm -f postgres
+docker run -d \
+  --name postgres \
+  -v dados-postgres:/var/lib/postgresql/data \
+  -e POSTGRES_PASSWORD=senha \
+  postgres:15
+# Os dados ainda estão lá!
+
+# Remover um volume (CUIDADO: apaga os dados!)
+docker volume rm dados-postgres
+
+# Remover volumes não utilizados
+docker volume prune</code></pre>
+                    </div>
+                </details>
+            </section>
+
+            <div class="mb-5">
+                <h3 class="text-xl font-semibold mb-2 text-blue-300">Docker Compose</h3>
+                <p>Ferramenta para gerir os containers, substitui o comando 'Docker run', escreve tudo em um arquivo YAML e sobe</p>
+            </div>
+
+            <!-- Docker Compose Estrutura -->
+            <section class="mb-5">
+                <details>
+                    <summary class="text-xl font-semibold text-white">Estrutura do docker-compose.yml</summary>
+                    <div>
+                        <p class="mb-4">Um arquivo Compose tem quatro seções principais: <code>version</code>, <code>services</code>, <code>volumes</code> e <code>networks</code>.</p>
+<pre><code>version: '3.8'
+
+# ─── SERVIÇOS ─────────────────────────────────────────────────
+services:
+
+  # Cada serviço é um container
+  nome-do-servico:
+    image: imagem:tag          # OU
+    build:                     # Construir de um Dockerfile
+      context: .               # Pasta com o Dockerfile
+      dockerfile: Dockerfile   # Nome do arquivo (se não for 'Dockerfile')
+
+    container_name: meu-app   # Nome fixo do container
+
+    ports:
+      - "HOST:CONTAINER"      # Mapeamento de portas
+
+    environment:               # Variáveis de ambiente
+      - VARIAVEL=valor
+      DATABASE_URL: postgres://user:senha@db/meudb
+
+    env_file:                  # Ou carrega de um arquivo .env
+      - .env
+
+    volumes:                   # Volumes e bind mounts
+      - dados-nomeados:/var/dados
+      - ./pasta-local:/app
+
+    depends_on:               # Ordem de inicialização
+      db:                     # Aguarda 'db' ficar 'healthy'
+        condition: service_healthy
+
+    restart: unless-stopped   # Política de reinício
+
+    networks:                 # Redes que participa
+      - minha-rede
+
+    healthcheck:              # Verificação de saúde
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+
+# ─── VOLUMES NOMEADOS ─────────────────────────────────────────
+volumes:
+  dados-nomeados:            # Volume gerenciado pelo Docker
+  outro-volume:
+    external: true           # Volume criado externamente
+
+
+# ─── REDES ────────────────────────────────────────────────────
+networks:
+  minha-rede:
+    driver: bridge</code></pre>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Comandos Docker Compose -->
+            <section class="mb-20">
+                <details>
+                    <summary class="text-xl font-semibold text-white">Comandos Docker Compose</summary>
+                    <div>
+<pre><code># ─── SUBIR ────────────────────────────────────────────────────
+
+# Subir todos os serviços em background
+docker compose up -d
+
+# Subir e reconstruir imagens (quando mudou Dockerfile/código)
+docker compose up -d --build
+
+# Subir apenas um serviço específico
+docker compose up -d nome-do-servico
+
+
+# ─── PARAR ────────────────────────────────────────────────────
+
+# Para os containers (mantém volumes e networks)
+docker compose stop
+
+# Para e REMOVE containers e networks (volumes permanecem)
+docker compose down
+
+# Remove tudo incluindo volumes (CUIDADO: apaga dados!)
+docker compose down -v
+
+
+# ─── MONITORAR ────────────────────────────────────────────────
+
+# Listar containers do projeto
+docker compose ps
+
+# Ver logs de todos os serviços
+docker compose logs
+
+# Seguir logs em tempo real
+docker compose logs -f
+
+# Logs de um serviço específico
+docker compose logs -f app
+
+
+# ─── EXECUTAR COMANDOS ────────────────────────────────────────
+
+# Abrir terminal em um serviço
+docker compose exec app bash
+
+# Executar comando pontual
+docker compose exec db psql -U usuario -d meudb
+
+# Rodar um serviço one-off (sem iniciar outros)
+docker compose run --rm app npm test
+
+
+# ─── OUTROS ──────────────────────────────────────────────────
+
+# Ver configuração final resolvida (variáveis substituídas)
+docker compose config
+
+# Rebuild de um serviço sem parar os outros
+docker compose up -d --build app
+
+# Escalar um serviço (criar múltiplas instâncias)
+docker compose up -d --scale app=3</code></pre>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Docker Run -->
+            <section class="mb-12">
+                <h2 id="DockerRun" class="text-3xl mb-2 text-white">Docker Run</h2>
+                <p class="mb-4">Baixa imagem, cria e inicia em um container</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Flag</th>
+                            <th>O que faz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>-d</code> (--detach)</td>
+                            <td>Roda em background. Sem isso, o terminal fica preso no container.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-p HOST:CONTAINER</code></td>
+                            <td>Mapeia porta. Ex: <code>-p 8080:80</code> — porta 8080 do seu PC entra na 80 do container.</td>
+                        </tr>
+                        <tr>
+                            <td><code>--name NOME</code></td>
+                            <td>Dá um nome ao container. Facilita referenciar depois.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-e VAR=VALOR</code></td>
+                            <td>Define variável de ambiente dentro do container.<br>
+                                Ex: <code>-e POSTGRES_USER=meususuario -e POSTGRES_PASSWORD=minhasenha123</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>-v ORIGEM:DESTINO</code></td>
+                            <td>Monta um volume — conecta pasta do host com pasta do container.<br>
+                                Ex: <code>-v dados-postgres:/var/lib/postgresql/data</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>--rm</code></td>
+                            <td>Remove o container automaticamente quando ele parar.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-it</code></td>
+                            <td>Modo interativo com terminal. Use para entrar no container.</td>
+                        </tr>
+                        <tr>
+                            <td><code>--network REDE</code></td>
+                            <td>Conecta o container a uma rede específica.</td>
+                        </tr>
+                        <tr>
+                            <td><code>--restart always</code></td>
+                            <td>Reinicia o container automaticamente se ele parar ou o host reiniciar.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="mt-4 text-sm text-gray-400">No fim do comando escreve a imagem que vai usar</p>
+            </section>
+
+            <!-- Gerenciando Containers -->
+            <section>
+                <h2 id="container" class="text-3xl mb-6 text-white">Gerenciando Containers</h2>
+            </section>
+
+            <section class="mb-12">
+                <details>
+                    <summary class="text-xl font-semibold text-white">Comandos do Dia a Dia</summary>
+                    <div>
+<pre><code># ─── LISTAR ───────────────────────────────────────────────────
+
+docker ps          # Containers em execução
+
+docker ps -a       # Todos os containers (incluindo parados)
+
+docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}' # Formato personalizado/legível
+
+
+# ─── INICIAR / PARAR ──────────────────────────────────────────
+
+# Parar graciosamente (envia SIGTERM, aguarda 10s, depois SIGKILL)
+docker stop meu-nginx
+
+# Parar imediatamente (SIGKILL direto — use apenas se necessário)
+docker kill meu-nginx
+
+docker start meu-nginx      # Iniciar container parado
+
+docker restart meu-nginx    # Reiniciar
+
+
+# ─── REMOVER ──────────────────────────────────────────────────
+
+docker rm meu-nginx         # Remover container parado
+
+docker rm -f meu-nginx      # Forçar remoção de container rodando
+
+docker container prune      # Remover todos os containers parados de uma vez
+
+
+# ─── LOGS ────────────────────────────────────────────────────
+
+docker logs meu-nginx                # Ver todos os logs
+
+docker logs -f meu-nginx             # Seguir logs em tempo real (como tail -f)
+
+docker logs --tail 50 meu-nginx      # Ver apenas as últimas 50 linhas
+
+docker logs -t meu-nginx             # Logs com timestamp
+
+
+# ─── ENTRAR NO CONTAINER ──────────────────────────────────────
+
+docker exec -it meu-nginx bash             # Abrir terminal bash no container
+
+docker exec -it meu-nginx sh               # Se a imagem não tiver bash, tente sh
+
+docker exec meu-nginx ls /var/www/html     # Executar um comando pontual sem entrar
+
+
+# ─── INSPECIONAR ──────────────────────────────────────────────
+
+docker inspect meu-nginx          # Informações detalhadas do container (JSON)
+
+docker stats                      # Ver uso de CPU, memória e rede em tempo real
+
+docker stats meu-nginx            # Stats de um container específico
+</code></pre>
+                    </div>
+                </details>
+            </section>
+            
+            <!-- Gerenciando Imagens -->
+            <section class="mb-12">
+                <h2 id="img" class="text-3xl mb-6 text-white">Gerenciando Imagens</h2>
+<pre><code>
+docker images                    # Listar imagens baixadas localmente
+
+# Baixar imagem sem criar container
+docker pull postgres:15
+docker pull node:20-alpine
+
+docker rmi nginx                 # Remover uma imagem
+
+docker image prune               # Remover imagens não utilizadas (dangling)
+
+docker image prune -a            # Remover TODAS as imagens não utilizadas por nenhum container
+
+docker search postgres           # Pesquisar imagem no Docker Hub via terminal
+</code></pre>
+            </section>
+
+            <!-- Dockerfile -->
+            <section class="mb-12">
+                <h2 id="File" class="text-3xl mb-6 text-white">Dockerfile (criar sua própria img)</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Instrução</th>
+                            <th>O que faz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>FROM imagem:tag</code></td>
+                            <td>Define a imagem base. Sempre a primeira instrução.</td>
+                        </tr>
+                        <tr>
+                            <td><code>WORKDIR /caminho</code></td>
+                            <td>Define o diretório de trabalho dentro do container.</td>
+                        </tr>
+                        <tr>
+                            <td><code>COPY origem destino</code></td>
+                            <td>Copia arquivos do host para o container.</td>
+                        </tr>
+                        <tr>
+                            <td><code>ADD origem destino</code></td>
+                            <td>Como COPY, mas suporta URLs e descompacta tar automaticamente.</td>
+                        </tr>
+                        <tr>
+                            <td><code>RUN comando</code></td>
+                            <td>Executa comando durante o BUILD da imagem (instalar pacotes, etc).</td>
+                        </tr>
+                        <tr>
+                            <td><code>CMD ["cmd", "arg"]</code></td>
+                            <td>Comando padrão ao iniciar o container. Pode ser sobrescrito.</td>
+                        </tr>
+                        <tr>
+                            <td><code>ENTRYPOINT ["cmd"]</code></td>
+                            <td>Ponto de entrada fixo do container. CMD vira argumentos dele.</td>
+                        </tr>
+                        <tr>
+                            <td><code>ENV VAR=VALOR</code></td>
+                            <td>Define variável de ambiente disponível em runtime.</td>
+                        </tr>
+                        <tr>
+                            <td><code>ARG VAR=VALOR</code></td>
+                            <td>Variável disponível APENAS no momento do build.</td>
+                        </tr>
+                        <tr>
+                            <td><code>EXPOSE porta</code></td>
+                            <td>Documenta qual porta o container vai usar (não abre automaticamente).</td>
+                        </tr>
+                        <tr>
+                            <td><code>VOLUME /caminho</code></td>
+                            <td>Declara um ponto de montagem de volume.</td>
+                        </tr>
+                        <tr>
+                            <td><code>USER usuario</code></td>
+                            <td>Define o usuário que roda os próximos comandos (segurança).</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <details class="mt-6">
+                    <summary class="text-xl font-semibold text-white">Exemplo de Dockerfile</summary>
+                    <div>
+<pre><code># ─────────────────────────────────────────────────────────────
+# ESTÁGIO 1: Instalação de dependências
+# ─────────────────────────────────────────────────────────────
+FROM node:20-alpine AS dependencies
+
+# Instala dependências nativas se necessário
+# (bcrypt, sharp e outros precisam de ferramentas de compilação)
+RUN apk add --no-cache python3 make g++
+
+WORKDIR /app
+
+# Copia APENAS os arquivos de dependência primeiro
+# Isso aproveita o cache do Docker:
+# Se package.json não mudou, essa camada é reutilizada
+COPY package.json package-lock.json ./
+
+# Instala dependências de produção
+RUN npm ci --only=production
+
+
+# ─────────────────────────────────────────────────────────────
+# ESTÁGIO 2: Imagem final (menor e mais segura)
+# ─────────────────────────────────────────────────────────────
+FROM node:20-alpine
+
+# Cria usuário não-root para rodar a aplicação (segurança!)
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+
+WORKDIR /app
+
+# Copia node_modules do estágio anterior
+COPY --from=dependencies /app/node_modules ./node_modules
+
+# Copia o código da aplicação
+COPY . .
+
+# Altera dono dos arquivos para o usuário criado
+RUN chown -R appuser:appgroup /app
+
+# Troca para o usuário não-root
+USER appuser
+
+# Documenta a porta (boa prática, não obrigatório)
+EXPOSE 3000
+
+# Variáveis de ambiente com valores padrão
+ENV NODE_ENV=production
+ENV PORT=3000
+
+# Verifica se a aplicação está saudável
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3000/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"
+
+# Inicia a aplicação
+CMD ["node", "src/server.js"]</code></pre>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Construindo e Publicando -->
+            <section class="mb-12">
+                <details>
+                    <summary class="text-xl font-semibold text-white">Construindo e Publicando Imagens</summary>
+                    <div>
+<pre><code>docker build -t minha-app:1.0 .     # Construir a imagem com a tag 'minha-app:1.0'
+                                    # O ponto (.) indica que o Dockerfile está na pasta atual
+
+docker build -f caminho/Dockerfile -t minha-app .   # Para usar um Dockerfile em outro lugar
+
+docker history minha-app:1.0        # Ver as camadas e tamanho da imagem construída
+
+# ─── Publicar no Docker Hub ───────────────────────────────────
+docker login    # Faça login no Docker Hub
+
+docker tag minha-app:1.0 seuusuario/minha-app:1.0    # Taguear a imagem com seu usuário Docker Hub
+
+docker push seuusuario/minha-app:1.0      # Enviar para o Docker Hub
+</code></pre>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Bind Mounts -->
+            <section class="mb-12">
+                <details>
+                    <summary class="text-xl font-semibold text-white">Bind Mounts — Desenvolvimento Local</summary>
+                    <div>
+                        <p class="mb-4">Bind mounts são indispensáveis no desenvolvimento. Eles espelham sua pasta local dentro do container — qualquer alteração no código é refletida imediatamente no container, sem precisar reconstruir a imagem.</p>
+<pre><code># Montar a pasta atual dentro do container
+docker run -d \
+  --name app-dev \
+  -p 3000:3000 \
+  -v $(pwd):/app \
+  -v /app/node_modules \
+  node:20-alpine \
+  sh -c 'npm install && npm run dev'
+
+# O que aconteceu:
+# -v $(pwd):/app          = pasta atual do host mapeada para /app no container
+# -v /app/node_modules    = volume anônimo para node_modules (não sobrescreve!)
+
+# No Windows PowerShell, use ${PWD} no lugar de $(pwd)
+docker run -v ${PWD}:/app ...</code></pre>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Exemplo Completo -->
+            <section class="mb-12">
+                <details>
+                    <summary class="text-xl font-semibold text-white">Exemplo Real — Node.js + PostgreSQL + Redis</summary>
+                    <div>
+                        <h3 class="text-2xl mb-4 text-blue-300">Estrutura do Projeto</h3>
+<pre><code>meu-projeto/
+├── src/
+│   └── server.js
+├── Dockerfile
+├── docker-compose.yml
+├── docker-compose.override.yml   # Sobrescreve configs para dev
+├── .dockerignore
+├── .env                          # Variáveis (não versionar!)
+├── .env.example                  # Template (versionar)
+└── package.json</code></pre>
+
+                        <h3 class="text-2xl mb-4 mt-8 text-blue-300">Arquivo .env</h3>
+<pre><code># .env — NÃO commite esse arquivo no git!
+# Adicione .env no .gitignore
+
+# Aplicação
+NODE_ENV=development
+PORT=3000
+APP_SECRET=sua-chave-secreta-aqui
+
+# PostgreSQL
+POSTGRES_USER=appuser
+POSTGRES_PASSWORD=senhasegura123
+POSTGRES_DB=meuapp
+DATABASE_URL=postgresql://appuser:senhasegura123@db:5432/meuapp
+
+# Redis
+REDIS_URL=redis://redis:6379</code></pre>
+
+                        <h3 class="text-2xl mb-4 mt-8 text-blue-300">Arquivo .dockerignore</h3>
+<pre><code># .dockerignore — equivalente ao .gitignore para Docker
+# Evita copiar arquivos desnecessários para a imagem
+
+node_modules
+.git
+.gitignore
+.env
+.env.*
+*.log
+docker-compose*.yml
+README.md
+.DS_Store
+coverage/
+.nyc_output/
+dist/            # Ou build/ — será compilado dentro do container</code></pre>
+
+                        <h3 class="text-2xl mb-4 mt-8 text-blue-300">docker-compose.yml — Produção</h3>
+<pre><code>version: '3.8'
+
+services:
+
+  # ─── APLICAÇÃO ───────────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production      # Estágio do multi-stage build
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_URL=${REDIS_URL}
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - app-net
+
+  # ─── BANCO DE DADOS ──────────────────────────────────────────
+  db:
+    image: postgres:15-alpine
+    env_file: .env
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - app-net
+
+  # ─── CACHE ───────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes --maxmemory 256mb
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-net
+
+  # ─── PROXY REVERSO ───────────────────────────────────────────
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - certbot-data:/etc/letsencrypt
+    depends_on:
+      - app
+    restart: unless-stopped
+    networks:
+      - app-net
+
+volumes:
+  postgres-data:
+  redis-data:
+  certbot-data:
+
+networks:
+  app-net:
+    driver: bridge</code></pre>
+
+                        <h3 class="text-2xl mb-4 mt-8 text-blue-300">docker-compose.override.yml — Desenvolvimento</h3>
+                        <p class="mb-4">O Docker Compose mescla automaticamente o arquivo override com o principal. Use isso para manter configurações de dev separadas sem modificar o arquivo de produção.</p>
+<pre><code># docker-compose.override.yml
+# Este arquivo é mesclado AUTOMATICAMENTE com docker-compose.yml
+# Use para configs de desenvolvimento
+
+version: '3.8'
+
+services:
+  app:
+    build:
+      target: development     # Usa estágio dev do Dockerfile
+    volumes:
+      - .:/app                # Bind mount para hot reload
+      - /app/node_modules     # Preserva node_modules do container
+    environment:
+      - NODE_ENV=development
+    command: npm run dev      # Sobrescreve CMD do Dockerfile
+
+  db:
+    ports:
+      - "5432:5432"          # Expõe porta para conectar externamente
+
+  redis:
+    ports:
+      - "6379:6379"</code></pre>
+                    </div>
+                </details>
+            </section>
+
+        </div>
+    </div>
+</body>
+</html>

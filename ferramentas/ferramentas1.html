@@ -19,12 +19,22 @@
     <title>Chokmah (חָכְמָה)</title>
 </head>
 
-<body class="-apple-system bg-[#131217] text-base">
+<body class="-apple-system bg-[#131217] text-base [zoom:1.1]">
 
     <div class="max-w-[1070px] mx-auto flex justify-between items-start">
+
+        <img 
+            id="menu-btn"
+            class="fixed top-2 left-2 z-50 block md:hidden p-2 cursor-pointer bg-[#131217] hover:bg-gray-800"
+            src="../img/opcao.png" 
+            alt="abrir barra lateral"
+        >
         <!-- Navbar -->
-        <nav class="max-w-[330px] w-full mx-auto top-0 ml-2 h-[960px] 
-            border-r border-[rgba(255,193,7,0.5)] py-[5%]">
+        <nav id="sidebar" class="
+            hidden md:block pl-5
+            fixed inset-y-0 left-0 z-40 w-[85%] max-w-[330px] h-full bg-[#131217] overflow-y-auto
+            md:relative md:h-[960px] md:ml-10 md:w-full md:bg-transparent md:overflow-visible
+            border-r border-[rgba(255,193,7,0.5)] py-[5%] shadow-2xl md:shadow-none transition-all duration-300">
 
             <img 
                 class="rounded-full ml-9 mb-9 h-[200px]"
@@ -92,6 +102,7 @@
         </nav>
 
         <!-- Ferramentas -->
+        <!-- icons em 32px -->
     
         <div class="text-[#D9D7E0] text-justify 
                     grid gap-7 justify-between
@@ -103,11 +114,11 @@
             <div class="bg-[#070808] p-5 
             border-2 border-solid rounded-xl">
                 <p class="text-[12px] mb-1">
-                    JANEIRO 2026
+                    FEVEREIRO 2026
                 </p>
-                <a class="flex" target="_blank" href="../front/tailwind.html">
-                    <h2 class="text-[24px] mb-5">Docker</h2>
-                    <img class="h-4 ml-2 mt-1" src="../img/tailwindcss.png" alt="">
+                <a class="flex" href="../ferramentas/sql.html">
+                    <h2 class="text-[24px] mb-5">SQL</h2>
+                    <img class="h-4 ml-2 mt-1" src="../img/docker.png" alt="">
                 </a>
                 <p class="text-[14px]">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit nihil u
@@ -116,30 +127,37 @@
             <div class="bg-[#070808] p-5 
             border-2 border-solid rounded-xl">
                 <p class="text-[12px] mb-1">
-                    JANEIRO 2026
+                    FEVEREIRO 2026
                 </p>
-                <a class="flex" target="_blank" href="">
+                <a class="flex" href="">
                     <h2 class="text-[24px] mb-5">Markdown</h2>
-                    <img class="h-4 ml-2 mt-1" src="../img/typescript.png" alt="">
+                    <img class="h-6 ml-2 mt-1" src="../img/markdown.png" alt="">
                 </a>
                 <p class="text-[14px]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, voluptatum voluptatibus! Sunt voluptates minus est, voluptatum nostrum architecto blanditiis repudiandae facilis iste deleniti quibusdam sequi mollitia modi ex quis dolorum!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, voluptatum voluptatibus! Sunt voluptates minus est, voluptatum nostrum
                 </p>
             </div>
 
             
             <div class="flex justify-between w-full mt-1 mb-10">
                 <a href="../ferramentas.html">
-                    <img src="../img/seta.png" alt="Anterior">
+                    <img src="../../img/seta.png" alt="Anterior">
                 </a>
                 
                 <a href="">
-                    <img class="-scale-x-100" src="../img/seta.png" alt="Próximo">
+                    <img class="-scale-x-100" src="../../img/seta.png" alt="Próximo">
                 </a>
             </div>
        </div>
     </div>
 
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
 
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
