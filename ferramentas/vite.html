@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'lobster': ['Lobster', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Chokmah (חָכְמָה)</title>
+</head>
+
+<body class="-apple-system bg-[#131217] text-base ">
+    <div class="min-h-screen w-full flex flex-col items-center py-10">
+
+        <a class="self-start ml-10 text-white py-2 px-6 
+                border border-white rounded-full 
+                hover:bg-white hover:text-black transition-colors duration-300" 
+        href="../ferramentas.html">
+            Ferramentas
+        </a>
+
+        <div class="mt-10 max-w-[945px] px-6 text-[#D9D7E0] text-center">
+
+            <h1 class="text-[50px]">
+                Vite
+            </h1>
+
+            <details class="mt-10 text-left bg-[#1e1b29] rounded-[0.5rem] overflow-hidden">
+                <summary class="text-xl font-semibold text-white cursor-pointer hover:bg-[#2a2738] pl-5 py-3 transition-colors">
+                    Baixar
+                </summary>
+                
+                <div class="px-5 pb-5 pt-5">
+                    <table class="w-full text-left border-collapse">
+                        <div>
+                            <tr class="border-b border-gray-500 text-gray-300">
+                                <th class="py-3 pr-4">Codigo</th>
+                                <th class="py-3">Uso</th>
+                            </tr>
+                        </div>
+                        
+                        <div class="text-gray-200">
+                            <tr class="border-b border-gray-700">
+                                <td class="py-4 pr-4"><strong>node -v</strong></td>
+                                <td class="py-4">Chegando se o node está instalado</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-4 pr-4"><strong>npm/npx</strong></td>
+                                <td class="py-4">Instalar de forma global/Cria o projeto de forma temporaria</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-4 pr-4"><strong>npm install -g vite</strong></td>
+                                <td class="py-4">Instalar o vite de forma global</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-4 pr-4"><strong>npm create vite@latest</strong></td>
+                                <td class="py-4">Criando o projeto vite</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 pr-4"><strong>npm run dev</strong></td>
+                                <td class="py-4">Rodar o projeto vite</td>
+                            </tr>
+                        </div>
+                    </table>
+                </div>
+            </details>
+
+            
+            <p class="mt-10 text-lg leading-relaxed">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, aut. Temporibus aperiam rem quia quam itaque animi recusandae, quaerat maiores corporis iste nesciunt explicabo neque aspernatur mollitia dolor nobis tenetur.
+            </p>
+            
+        </div>
+
+    </div>
+
+    <script>
+
+    </script>
+</body>
+</html>
