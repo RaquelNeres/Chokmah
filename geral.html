@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>React — Notas de Aula</title>
+</head>
+
+<body class="bg-[#131217] text-[#D9D7E0] text-base">
+
+    <div class="min-h-screen flex flex-col items-center py-10">
+        <a class="self-start ml-10 text-white py-2 px-6
+                border border-white rounded-full
+                hover:bg-white hover:text-black transition-colors duration-300"
+        href="../frontend.html">
+           Voltar
+        </a>
+
+        <div class="mt-10 max-w-[945px] px-6 text-justify w-full mx-auto">
+            <h1 class="font-bold text-[50px] text-center text-white">Geral</h1>
+
+            <ul class="space-y-5 mt-10">
+
+                <!-- package.json -->
+                <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
+                    <h3 class="text-xl font-bold mb-4">package.json</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-2 text-sm text-gray-300">
+                            <p>Arquivo padrão de qualquer projeto Node. Funciona como o <span class="text-white font-semibold">arquivo de configuração</span> do projeto.</p>
+                            <p>Contém os <span class="text-white font-semibold">scripts</span> disponíveis (dev, build…) e as <span class="text-white font-semibold">dependências</span> que o projeto precisa para rodar.</p>
+                            <p>Ao rodar <code class="text-pink-400">npm install</code>, o npm lê esse arquivo e instala tudo que está listado em <code class="text-pink-400">dependencies</code> e <code class="text-pink-400">devDependencies</code>.</p>
+                        </div>
+                        <div class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300">
+                            <p class="text-gray-500">// package.json</p>
+                            <p>{"{"}</p>
+                            <p class="pl-4"><span class="text-yellow-300">"scripts"</span>: {"{"}</p>
+                            <p class="pl-8"><span class="text-green-400">"dev"</span>: <span class="text-green-400">"vite"</span>,</p>
+                            <p class="pl-8"><span class="text-green-400">"build"</span>: <span class="text-green-400">"vite build"</span></p>
+                            <p class="pl-4">{"}"},</p>
+                            <p class="pl-4"><span class="text-yellow-300">"dependencies"</span>: {"{"}</p>
+                            <p class="pl-8"><span class="text-green-400">"react"</span>: <span class="text-green-400">"^18.0.0"</span>,</p>
+                            <p class="pl-8"><span class="text-green-400">"react-dom"</span>: <span class="text-green-400">"^18.0.0"</span></p>
+                            <p class="pl-4">{"}"}</p>
+                            <p>{"}"}</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- index.html -->
+                <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
+                    <h3 class="text-xl font-bold mb-4">index.html</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-2 text-sm text-gray-300">
+                            <p>O único arquivo HTML da aplicação. Serve apenas como <span class="text-white font-semibold">casca</span> — não tem conteúdo real.</p>
+                            <p>Possui uma <code class="text-pink-400">&lt;div id="root"&gt;</code> onde o React vai <span class="text-white font-semibold">injetar toda a aplicação</span> via JavaScript.</p>
+                            <p>Também carrega o <code class="text-pink-400">main.jsx</code>, que é o ponto de entrada do React.</p>
+                        </div>
+                        <div class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300">
+                            <p><span class="text-blue-400">&lt;body&gt;</span></p>
+                            <p class="pl-4"><span class="text-blue-400">&lt;div</span> <span class="text-yellow-300">id=</span><span class="text-green-400">"root"</span><span class="text-blue-400">&gt;&lt;/div&gt;</span></p>
+                            <p class="pl-4 text-gray-500">&lt;!-- vazio, React preenche aqui --&gt;</p>
+                            <br>
+                            <p class="pl-4"><span class="text-blue-400">&lt;script</span> <span class="text-yellow-300">type=</span><span class="text-green-400">"module"</span></p>
+                            <p class="pl-8"><span class="text-yellow-300">src=</span><span class="text-green-400">"/src/main.jsx"</span><span class="text-blue-400">&gt;</span></p>
+                            <p class="pl-4"><span class="text-blue-400">&lt;/script&gt;</span></p>
+                            <p><span class="text-blue-400">&lt;/body&gt;</span></p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- main.jsx -->
+                <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
+                    <h3 class="text-xl font-bold mb-4">main.jsx</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-2 text-sm text-gray-300">
+                            <p>É o <span class="text-white font-semibold">ponto de entrada</span> da aplicação React. Responsável por renderizar o componente raiz (<code class="text-pink-400">App</code>) dentro da <code class="text-pink-400">div#root</code> do HTML.</p>
+                            <p>Também é aqui onde se configura o <span class="text-white font-semibold">React Router</span> (RouterProvider), quando usado.</p>
+                            <p>Você raramente vai precisar editar esse arquivo no dia a dia.</p>
+                        </div>
+                        <div class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300">
+                            <p><span class="text-blue-400">import</span> React <span class="text-blue-400">from</span> <span class="text-green-400">'react'</span></p>
+                            <p><span class="text-blue-400">import</span> ReactDOM <span class="text-blue-400">from</span> <span class="text-green-400">'react-dom/client'</span></p>
+                            <p><span class="text-blue-400">import</span> App <span class="text-blue-400">from</span> <span class="text-green-400">'./App.jsx'</span></p>
+                            <br>
+                            <p>ReactDOM</p>
+                            <p class="pl-4">.<span class="text-yellow-300">createRoot</span>(document.<span class="text-yellow-300">getElementById</span>(<span class="text-green-400">'root'</span>))</p>
+                            <p class="pl-4">.<span class="text-yellow-300">render</span>(<span class="text-blue-400">&lt;App /&gt;</span>)</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- App.jsx -->
+                <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
+                    <h3 class="text-xl font-bold mb-4">App.jsx</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-2 text-sm text-gray-300">
+                            <p>É o <span class="text-white font-semibold">componente raiz</span> da aplicação — o primeiro componente que o React renderiza.</p>
+                            <p>Funciona como o <span class="text-white font-semibold">ponto central</span> onde você organiza os outros componentes e gerencia os estados principais.</p>
+                            <p>É comum manter aqui os <span class="text-white font-semibold">states globais</span> da aplicação e passar os dados para os filhos via props.</p>
+                        </div>
+                        <div class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300">
+                            <p><span class="text-blue-400">import</span> {"{ useState }"} <span class="text-blue-400">from</span> <span class="text-green-400">'react'</span></p>
+                            <p><span class="text-blue-400">import</span> Tasks <span class="text-blue-400">from</span> <span class="text-green-400">'./components/Tasks'</span></p>
+                            <br>
+                            <p><span class="text-blue-400">function</span> <span class="text-yellow-300">App</span>() {"{"}</p>
+                            <p class="pl-4"><span class="text-blue-400">const</span> [tasks, setTasks] = <span class="text-yellow-300">useState</span>([])</p>
+                            <br>
+                            <p class="pl-4"><span class="text-blue-400">return</span> &lt;<span class="text-yellow-300">Tasks</span> <span class="text-pink-400">tasks=</span>{"{tasks}"} /&gt;</p>
+                            <p>{"}"}</p>
+                            <br>
+                            <p><span class="text-blue-400">export default</span> App</p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Estrutura de pastas -->
+                <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
+                    <h3 class="text-xl font-bold mb-4">Estrutura de Pastas</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-2 text-sm text-gray-300">
+                            <p>Não existe uma estrutura obrigatória, mas a convenção mais comum separa o código em pastas dentro de <code class="text-pink-400">src/</code>.</p>
+                            <p><code class="text-pink-400">components/</code> — peças reutilizáveis da UI (botões, cards, listas…).</p>
+                            <p><code class="text-pink-400">pages/</code> — componentes que representam uma rota/página inteira.</p>
+                            <p>Arquivos de componentes sempre com extensão <code class="text-pink-400">.jsx</code> e nome em <code class="text-pink-400">PascalCase</code>.</p>
+                        </div>
+                        <div class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300 leading-6">
+                            <p><span class="text-yellow-300">📁 src/</span></p>
+                            <p class="pl-4"><span class="text-blue-400">📁 components/</span></p>
+                            <p class="pl-8"><span class="text-green-400">AddTask.jsx</span></p>
+                            <p class="pl-8"><span class="text-green-400">Tasks.jsx</span></p>
+                            <p class="pl-4"><span class="text-blue-400">📁 pages/</span></p>
+                            <p class="pl-8"><span class="text-green-400">TaskPage.jsx</span></p>
+                            <p class="pl-4"><span class="text-pink-400">App.jsx</span></p>
+                            <p class="pl-4"><span class="text-pink-400">main.jsx</span></p>
+                            <p class="pl-4"><span class="text-pink-400">index.css</span></p>
+                            <p><span class="text-yellow-300">index.html</span></p>
+                            <p><span class="text-yellow-300">package.json</span></p>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>
