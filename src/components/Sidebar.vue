@@ -6,7 +6,7 @@
        ]">
 
     <div class="flex justify-between items-center pr-4">
-      <img class="rounded-full ml-9 mb-5 mt-6 h-[200px]" src="/img/blue.jpg" alt="profile" />
+      <img class="rounded-full mt-6 mb-5 ml-10 h-[200px]" src="/img/anjo.png" alt="profile" />
       
     </div>
 
