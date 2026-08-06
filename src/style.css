@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* add Lobster font utility used by the original layout */
+.font-lobster {
+	font-family: 'Lobster', cursive;
+}
