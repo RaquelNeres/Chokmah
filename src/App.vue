@@ -1,5 +1,5 @@
 <template>
-  <link rel="icon" type="image/png" href="../public/img/grego.png">
+  <link rel="icon" type="image/png" href="../public/img/anjo.png">
   <div class="bg-[#131217] min-h-screen [zoom:1.1]">
     <!-- Mobile sidebar overlay -->
     <div v-if="showSidebar" class="fixed inset-0 z-50 md:hidden">
