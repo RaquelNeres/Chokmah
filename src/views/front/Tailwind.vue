@@ -21,7 +21,7 @@
                         Uso
                     </summary>
                     
-                     <div class="px-5 pb-5 pt-5">
+                    <div class="px-5 pb-5 pt-5">
                         <p><code class="text-pink-400">src="https://cdn.tailwindcss.com"</code>: No Script do html</p>
                     </div>
 
