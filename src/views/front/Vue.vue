@@ -52,42 +52,33 @@
 
       <ul class="space-y-5 mt-10">
 
-        <!-- 1. O QUE É VUE -->
-        <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
-          <h3 class="text-xl font-bold mb-4">1. O que é Vue?</h3>
-          <div class="space-y-3 text-sm text-gray-300">
-            <p>Vue (pronunciado <span class="text-white font-semibold">/vjuː/</span>, como <em>view</em>) é uma <span class="text-white font-semibold">abstração JavaScript</span> para construção de interfaces de usuário. Assim como o React, ele brilha em aplicações interativas.</p>
-            <p>Constrói sobre HTML, CSS e JavaScript padrão, fornecendo um modelo de programação <span class="text-white font-semibold">declarativo e baseado em componentes</span>.</p>
-            <p>Suas duas funcionalidades principais são:</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
-              <div class="bg-[#131217] rounded p-4">
-                <p class="text-green-400 font-bold mb-1">Interpretação Declarativa</p>
-                <p class="text-gray-400 text-xs">Vue estende o HTML com uma sintaxe de template que descreve a saída baseada no estado JavaScript. O que você escreve no template reflete diretamente o que aparece na tela.</p>
-              </div>
-              <div class="bg-[#131217] rounded p-4">
-                <p class="text-green-400 font-bold mb-1">Reatividade</p>
-                <p class="text-gray-400 text-xs">Vue rastreia automaticamente mudanças no estado JavaScript e atualiza o DOM de forma eficiente — sem você precisar fazer nada manualmente.</p>
-              </div>
-            </div>
-          </div>
-        </li>
-
         <!-- 2. SFC -->
         <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
-          <h3 class="text-xl font-bold mb-4">2. Componente de Arquivo Único — <code class="text-green-400 text-lg">.vue</code></h3>
+          <h3 class="text-xl font-bold mb-4">2. Exemplos Componentes — <code class="text-green-400 text-lg">.vue</code></h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div class="space-y-2 text-sm text-gray-300">
-              <p>O Vue usa arquivos <code class="text-green-400">.vue</code> chamados de <span class="text-white font-semibold">SFC (Single File Component)</span>. É o equivalente ao <code>.jsx</code> do React.</p>
-              <p>Cada arquivo <code class="text-green-400">.vue</code> encapsula as três partes de um componente em um único lugar:</p>
-              <ul class="space-y-1 mt-2 text-xs">
-                <li><code class="text-green-400">&lt;script&gt;</code> — lógica JavaScript</li>
-                <li><code class="text-green-400">&lt;template&gt;</code> — estrutura HTML</li>
-                <li><code class="text-green-400">&lt;style&gt;</code> — estilos CSS (opcionalmente com <code>scoped</code>)</li>
-              </ul>
-              <p class="text-yellow-400 text-xs mt-3">💡 O <code>scoped</code> no style faz com que o CSS só afete aquele componente, sem vazar para outros.</p>
-            </div>
+
+            <!-- EXEMPLO 1: Esquerda (Novo exemplo de Props) -->
             <div v-pre class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300">
-              <p class="text-gray-500">// MeuComponente.vue</p>
+              <p class="text-gray-500">// Filho.vue (Exemplo recebendo Props)</p>
+              <br>
+              <p><span class="text-blue-400">&lt;script setup&gt;</span></p>
+              <p class="pl-4"><span class="text-blue-400">const</span> props = <span class="text-yellow-300">defineProps</span>({</p>
+              <p class="pl-8">nome: String</p>
+              <p class="pl-4">})</p>
+              <p><span class="text-blue-400">&lt;/script&gt;</span></p>
+              <br>
+              <p><span class="text-green-400">&lt;template&gt;</span></p>
+              <p class="pl-4"><span class="text-green-400">&lt;h1&gt;</span>Olá, <span class="text-pink-400">{{ nome }}</span>!<span class="text-green-400">&lt;/h1&gt;</span></p>
+              <p><span class="text-green-400">&lt;/template&gt;</span></p>
+              <br>
+              <p><span class="text-yellow-300">&lt;style scoped&gt;</span></p>
+              <p class="pl-4">h1 { color: #38bdf8; }</p>
+              <p><span class="text-yellow-300">&lt;/style&gt;</span></p>
+            </div>
+            
+            <!-- EXEMPLO 2: Direita (Original Contador) -->
+            <div v-pre class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300">
+              <p class="text-gray-500">// MeuComponente.vue (Exemplo de Estado)</p>
               <br>
               <p><span class="text-blue-400">&lt;script setup&gt;</span></p>
               <p class="pl-4"><span class="text-blue-400">import</span> { ref } <span class="text-blue-400">from</span> <span class="text-green-400">'vue'</span></p>
@@ -104,59 +95,6 @@
               <p class="pl-4">button { font-weight: bold; }</p>
               <p><span class="text-yellow-300">&lt;/style&gt;</span></p>
             </div>
-          </div>
-        </li>
-
-        <!-- 3. ESTILOS DE API -->
-        <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
-          <h3 class="text-xl font-bold mb-4">3. Estilos de API — Options vs Composition</h3>
-          <div class="space-y-4">
-            <p class="text-sm text-gray-300">O Vue tem duas formas de escrever componentes. Ambas funcionam — são interfaces diferentes sobre o mesmo sistema por baixo.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-              <!-- Options API -->
-              <div class="bg-[#131217] rounded p-4">
-                <p class="text-yellow-300 font-bold text-sm mb-3">Options API</p>
-                <p class="text-gray-400 text-xs mb-3">Define a lógica do componente por meio de um <span class="text-white">objeto de opções</span> (<code>data</code>, <code>methods</code>, <code>mounted</code>…). Mais familiar para quem vem de orientação a objetos.</p>
-                <div v-pre class="font-mono text-xs text-gray-300">
-                  <p><span class="text-blue-400">export default</span> {</p>
-                  <p class="pl-4"><span class="text-yellow-300">data</span>() {</p>
-                  <p class="pl-8"><span class="text-blue-400">return</span> { count: 0 }</p>
-                  <p class="pl-4">},</p>
-                  <p class="pl-4"><span class="text-yellow-300">methods</span>: {</p>
-                  <p class="pl-8"><span class="text-yellow-300">increment</span>() {</p>
-                  <p class="pl-12"><span class="text-blue-400">this</span>.count++</p>
-                  <p class="pl-8">}</p>
-                  <p class="pl-4">},</p>
-                  <p class="pl-4"><span class="text-yellow-300">mounted</span>() {</p>
-                  <p class="pl-8">console.<span class="text-yellow-300">log</span>(<span class="text-blue-400">this</span>.count)</p>
-                  <p class="pl-4">}</p>
-                  <p>}</p>
-                </div>
-              </div>
-
-              <!-- Composition API -->
-              <div class="bg-[#131217] rounded p-4">
-                <p class="text-green-400 font-bold text-sm mb-3">Composition API <span class="text-gray-500 font-normal text-xs">(recomendada)</span></p>
-                <p class="text-gray-400 text-xs mb-3">Define a lógica usando <span class="text-white">funções importadas</span> do Vue. Com <code class="text-green-400">&lt;script setup&gt;</code>, tudo que você declara fica disponível no template automaticamente.</p>
-                <div v-pre class="font-mono text-xs text-gray-300">
-                  <p><span class="text-blue-400">&lt;script setup&gt;</span></p>
-                  <p><span class="text-blue-400">import</span> { ref, onMounted } <span class="text-blue-400">from</span> <span class="text-green-400">'vue'</span></p>
-                  <br>
-                  <p><span class="text-blue-400">const</span> count = <span class="text-yellow-300">ref</span>(0)</p>
-                  <br>
-                  <p><span class="text-blue-400">function</span> <span class="text-yellow-300">increment</span>() {</p>
-                  <p class="pl-4">count.value++</p>
-                  <p>}</p>
-                  <br>
-                  <p><span class="text-yellow-300">onMounted</span>(() => {</p>
-                  <p class="pl-4">console.<span class="text-yellow-300">log</span>(count.value)</p>
-                  <p>})</p>
-                  <p><span class="text-blue-400">&lt;/script&gt;</span></p>
-                </div>
-              </div>
-            </div>
-            <p class="text-yellow-400 text-xs">⚠️ Para projetos novos, prefira a <strong>Composition API + &lt;script setup&gt;</strong>. A Options API é mais comum em projetos antigos ou para quem vem de POO.</p>
           </div>
         </li>
 
@@ -208,8 +146,8 @@
               <table class="w-full text-left text-sm text-gray-400">
                 <thead class="text-gray-200 uppercase bg-gray-700/50 text-xs">
                   <tr>
-                    <th class="px-4 py-3">Sintaxe</th>
-                    <th class="px-4 py-3">React equivalente</th>
+                    <th class="px-4 py-3 min-w-[150px]">Sintaxe</th>
+                    <th class="px-4 py-3 min-w-[200px]">React equivalente</th>
                     <th class="px-4 py-3">Descrição</th>
                   </tr>
                 </thead>
@@ -227,34 +165,136 @@
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">v-on:click ou @click</td>
                     <td class="px-4 py-3 font-mono text-pink-400">onClick={fn}</td>
-                    <td class="px-4 py-3">Escuta eventos do DOM.</td>
+                    <td class="px-4 py-3">Escuta eventos do DOM (como o clique do usuário).</td>
+                  </tr>
+                  <tr class="hover:bg-gray-700/30">
+                    <td class="px-4 py-3 font-mono text-green-400">@keyup.enter</td>
+                    <td class="px-4 py-3 font-mono text-pink-400">onKeyDown={e => e.key === 'Enter' && fn()}</td>
+                    <td class="px-4 py-3">Aciona a função <strong>somente</strong> quando o usuário apertar a tecla "Enter" (muito útil para campos de busca).</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">v-if / v-else</td>
                     <td class="px-4 py-3 font-mono text-pink-400">{cond &amp;&amp; &lt;El /&gt;}</td>
-                    <td class="px-4 py-3">Renderização condicional.</td>
+                    <td class="px-4 py-3">Renderização condicional. Remove o elemento completamente do HTML se a condição for falsa.</td>
+                  </tr>
+                  <tr class="hover:bg-gray-700/30">
+                    <td class="px-4 py-3 font-mono text-green-400">v-show</td>
+                    <td class="px-4 py-3 font-mono text-pink-400">style={ {display: cond ? 'block' : 'none'} }</td>
+                    <td class="px-4 py-3">Esconde o elemento usando CSS (<code>display: none</code>), mas ele <strong>continua existindo</strong> no código HTML. Melhor para elementos que aparecem e somem o tempo todo.</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">v-for</td>
                     <td class="px-4 py-3 font-mono text-pink-400">{arr.map(...)}</td>
-                    <td class="px-4 py-3">Renderiza uma lista de elementos.</td>
+                    <td class="px-4 py-3">Renderiza uma lista de elementos (loop).</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">v-model</td>
                     <td class="px-4 py-3 font-mono text-pink-400">value + onChange</td>
-                    <td class="px-4 py-3">Two-way binding em inputs — vincula e atualiza o estado automaticamente.</td>
+                    <td class="px-4 py-3">Two-way binding: o que você digita no input atualiza a variável, e se a variável mudar, o input atualiza na hora.</td>
+                  </tr>
+                  <tr class="hover:bg-gray-700/30">
+                    <td class="px-4 py-3 font-mono text-green-400">@submit.prevent</td>
+                    <td class="px-4 py-3 font-mono text-pink-400">e.preventDefault()</td>
+                    <td class="px-4 py-3">Usado em formulários (<code>&lt;form&gt;</code>). Ele <strong>impede que a página recarregue inteira</strong> (comportamento padrão) quando você clica no botão de enviar.</td>
+                  </tr>
+                  <tr class="hover:bg-gray-700/30">
+                    <td class="px-4 py-3 font-mono text-green-400">:class="{ativo: isAtivo}"</td>
+                    <td class="px-4 py-3 font-mono text-pink-400">className={isAtivo ? 'ativo' : ''}</td>
+                    <td class="px-4 py-3">Adiciona ou remove classes CSS dependendo se a variável é verdadeira ou falsa.</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <div v-pre class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300">
-              <p class="text-gray-500">// exemplos no template</p>
-              <p><span class="text-green-400">&lt;p</span> <span class="text-yellow-300">:class=</span><span class="text-pink-400">"ativo ? 'verde' : 'cinza'"</span><span class="text-green-400">&gt;</span>Texto<span class="text-green-400">&lt;/p&gt;</span></p>
-              <p><span class="text-green-400">&lt;input</span> <span class="text-yellow-300">v-model=</span><span class="text-pink-400">"nome"</span> <span class="text-green-400" />&gt;</p>
-              <p><span class="text-green-400">&lt;li</span> <span class="text-yellow-300">v-for=</span><span class="text-pink-400">"item in lista"</span> <span class="text-yellow-300">:key=</span><span class="text-pink-400">"item.id"</span><span class="text-green-400">&gt;</span><span class="text-pink-400">{{ item.nome }}</span><span class="text-green-400">&lt;/li&gt;</span></p>
-              <p><span class="text-green-400">&lt;div</span> <span class="text-yellow-300">v-if=</span><span class="text-pink-400">"logado"</span><span class="text-green-400">&gt;</span>Bem-vindo!<span class="text-green-400">&lt;/div&gt;</span></p>
-              <p><span class="text-green-400">&lt;button</span> <span class="text-yellow-300">@click=</span><span class="text-pink-400">"salvar"</span><span class="text-green-400">&gt;</span>Salvar<span class="text-green-400">&lt;/button&gt;</span></p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-4">
+              <!-- CÓDIGO -->
+              <div v-pre class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300 border border-transparent">
+                <p class="text-gray-500 mb-2">// exemplos no template</p>
+                <p><span class="text-green-400">&lt;p</span> <span class="text-yellow-300">:class=</span><span class="text-pink-400">"{ 'text-red': error, 'text-green': success }"</span><span class="text-green-400">&gt;</span>Classes Objeto<span class="text-green-400">&lt;/p&gt;</span></p>
+                <p><span class="text-green-400">&lt;div</span> <span class="text-yellow-300">:style=</span><span class="text-pink-400">"{ color: corAtiva, fontSize: tamanhoFonte + 'px' }"</span><span class="text-green-400">&gt;</span>Estilo Dinâmico<span class="text-green-400">&lt;/div&gt;</span></p>
+                <p><span class="text-green-400">&lt;a</span> <span class="text-yellow-300">:href=</span><span class="text-pink-400">"linkPerfil"</span><span class="text-green-400">&gt;</span>Link Reativo<span class="text-green-400">&lt;/a&gt;</span></p>
+                <p><span class="text-green-400">&lt;input</span> <span class="text-yellow-300">v-model=</span><span class="text-pink-400">"nome"</span> <span class="text-green-400" />&gt;</p>
+                <p><span class="text-green-400">&lt;input</span> <span class="text-yellow-300">@keyup.enter=</span><span class="text-pink-400">"pesquisar"</span> <span class="text-green-400" />&gt;</p>
+                <p><span class="text-green-400">&lt;li</span> <span class="text-yellow-300">v-for=</span><span class="text-pink-400">"item in lista"</span> <span class="text-yellow-300">:key=</span><span class="text-pink-400">"item.id"</span><span class="text-green-400">&gt;</span><span class="text-pink-400">{{ item.nome }}</span><span class="text-green-400">&lt;/li&gt;</span></p>
+                <p><span class="text-green-400">&lt;div</span> <span class="text-yellow-300">v-if=</span><span class="text-pink-400">"logado"</span><span class="text-green-400">&gt;</span>Bem-vindo!<span class="text-green-400">&lt;/div&gt;</span></p>
+                <p><span class="text-green-400">&lt;div</span> <span class="text-yellow-300">v-else-if=</span><span class="text-pink-400">"carregando"</span><span class="text-green-400">&gt;</span>Carregando...<span class="text-green-400">&lt;/div&gt;</span></p>
+                <p><span class="text-green-400">&lt;div</span> <span class="text-yellow-300">v-else</span><span class="text-green-400">&gt;</span>Faça login<span class="text-green-400">&lt;/div&gt;</span></p>
+                <p><span class="text-green-400">&lt;div</span> <span class="text-yellow-300">v-show=</span><span class="text-pink-400">"carregando"</span><span class="text-green-400">&gt;</span>Loading apenas oculto via CSS<span class="text-green-400">&lt;/div&gt;</span></p>
+                <p><span class="text-green-400">&lt;form</span> <span class="text-yellow-300">@submit.prevent=</span><span class="text-pink-400">"salvarDados"</span><span class="text-green-400">&gt;</span>...<span class="text-green-400">&lt;/form&gt;</span></p>
+                <p><span class="text-green-400">&lt;button</span> <span class="text-yellow-300">@click=</span><span class="text-pink-400">"salvar"</span><span class="text-green-400">&gt;</span>Salvar<span class="text-green-400">&lt;/button&gt;</span></p>
+              </div>
+
+              <!-- RESULTADO VISUAL -->
+              <div class="flex flex-col justify-center p-4 border border-gray-600 rounded bg-[#131217] gap-4 text-sm">
+                <p class="text-gray-500 font-mono text-xs">// Resultado Visual</p>
+                
+                <div class="flex items-center gap-3">
+                    <span class="w-1/3 text-gray-500 text-xs text-right font-mono">:class</span>
+                    <p class="text-green-400 font-semibold w-2/3">Classes Objeto</p>
+                </div>
+                
+                <div class="flex items-center gap-3">
+                    <span class="w-1/3 text-gray-500 text-xs text-right font-mono">:style</span>
+                    <div style="color: #38bdf8; font-size: 16px;" class="w-2/3">Estilo Dinâmico</div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <span class="w-1/3 text-gray-500 text-xs text-right font-mono">:href</span>
+                    <a href="#" class="w-2/3 text-blue-400 hover:underline">Link Reativo</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <span class="w-1/3 text-gray-500 text-xs text-right font-mono">v-model</span>
+                    <input type="text" placeholder="Digite algo..." class="w-2/3 bg-[#374151] border border-slate-500 rounded px-2 py-1 text-white focus:outline-none">
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <span class="w-1/3 text-gray-500 text-xs text-right font-mono">@keyup</span>
+                    <input type="text" placeholder="Aperte Enter..." class="w-2/3 bg-[#374151] border border-slate-500 rounded px-2 py-1 text-white focus:outline-none">
+                </div>
+
+                <div class="flex gap-3">
+                    <span class="w-1/3 text-gray-500 text-xs text-right font-mono mt-1">v-for</span>
+                    <ul class="w-2/3 list-disc pl-4 text-gray-300 text-xs space-y-1">
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                    </ul>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <span class="w-1/3 text-gray-500 text-xs text-right font-mono">v-if / else</span>
+                    <div class="w-2/3 flex gap-2">
+                        <span class="bg-green-900/50 text-green-400 px-2 py-0.5 rounded text-xs border border-green-700">Bem-vindo!</span>
+                        <span class="bg-gray-800 text-gray-500 px-2 py-0.5 rounded text-xs border border-gray-700 line-through">Faça login</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3">
+                    <span class="w-1/3 text-gray-500 text-xs text-right font-mono">v-show</span>
+                    <div class="w-2/3 text-gray-500 text-xs italic">
+                        <span class="border border-dashed border-gray-600 p-1">Oculto (display: none)</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <span class="w-1/3 text-gray-500 text-xs text-right font-mono">@submit</span>
+                    <form class="w-2/3 flex gap-2" @submit.prevent>
+                        <input type="text" placeholder="..." class="bg-[#374151] border border-slate-500 rounded px-2 py-1 text-white focus:outline-none w-16">
+                        <button class="bg-slate-600 text-white px-2 py-1 rounded text-xs hover:bg-slate-500 transition-colors">Enviar sem recarregar</button>
+                    </form>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <span class="w-1/3 text-gray-500 text-xs text-right font-mono">@click</span>
+                    <div class="w-2/3">
+                        <button class="bg-sky-600 hover:bg-sky-500 transition-colors text-white px-4 py-1 rounded">
+                            Salvar
+                        </button>
+                    </div>
+                </div>
+              </div>
             </div>
+            
           </div>
         </li>
 
@@ -282,6 +322,71 @@
               <p class="pl-4"><span class="text-yellow-300">:done=</span><span class="text-pink-400">"task.done"</span></p>
               <p class="pl-4"><span class="text-yellow-300">@delete=</span><span class="text-pink-400">"removeTask"</span></p>
               <p><span class="text-green-400">/&gt;</span></p>
+            </div>
+          </div>
+          
+          <!-- EXEMPLO ADICIONAL: AVÔ, PAI E FILHO -->
+          <div class="mt-8 space-y-4 pt-4 border-t border-gray-700">
+            <p class="text-sm text-gray-300"><strong>Exemplo Prático:</strong> Passando <code>props</code> em cadeia do <strong>Avô</strong>, para o <strong>Pai</strong>, e finalmente para o <strong>Filho</strong>.</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              <!-- AVO -->
+              <div v-pre class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300 border border-gray-700">
+                <p class="text-gray-500 mb-2">👵 AVÔ (App.vue)</p>
+                <p><span class="text-blue-400">&lt;script setup&gt;</span></p>
+                <p class="pl-2"><span class="text-blue-400">import</span> { reactive } <span class="text-blue-400">from</span> <span class="text-green-400">'vue'</span></p>
+                <p class="pl-2"><span class="text-blue-400">import</span> NavBar <span class="text-blue-400">from</span> <span class="text-green-400">'./NavBar.vue'</span></p>
+                <br>
+                <p class="pl-2"><span class="text-blue-400">const</span> state = <span class="text-yellow-300">reactive</span>({</p>
+                <p class="pl-4">pastas: [{ id: 1, title: <span class="text-green-400">'Pasta 0'</span> }]</p>
+                <p class="pl-2">})</p>
+                <p><span class="text-blue-400">&lt;/script&gt;</span></p>
+                <br>
+                <p><span class="text-green-400">&lt;template&gt;</span></p>
+                <p class="pl-2"><span class="text-gray-500">&lt;!-- Passa o Array de pastas --&gt;</span></p>
+                <p class="pl-2"><span class="text-green-400">&lt;NavBar</span> <span class="text-yellow-300">:pastas=</span><span class="text-pink-400">"state.pastas"</span> <span class="text-green-400">/&gt;</span></p>
+                <p><span class="text-green-400">&lt;/template&gt;</span></p>
+              </div>
+
+              <!-- PAI -->
+              <div v-pre class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300 border border-gray-700">
+                <p class="text-gray-500 mb-2">👨 PAI (NavBar.vue)</p>
+                <p><span class="text-blue-400">&lt;script setup&gt;</span></p>
+                <p class="pl-2"><span class="text-blue-400">import</span> Folders <span class="text-blue-400">from</span> <span class="text-green-400">'./Folders.vue'</span></p>
+                <br>
+                <p class="pl-2"><span class="text-gray-500">// Recebe pastas do Avô</span></p>
+                <p class="pl-2"><span class="text-blue-400">const</span> props = <span class="text-yellow-300">defineProps</span>({</p>
+                <p class="pl-4">pastas: Array</p>
+                <p class="pl-2">})</p>
+                <p><span class="text-blue-400">&lt;/script&gt;</span></p>
+                <br>
+                <p><span class="text-green-400">&lt;template&gt;</span></p>
+                <p class="pl-2"><span class="text-green-400">&lt;Folders</span></p>
+                <p class="pl-4"><span class="text-yellow-300">v-for=</span><span class="text-pink-400">"pasta in props.pastas"</span></p>
+                <p class="pl-4"><span class="text-gray-500">&lt;!-- Envia dados para o Filho --&gt;</span></p>
+                <p class="pl-4"><span class="text-yellow-300">:id=</span><span class="text-pink-400">"pasta.id"</span></p>
+                <p class="pl-4"><span class="text-yellow-300">:title=</span><span class="text-pink-400">"pasta.title"</span></p>
+                <p class="pl-2"><span class="text-green-400">/&gt;</span></p>
+                <p><span class="text-green-400">&lt;/template&gt;</span></p>
+              </div>
+
+              <!-- FILHO -->
+              <div v-pre class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300 border border-gray-700">
+                <p class="text-gray-500 mb-2">👦 FILHO (Folders.vue)</p>
+                <p><span class="text-blue-400">&lt;script setup&gt;</span></p>
+                <p class="pl-2"><span class="text-gray-500">// Recebe dados únicos do Pai</span></p>
+                <p class="pl-2"><span class="text-blue-400">const</span> props = <span class="text-yellow-300">defineProps</span>({</p>
+                <p class="pl-4">id: Number,</p>
+                <p class="pl-4">title: String</p>
+                <p class="pl-2">})</p>
+                <p><span class="text-blue-400">&lt;/script&gt;</span></p>
+                <br>
+                <p><span class="text-green-400">&lt;template&gt;</span></p>
+                <p class="pl-2"><span class="text-green-400">&lt;div</span> <span class="text-yellow-300">class=</span><span class="text-pink-400">"p-3 rounded-xl"</span><span class="text-green-400">&gt;</span></p>
+                <p class="pl-4"><span class="text-green-400">&lt;span&gt;</span><span class="text-pink-400">{{ title }}</span><span class="text-green-400">&lt;/span&gt;</span></p>
+                <p class="pl-2"><span class="text-green-400">&lt;/div&gt;</span></p>
+                <p><span class="text-green-400">&lt;/template&gt;</span></p>
+              </div>
             </div>
           </div>
         </li>
@@ -429,29 +534,30 @@
                 </tbody>
               </table>
             </div>
-          </div>
-        </li>
 
-        <!-- 11. PRÓXIMOS PASSOS -->
-        <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
-          <h3 class="text-xl font-bold mb-4">11. Próximos Passos no Vue</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300">
-            <div class="space-y-2">
-              <p class="text-white font-semibold">Estado Global</p>
-              <p class="text-gray-400 text-xs"><span class="text-green-400">Pinia</span> é a biblioteca oficial de gerenciamento de estado do Vue — equivalente ao Redux/Zustand do React. Mais simples e moderna que o Vuex (antigo padrão).</p>
-              <p class="text-white font-semibold mt-3">Formulários</p>
-              <p class="text-gray-400 text-xs">VeeValidate + Zod ou Yup para validação de formulários complexos.</p>
-              <p class="text-white font-semibold mt-3">Data Fetching</p>
-              <p class="text-gray-400 text-xs">VueUse (coleção de composables utilitárias) ou TanStack Query (mesma lib do React Query, mas para Vue).</p>
+            <!-- EXEMPLO PRÁTICO: ROUTER.JS -->
+            <div class="mt-4 bg-[#131217] rounded p-4 text-xs font-mono text-gray-300" v-pre>
+              <p class="text-gray-500">// router.js (Exemplo visual prático e reduzido)</p>
+              <p><span class="text-blue-400">import</span> { createRouter, createWebHistory } <span class="text-blue-400">from</span> <span class="text-green-400">'vue-router'</span></p>
+              <br>
+              <p class="text-gray-500">// Lazy loading dos componentes (Carrega apenas quando acessar a rota)</p>
+              <p><span class="text-blue-400">const</span> Home = () => <span class="text-yellow-300">import</span>(<span class="text-green-400">'./views/Home.vue'</span>)</p>
+              <p><span class="text-blue-400">const</span> Frontend = () => <span class="text-yellow-300">import</span>(<span class="text-green-400">'./views/Frontend.vue'</span>)</p>
+              <br>
+              <p><span class="text-blue-400">const</span> routes = [</p>
+              <p class="pl-4">{ path: <span class="text-green-400">'/'</span>, component: Home },</p>
+              <p class="pl-4">{ path: <span class="text-green-400">'/frontend'</span>, component: Frontend }</p>
+              <p>]</p>
+              <br>
+              <p class="text-gray-500">// Criação da instância do roteador</p>
+              <p><span class="text-blue-400">const</span> router = <span class="text-yellow-300">createRouter</span>({</p>
+              <p class="pl-4">history: <span class="text-yellow-300">createWebHistory</span>(),</p>
+              <p class="pl-4">routes</p>
+              <p>})</p>
+              <br>
+              <p><span class="text-blue-400">export default</span> router</p>
             </div>
-            <div class="space-y-2">
-              <p class="text-white font-semibold">Testes</p>
-              <p class="text-gray-400 text-xs">Vitest + Vue Testing Library + Cypress para testes e2e.</p>
-              <p class="text-white font-semibold mt-3">Vue no Servidor</p>
-              <p class="text-gray-400 text-xs"><span class="text-green-400">Nuxt.js</span> é o framework Vue para SSR/SSG — equivalente ao Next.js para React. Padrão do mercado Vue.</p>
-              <p class="text-white font-semibold mt-3">Componentes UI</p>
-              <p class="text-gray-400 text-xs">Vuetify, PrimeVue ou shadcn-vue para bibliotecas de componentes prontos.</p>
-            </div>
+            
           </div>
         </li>
 
