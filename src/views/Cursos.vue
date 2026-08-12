@@ -52,6 +52,18 @@
                 Um simples tutorial inicial de Flask, possui uma dinamica/didatica bem instigante onde nem ve a hora passar.
             </p>
         </div>
+        <div class="bg-[#070808] p-5 
+        border-2 border-solid rounded-xl">
+            <p class="text-[12px] mb-1">
+                AGOSTO 2026
+            </p>
+            <a class="flex" target="_blank" href="https://www.freecodecamp.org/portuguese/news/como-criar-uma-aplicacao-da-web-usando-o-flask-e-implanta-la-na-nuvem/">
+                <h2 class="text-[24px] mb-5">akira アキラ</h2>
+            </a>
+            <p class="text-[14px]">
+                <b>Simplesmente a inspiração desse projeto</b>, a lenda tem explicações de diversos temas como: programação, filosofia, vida, sociedade e etc. Recomendo fortemente a leitura.
+            </p>
+        </div>
 
         <div class="flex justify-between w-full mt-1 mb-10">
             <a href="">

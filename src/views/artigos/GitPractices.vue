@@ -1,12 +1,14 @@
 <template>
   <div class="bg-[#131217] text-[#D9D7E0] min-h-screen p-8">
-    <div class="max-w-2xl mx-auto">
-      <router-link to="/artigos" class="text-blue-400 hover:underline mb-6 inline-block">
-        ← Voltar
-      </router-link>
+    <button class="self-start ml-10 text-white py-2 px-6
+            border border-white rounded-full
+            hover:bg-white hover:text-black transition-colors duration-300"
+      @click="voltar">
+        Voltar
+    </button>
 
-      <h1 class="text-4xl font-bold mb-2">Boas Práticas de Git</h1>
-      <p class="text-gray-300 mb-8">Fluxos de trabalho, padrões de commit, branching e colaboração eficiente com Git.</p>
+    <div class="max-w-2xl mx-auto mt-10">
+      <h1 class="font-bold text-[50px] text-center mb-10">Boas Práticas de Git</h1>
 
       <div class="space-y-4">
         <div class="bg-[#1e1b29] rounded p-5">
@@ -196,5 +198,12 @@ npm-debug.log*</code></pre>
 
 <script setup>
 import { inject } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 const showSidebar = inject('showSidebar') || { value: false }
+
+const voltar = () => {
+  router.back()
+}
 </script>

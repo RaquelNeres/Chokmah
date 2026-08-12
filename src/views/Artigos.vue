@@ -11,10 +11,12 @@
         alt="abrir barra lateral"
       />
 
-      <div class="text-[#D9D7E0] text-justify items-start h-full grid gap-7 justify-between w-full max-w-[703px] mx-auto px-5 ml-2 mr-10">
-        <h1 class="mt-16 text-[50px] mb-1">Artigos</h1>
+      <!-- Alterado de 'grid justify-between' para 'flex flex-col w-full' -->
+      <div class="text-[#D9D7E0] text-justify items-start h-full flex flex-col gap-7 w-full max-w-[590px] mx-auto ml-7">
+        <h1 class="mt-16 text-[50px] mb-1 text-amber-700">Artigos</h1>
+        <p class="text-amber-200">Totalmente autorais</p>
 
-        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl">
+        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
           <p class="text-[12px] mb-1">HTTP</p>
           <router-link class="flex" to="/artigos/introducao-http">
             <h2 class="text-[24px] mb-5">Introdução ao HTTP</h2>
@@ -22,17 +24,36 @@
           <p class="text-[14px]">Resumo sobre métodos, status codes, cabeçalhos e fluxo de requisições.</p>
         </div>
 
-        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl">
+        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
           <p class="text-[12px] mb-1">GIT</p>
           <router-link class="flex" to="/artigos/git-practices">
             <h2 class="text-[24px] mb-5">Boas práticas de Git</h2>
           </router-link>
-          <p class="text-[14px]">Fluxos de trabalho, commits, branches, merge e rebase em um guia rápido.</p>
+          <p class="text-[14px]">Fluxos de trabalho, commits, branches, merge e rebase.</p>
+        </div>
+
+        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
+          <p class="text-[12px] mb-1">Engineering Software</p>
+          <router-link class="flex" to="/artigos/engineering">
+            <h2 class="text-[24px] mb-5">Fundamentos de Engenharia de Software (router.js)</h2>
+          </router-link>
+          <p class="text-[14px]">Introdução aos princípios e práticas de desenvolvimento de software.</p>
+        </div>
+
+        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
+          <p class="text-[12px] mb-1">BD</p>
+          <router-link class="flex" to="/artigos/database">
+            <h2 class="text-[24px] mb-5">Fundamentos de Base de Dados (router.js)</h2>
+          </router-link>
+          <p class="text-[14px]">Banco de Dados no projeto</p>
         </div>
 
         <div class="flex justify-between w-full mt-1 mb-10">
           <img src="/img/seta.png" alt="Anterior" />
-          <img class="-scale-x-100" src="/img/seta.png" alt="Próximo" />
+          <router-link to="/artigos/artigos1" class="flex items-center">
+            <img class="-scale-x-100" src="/img/seta.png" alt="Próximo" />
+          </router-link>
+          
         </div>
       </div>
     </div>
@@ -43,4 +64,6 @@
 import { inject } from 'vue'
 
 const showSidebar = inject('showSidebar') || { value: false }
-</script>
+
+</script> 
+

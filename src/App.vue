@@ -46,6 +46,7 @@ const showSidebarFlag = computed(() => {
     '/backend/fastapi',
     '/artigos/git-practices',
     '/artigos/introducao-http',
+    '/artigos/log',
     '/geral'
   ]
   return !hiddenPaths.includes(route.path)

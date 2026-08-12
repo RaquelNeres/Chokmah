@@ -1,12 +1,14 @@
 <template>
-  <div class="bg-[#131217] text-[#D9D7E0] min-h-screen p-8">
-    <div class="max-w-2xl mx-auto">
-      <router-link to="/artigos" class="text-blue-400 hover:underline mb-6 inline-block">
-        ← Voltar
-      </router-link>
+  <div class="text-[#D9D7E0] min-h-screen flex flex-col items-center py-10">
+    <button class="self-start ml-10 text-white py-2 px-6
+            border border-white rounded-full
+            hover:bg-white hover:text-black transition-colors duration-300"
+      @click="voltar">
+        Voltar
+    </button>
 
-      <h1 class="text-4xl font-bold mb-2">Introdução ao HTTP</h1>
-      <p class="text-gray-300 mb-8">HyperText Transfer Protocol é o protocolo fundamental da web que define como mensagens são trocadas entre cliente e servidor.</p>
+    <div class="mt-10 max-w-[945px] px-6 text-justify ml-[10%] mr-[10%]">
+      <h1 class="font-bold text-[50px] text-center mb-10">Introdução ao HTTP</h1>
 
       <div class="space-y-4">
         <div class="bg-[#1e1b29] rounded p-5">
@@ -125,20 +127,20 @@
           <pre class="text-sm text-gray-300 bg-[#0f0f12] p-3 rounded overflow-x-auto"><code>1. Cliente abre navegador e acessa: https://exemplo.com/api/users
 
 2. Navegador cria REQUISIÇÃO HTTP:
-   GET /api/users HTTP/1.1
-   Host: exemplo.com
-   Content-Type: application/json
+  GET /api/users HTTP/1.1
+  Host: exemplo.com
+  Content-Type: application/json
 
 3. Servidor processa e retorna RESPOSTA HTTP:
-   HTTP/1.1 200 OK
-   Content-Type: application/json
-   
-   {
-     "users": [
-       {"id": 1, "name": "João"},
-       {"id": 2, "name": "Maria"}
-     ]
-   }
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+  
+  {
+    "users": [
+      {"id": 1, "name": "João"},
+      {"id": 2, "name": "Maria"}
+    ]
+  }
 
 4. Navegador renderiza os dados</code></pre>
         </div>
@@ -157,6 +159,8 @@
 </template>
 
 <script setup>
-import { inject } from 'vue'
-const showSidebar = inject('showSidebar') || { value: false }
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const voltar = () => router.back()
 </script>

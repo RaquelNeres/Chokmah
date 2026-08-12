@@ -20,6 +20,8 @@ const BackPython = () => import('./views/back/Python.vue')
 
 const ArtIntro = () => import('./views/artigos/IntroducaoHTTP.vue')
 const ArtGit = () => import('./views/artigos/GitPractices.vue')
+const Artigos1 = () => import('./views/artigos/Artigos1.vue')
+const ArtLog = () => import('./views/artigos/Log.vue')
 
 const FerramentasDocker = () => import('./views/ferramentas/Docker.vue')
 const FerramentasVite = () => import('./views/ferramentas/Vite.vue')
@@ -40,8 +42,10 @@ const routes = [
   { path: '/backend/python', component: BackPython },
   { path: '/geral', component: Geral },
   { path: '/artigos', component: Artigos },
+  { path: '/artigos/artigos1', component: Artigos1 },
   { path: '/artigos/introducao-http', component: ArtIntro },
   { path: '/artigos/git-practices', component: ArtGit },
+  { path: '/artigos/log', component: ArtLog },
   { path: '/cursos', component: Cursos },
   { path: '/ferramentas', component: Ferramentas },
   { path: '/ferramentas/docker', component: FerramentasDocker },

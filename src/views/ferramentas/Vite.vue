@@ -16,12 +16,15 @@
 
       <div class="mt-10 max-w-[945px] px-6 text-justify w-full mx-auto">
         <a target="_blank" href="https://vite.dev/">
-          <h1 class="font-bold text-[50px] text-center text-white hover:text-gray-300 transition-colors">Vite</h1>
+          <h1 class="font-extrabold text-[50px] text-center leading-tight
+            bg-gradient-to-tr from-[#41D1FF] via-[#BD34FE] to-[#BD34FE] 
+            bg-clip-text text-transparent ">
+            Vite
+          </h1>
         </a>
-        <p class="text-center text-gray-400 mt-2 text-sm">Ferramenta moderna de build e desenvolvimento com HMR instantâneo.</p>
 
         <ul class="space-y-5 mt-10">
-          <details class="text-left bg-[#1e1b29] rounded-[0.5rem] overflow-hidden" open>
+          <details class="text-left bg-[#1e1b29] rounded-[0.5rem] overflow-hidden">
             <summary class="text-xl font-semibold text-white cursor-pointer hover:bg-[#2a2738] pl-5 py-3 transition-colors">
               Baixar e Iniciar
             </summary>
@@ -58,16 +61,6 @@
               </table>
             </div>
           </details>
-
-          <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
-            <h3 class="text-xl font-bold mb-4">Por que Vite?</h3>
-            <ul class="text-sm text-gray-300 space-y-2 list-disc pl-5">
-              <li><strong class="text-white">Desenvolvimento rápido:</strong> Reload em milissegundos (HMR)</li>
-              <li><strong class="text-white">Build otimizado:</strong> Saída pequena e altamente otimizada</li>
-              <li><strong class="text-white">Agnóstico:</strong> Funciona com Vue, React, Svelte, Vanilla JS, etc.</li>
-              <li><strong class="text-white">Moderno:</strong> Usa ES modules nativos durante dev</li>
-            </ul>
-          </li>
 
           <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
             <h3 class="text-xl font-bold mb-4">Criando um Projeto (Templates)</h3>
