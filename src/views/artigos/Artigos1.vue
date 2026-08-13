@@ -23,6 +23,14 @@
           <p class="text-[14px]">texto</p>
         </div>
 
+        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
+          <p class="text-[12px] mb-1">HTTP</p>
+          <router-link class="flex" to="/artigos/introducao-http">
+            <h2 class="text-[24px] mb-5">Introdução ao HTTP</h2>
+          </router-link>
+          <p class="text-[14px]">Resumo sobre métodos, status codes, cabeçalhos e fluxo de requisições.</p>
+        </div>
+
         <div class="flex justify-between w-full mt-1 mb-10">
           <button @click="voltar" class="flex items-center">
             <img src="/img/seta.png" alt="Anterior" />

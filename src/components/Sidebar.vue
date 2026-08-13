@@ -21,6 +21,7 @@
     </p>
 
     <div class="flex flex-col items-start text-left w-full">
+
       <router-link to="/frontend" class="text-[#d9d7e0] no-underline text-xl py-3 px-4 transition-all duration-300 ease-in-out w-full hover:border-l-4 hover:border-l-[#FFC107] hover:border-t-0 block">
         Frontend
       </router-link>
@@ -28,17 +29,17 @@
       <router-link to="/backend" class="text-[#d9d7e0] no-underline text-xl py-3 px-4 transition-all duration-300 ease-in-out w-full hover:border-l-4 hover:border-l-[#FFC107] hover:border-t-0 block">
         Backend
       </router-link>
+
+      <router-link to="/ferramentas" class="text-[#D9D7E0] no-underline text-xl py-3 px-4 transition-all duration-300 ease-in-out w-full hover:border-l-4 hover:border-l-[#FFC107] hover:border-t-0 block">
+        Ferramentas
+      </router-link>
+
+      <router-link to="/projetos" class="text-[#D9D7E0] no-underline text-xl py-3 px-4 transition-all duration-300 ease-in-out w-full hover:border-l-4 hover:border-l-[#FFC107] hover:border-t-0 block">
+        Projetos
+      </router-link>
       
       <router-link to="/artigos" class="text-[#D9D7E0] no-underline text-xl py-3 px-4 transition-all duration-300 ease-in-out w-full hover:border-l-4 hover:border-l-[#FFC107] hover:border-t-0 block">
         Artigos
-      </router-link>
-      
-      <router-link to="/cursos" class="text-[#D9D7E0] no-underline text-xl py-3 px-4 transition-all duration-300 ease-in-out w-full hover:border-l-4 hover:border-l-[#FFC107] hover:border-t-0 block">
-        Cursos
-      </router-link>
-      
-      <router-link to="/ferramentas" class="text-[#D9D7E0] no-underline text-xl py-3 px-4 transition-all duration-300 ease-in-out w-full hover:border-l-4 hover:border-l-[#FFC107] hover:border-t-0 block">
-        Ferramentas
       </router-link>
 
       <div class="flex gap-5 ml-4 mt-3">

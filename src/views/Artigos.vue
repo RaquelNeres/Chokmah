@@ -16,12 +16,14 @@
         <h1 class="mt-16 text-[50px] mb-1 text-amber-700">Artigos</h1>
         <p class="text-amber-200">Totalmente autorais</p>
 
-        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
-          <p class="text-[12px] mb-1">HTTP</p>
-          <router-link class="flex" to="/artigos/introducao-http">
-            <h2 class="text-[24px] mb-5">Introdução ao HTTP</h2>
-          </router-link>
-          <p class="text-[14px]">Resumo sobre métodos, status codes, cabeçalhos e fluxo de requisições.</p>
+        <div class="bg-[#070808] p-5 
+        border-2 border-solid rounded-xl">
+            <a class="flex" target="_blank" href="https://akiradev.netlify.app/sobre/">
+                <h2 class="text-[24px] mb-5">📍 akira アキラ</h2>
+            </a>
+            <p class="text-[14px]">
+                <b>Simplesmente a inspiração desse projeto</b>, a lenda tem explicações de diversos temas como: programação, filosofia, vida, sociedade e etc. Recomendo fortemente a leitura.
+            </p>
         </div>
 
         <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
@@ -43,7 +45,7 @@
         <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
           <p class="text-[12px] mb-1">BD</p>
           <router-link class="flex" to="/artigos/database">
-            <h2 class="text-[24px] mb-5">Fundamentos de Base de Dados (router.js)</h2>
+            <h2 class="text-[24px] mb-5">Fundamentos de Banco de Dados (router.js)</h2>
           </router-link>
           <p class="text-[14px]">Banco de Dados no projeto</p>
         </div>

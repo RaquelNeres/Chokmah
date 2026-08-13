@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const Home = () => import('./views/Home.vue')
+const Projetos = () => import('./views/Projetos.vue')
 const Frontend = () => import('./views/Frontend.vue')
 const Backend = () => import('./views/Backend.vue')
 const Artigos = () => import('./views/Artigos.vue')
-const Cursos = () => import('./views/Cursos.vue')
 const Ferramentas = () => import('./views/Ferramentas.vue')
 
 const FrontTailwind = () => import('./views/front/Tailwind.vue')
@@ -32,6 +32,7 @@ const Ferramentas1 = () => import('./views/ferramentas/Ferramentas1.vue')
 
 const routes = [
   { path: '/', component: Home },
+  { path: '/projetos', component: Projetos },
   { path: '/frontend', component: Frontend },
   { path: '/frontend/tailwind', component: FrontTailwind },
   { path: '/frontend/vue', component: FrontVue },
@@ -48,7 +49,6 @@ const routes = [
   { path: '/artigos/git-practices', component: ArtGit },
   { path: '/artigos/log', component: ArtLog },
   { path: '/artigos/engenharia-software', component: ArtEngSof },
-  { path: '/cursos', component: Cursos },
   { path: '/ferramentas', component: Ferramentas },
   { path: '/ferramentas/docker', component: FerramentasDocker },
   { path: '/ferramentas/vite', component: FerramentasVite },
