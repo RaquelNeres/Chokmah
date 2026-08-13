@@ -40,7 +40,7 @@
           <li><strong>Bibliotecas e Frameworks:</strong> Bootstrap, Tailwind, Flask, Vue, React;</li>
           <li><strong>Ferramentas:</strong> Command Line Interface, Visual Studio, Git, Docker, IntelliJ IDEA, Microsoft Excel;</li>
           <li><strong>Sistemas Operacionais:</strong> Ubuntu, Windows Systems;</li>
-          <li><strong>Campos de Interesse:</strong> Desenvolvimento de Software, Ciência de Dados;</li>
+          <li><strong>Campos de Interesse:</strong> Engenharia de Software, Ciência de Dados;</li>
         </ul>
 
         <p><b>Projeto</b></p>

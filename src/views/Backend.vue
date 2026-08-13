@@ -72,6 +72,14 @@
             </p>
             <router-link class="text-[#FFC107] hover:text-[#FFC107]/80" to="https://docs.oracle.com/en/java/" target="_blank" rel="noopener noreferrer">Java Docs</router-link >
         </div>
+
+        <div class="flex justify-between w-full mt-1 mb-10">
+          <img src="../../public/img/seta.png" alt="Anterior" />
+          <router-link to="" class="flex items-center">
+            <img class="-scale-x-100" src="../../public/img/seta.png" alt="Próximo" />
+          </router-link>
+          
+        </div>
       </div>
     </div>
   </div>
