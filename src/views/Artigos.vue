@@ -34,8 +34,8 @@
 
         <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
           <p class="text-[12px] mb-1">Engineering Software</p>
-          <router-link class="flex" to="/artigos/engineering">
-            <h2 class="text-[24px] mb-5">Fundamentos de Engenharia de Software (router.js)</h2>
+          <router-link class="flex" to="/artigos/engenharia-software">
+            <h2 class="text-[24px] mb-5">Fundamentos de Engenharia de Software</h2>
           </router-link>
           <p class="text-[14px]">Introdução aos princípios e práticas de desenvolvimento de software.</p>
         </div>

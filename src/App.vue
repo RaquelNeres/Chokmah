@@ -47,6 +47,7 @@ const showSidebarFlag = computed(() => {
     '/artigos/git-practices',
     '/artigos/introducao-http',
     '/artigos/log',
+    '/artigos/engenharia-software',
     '/geral'
   ]
   return !hiddenPaths.includes(route.path)

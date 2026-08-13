@@ -11,7 +11,6 @@
         alt="abrir barra lateral"
       />
 
-      <!-- Alterado de 'grid justify-between' para 'flex flex-col w-full' -->
       <div class="text-[#D9D7E0] text-justify items-start h-full flex flex-col gap-7 w-full max-w-[590px] mx-auto ml-7">
         <h1 class="mt-16 text-[50px] mb-1 text-amber-700">Artigos</h1>
         <p class="text-amber-200">Totalmente autorais</p>
