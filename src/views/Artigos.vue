@@ -16,8 +16,7 @@
         <h1 class="mt-16 text-[50px] mb-1 text-amber-700">Artigos</h1>
         <p class="text-amber-200">Totalmente autorais</p>
 
-        <div class="bg-[#070808] p-5 
-        border-2 border-solid rounded-xl">
+        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl">
             <a class="flex" target="_blank" href="https://akiradev.netlify.app/sobre/">
                 <h2 class="text-[24px] mb-5">📍 akira アキラ</h2>
             </a>

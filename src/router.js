@@ -17,12 +17,14 @@ const Geral = () => import('./views/Geral.vue')
 const BackFlask = () => import('./views/back/Flask.vue')
 const BackFastAPI = () => import('./views/back/FastAPI.vue')
 const BackPython = () => import('./views/back/Python.vue')
+const BackJS = () => import('./views/back/JS.vue')
+const Backend1 = () => import('./views/back/Back1.vue')
 
 const ArtIntro = () => import('./views/artigos/IntroducaoHTTP.vue')
 const ArtGit = () => import('./views/artigos/GitPractices.vue')
-const Artigos1 = () => import('./views/artigos/Artigos1.vue')
 const ArtLog = () => import('./views/artigos/Log.vue')
 const ArtEngSof = () => import('./views/artigos/EngSoft.vue')
+const Artigos1 = () => import('./views/artigos/Artigos1.vue')
 
 const FerramentasDocker = () => import('./views/ferramentas/Docker.vue')
 const FerramentasVite = () => import('./views/ferramentas/Vite.vue')
@@ -39,9 +41,11 @@ const routes = [
   { path: '/frontend/react', component: FrontReact },
   { path: '/frontend/html', component: FrontHtml },
   { path: '/backend', component: Backend },
+  { path: '/backend/backend1', component: Backend1 },
   { path: '/backend/flask', component: BackFlask },
   { path: '/backend/fastapi', component: BackFastAPI },
   { path: '/backend/python', component: BackPython },
+  { path: '/backend/javascript', component: BackJS },
   { path: '/geral', component: Geral },
   { path: '/artigos', component: Artigos },
   { path: '/artigos/artigos1', component: Artigos1 },
@@ -50,11 +54,11 @@ const routes = [
   { path: '/artigos/log', component: ArtLog },
   { path: '/artigos/engenharia-software', component: ArtEngSof },
   { path: '/ferramentas', component: Ferramentas },
+  { path: '/ferramentas/ferramentas1', component: Ferramentas1 },
   { path: '/ferramentas/docker', component: FerramentasDocker },
   { path: '/ferramentas/vite', component: FerramentasVite },
   { path: '/ferramentas/git', component: FerramentasGit },
   { path: '/ferramentas/sql', component: FerramentasSql },
-  { path: '/ferramentas/ferramentas1', component: Ferramentas1 }
 ]
 
 const router = createRouter({
