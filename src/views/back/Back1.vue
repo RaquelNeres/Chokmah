@@ -21,7 +21,7 @@
             </p>
             <router-link class="flex" to="/backend/flask">
                 <h2 class="text-[24px] mb-5">Flask</h2>
-                <img class="h-5 ml-2 mt-1" src="../../public/img/flask.png" alt="">
+                <img class="h-5 ml-2 mt-1" src="/img/flask.png" alt="">
                 <p class="ml-4 text-[24px]">(Em Breve)</p>
             </router-link>
             <p class="text-[14px]">
@@ -37,7 +37,7 @@
             </p>
             <router-link class="flex" to="/backend/java">
                 <h2 class="text-[24px] mb-5">Java</h2>
-                <img class="h-5 ml-2 mt-1" src="../../public/img/java.png" alt="">
+                <img class="h-5 ml-2 mt-1" src="/img/java.png" alt="">
                 <p class="ml-4 text-[24px]">(Em Breve)</p>
             </router-link>
             <p class="text-[14px]">
