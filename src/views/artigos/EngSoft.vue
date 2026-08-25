@@ -35,57 +35,22 @@
           </div>
         </header>
 
-        <div class="bg-[#1e1b29] border-l-4 border-[#BD34FE] rounded-r-lg p-6 mb-12 shadow-xl">
+        <div class="bg-[#1e1b29] border-l-4 border-[#16141f] rounded-r-lg p-6 mb-12 shadow-xl">
           <p class="text-lg italic text-white font-medium mb-3">
             “Engenharia de software é o processo de diminuir a chance de construir soluções erradas para o problema certo. Programar a coisa errada de forma excelente continua sendo um erro.”
           </p>
-          <cite class="text-xs font-mono text-[#41D1FF] block text-right">— Engenharia de Software - Anotação</cite>
+          <cite class="text-xs font-mono text-[#41D1FF] block text-right">— Anotação</cite>
         </div>
 
-        <section class="mb-12">
-          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-            <span class="text-[#41D1FF]">#</span> 01. O Paradoxo do Teclado
-          </h2>
-          <p class="text-gray-300 mb-4">
-            Na cultura atual de desenvolvimento rápido, somos inundados por promessas de 
-            <span class="text-white font-semibold">"Aprenda um Framework em 15 minutos"</span>. No entanto, o software profissional não recompensa a velocidade bruta de escrita, mas sim a qualidade das decisões tomadas. Como engenheiros, nossa responsabilidade principal é lidar com a complexidade e garantir que os sistemas sejam sustentáveis a longo prazo.
-          </p>
-          
-          <div class="bg-[#1e1b29] rounded-lg p-5 my-6 border border-gray-800">
-            <h4 class="text-[#41D1FF] font-mono text-xs uppercase mb-3 tracking-wider">A Diferença Fundamental</h4>
-            <div class="overflow-x-auto">
-              <table class="w-full text-left text-sm">
-                <thead>
-                    <tr class="border-b border-gray-700 text-white font-mono">
-                    <th class="pb-3 pr-6">Abordagem</th>
-                    <th class="pb-3 pr-6">Foco Principal</th>
-                    <th class="pb-3">Visão de Sucesso</th>
-                    </tr>
-                </thead>
-                <tbody class="text-gray-300">
-                    <tr class="border-b border-gray-800">
-                    <!-- O py-4 define o espaçamento vertical entre as linhas -->
-                    <!-- O pr-6 garante que o texto de uma coluna não cole na outra -->
-                    <td class="py-4 pr-6 font-semibold text-pink-400">Programador Ad-Hoc</td>
-                    <td class="py-4 pr-6">Fazer o sistema funcionar (Escrever código rápido).</td>
-                    <td class="py-4">"Funciona na minha máquina."</td>
-                    </tr>
-                    <tr>
-                    <td class="py-4 pr-6 font-semibold text-[#41D1FF]">Engenheiro de Software</td>
-                    <td class="py-4 pr-6">Descobrir o problema real, garantir manutenibilidade e evolução do código.</td>
-                    <td class="py-4">O sistema é sustentável, legível e robusto frente a mudanças.</td>
-                    </tr>
-                </tbody>
-                </table>
-
-            </div>
-          </div>
-        </section>
+        <p class="text-gray-300 mb-10">
+          Na cultura atual de desenvolvimento rápido, somos inundados por promessas de 
+          <span class="text-white font-semibold">"Aprenda um Framework em 15 minutos"</span>. No entanto, o software profissional não recompensa a velocidade bruta de escrita, mas sim a qualidade das decisões tomadas. Um engenheiro tem a responsabilidade principal de lidar com a complexidade e garantir que os sistemas sejam sustentáveis a longo prazo.
+        </p>
 
         <!-- Tópico Central das Etapas (Sprints) de Software -->
-        <section class="mb-12">
+        <section class="mb-5">
           <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <span class="text-[#BD34FE]">#</span> 02. O Ciclo de Desenvolvimento Prático
+            <span class="text-[#BD34FE]">#</span> O Ciclo de Desenvolvimento Prático
           </h2>
           <p class="text-gray-300 mb-8">
             Para tornar o aprendizado tangível, analisaremos o processo de construção de um 
@@ -313,7 +278,7 @@
         </section>
 
         <!-- Seção 03: Conclusão -->
-        <section class="mt-16 pt-10 border-t border-gray-800">
+        <section class="pt-10 border-gray-800">
           <h2 class="text-2xl font-bold text-white mb-4">Conclusão</h2>
           <p class="text-gray-300">
             A engenharia de software não limita a criatividade do desenvolvedor; pelo contrário, ela garante que as soluções construídas permaneçam de pé e utilizáveis ao longo dos anos. Ao transformar requisitos verbais em artefatos abstratos (casos de uso, domínio, arquitetura), o processo técnico torna-se previsível, elegante e limpo.
@@ -325,7 +290,7 @@
             <p>• PRESSMAN, R. S.; MAXIM, B. R. <span class="italic">Engenharia de software: uma abordagem profissional</span>. 9. ed. Porto Alegre: AMGH, 2021.</p>
             <p>• Transcrições de roteiros estruturados sobre Engenharia de Software.</p>
             <a href="https://youtube.com/playlist?list=PLUrWRAAfHLis&si=0iZw1HbQyd7UPgCu" class="block text-gray-500 no-underline hover:text-gray-400 transition-colors">
-                • Video aulas de Loid Padre
+                • Canal de Loid Padre
             </a>
         </footer>
 
