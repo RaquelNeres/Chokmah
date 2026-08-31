@@ -20,7 +20,6 @@ const BackPython = () => import('./views/back/Python.vue')
 const BackJS = () => import('./views/back/JS.vue')
 const Backend1 = () => import('./views/back/Back1.vue')
 
-const ArtIntro = () => import('./views/artigos/IntroducaoHTTP.vue')
 const ArtGit = () => import('./views/artigos/GitPractices.vue')
 const ArtLog = () => import('./views/artigos/Log.vue')
 const ArtEngSof = () => import('./views/artigos/EngSoft.vue')
@@ -49,7 +48,6 @@ const routes = [
   { path: '/geral', component: Geral },
   { path: '/artigos', component: Artigos },
   { path: '/artigos/artigos1', component: Artigos1 },
-  { path: '/artigos/introducao-http', component: ArtIntro },
   { path: '/artigos/git-practices', component: ArtGit },
   { path: '/artigos/log', component: ArtLog },
   { path: '/artigos/engenharia-software', component: ArtEngSof },

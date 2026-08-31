@@ -39,7 +39,7 @@
           <p class="text-lg italic text-white font-medium mb-3">
             “Engenharia de software é o processo de diminuir a chance de construir soluções erradas para o problema certo. Programar a coisa errada de forma excelente continua sendo um erro.”
           </p>
-          <cite class="text-xs font-mono text-[#41D1FF] block text-right">— Anotação</cite>
+          <cite class="text-xs font-mono text-[#16141f] block text-right">— Anotação</cite>
         </div>
 
         <p class="text-gray-300 mb-10">
@@ -50,7 +50,7 @@
         <!-- Tópico Central das Etapas (Sprints) de Software -->
         <section class="mb-5">
           <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <span class="text-[#BD34FE]">#</span> O Ciclo de Desenvolvimento Prático
+            O Ciclo de Desenvolvimento Prático
           </h2>
           <p class="text-gray-300 mb-8">
             Para tornar o aprendizado tangível, analisaremos o processo de construção de um 
