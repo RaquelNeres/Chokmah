@@ -24,18 +24,11 @@
         </div>
 
         <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
-          <p class="text-[12px] mb-1">HTTP</p>
-          <router-link class="flex" to="https://github.com/RaquelNeres/Chokmah/tree/main/.md/HTTP.md" target="_blank">
-            <h2 class="text-[24px] mb-5">Introdução ao HTTP</h2>
+          <p class="text-[12px] mb-1">BD</p>
+          <router-link class="flex" to="/artigos/database">
+            <h2 class="text-[24px] mb-5">Fundamentos de Banco de Dados (router.js)</h2>
           </router-link>
-          <p class="text-[14px]">Resumo sobre métodos, status codes, cabeçalhos e fluxo de requisições.</p>
-        </div>
-
-        <div class="flex justify-between w-full mt-1 mb-10">
-          <button @click="voltar" class="flex items-center">
-            <img src="/img/seta.png" alt="Anterior" />
-          </button>
-          <img class="-scale-x-100" src="/img/seta.png" alt="Próximo" />
+          <p class="text-[14px]">Banco de Dados no projeto</p>
         </div>
       </div>
     </div>
