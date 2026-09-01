@@ -1,36 +1,36 @@
 # 🌐 Documentação Interativa do Protocolo HTTP 
 
-<div style="display: flex; flex-direction: column; align-items: center; gap:10px; font-family: sans-serif; align='center' ">
+<div align="center">
   
   <h2>1. O Ciclo Básico: Cliente e Servidor</h2>
-  <p style="text-align: center; max-width: 70%; line-height: 1.6;">
+  <p style="max-width: 70%; line-height: 1.6;">
     Toda comunicação na web se baseia no modelo Cliente-Servidor. O navegador (cliente) envia uma requisição e aguarda a resposta do host (servidor) para renderizar a página ou atualizar os dados.
   </p>
-  <img src="imgs/image-1.png" alt="image-1" style="width: 70%; height: auto; border-radius: 8px;">
+  <img src="imgs/image-1.png" alt="image-1" style="width: 70%; border-radius: 8px;">
 
   <h2>2. Anatomia de uma Requisição</h2>
-  <p style="text-align: center; max-width: 70%; line-height: 1.6;">
+  <p style="max-width: 70%; line-height: 1.6;">
     Durante esse trajeto, a mensagem possui componentes distintos. Os <strong>Headers</strong> descrevem a requisição (como o tipo de conteúdo), enquanto o <strong>Body</strong> carrega o payload principal, viajando até que o servidor retorne um código de status, como <code>200 OK</code>.
   </p>
-  <img src="imgs/image-3.png" alt="image" style="width: 70%; height: auto; border-radius: 8px;">
+  <img src="imgs/image-3.png" alt="image" style="width: 70%; border-radius: 8px;">
 
   <h2>3. Idempotência no Design de APIs</h2>
-  <p style="text-align: center; max-width: 70%; line-height: 1.6;">
+  <p style="max-width: 70%; line-height: 1.6;">
     No consumo de APIs REST, entender a idempotência é crucial. Métodos como <strong>GET</strong>, <strong>PUT</strong> e <strong>DELETE</strong> são idempotentes: repetir a chamada não altera o estado do servidor além da primeira vez. Já o <strong>POST</strong> não é idempotente; repeti-lo pode causar efeitos colaterais indesejados, como duplicar o processamento de um pagamento.
   </p>
-  <img src="imgs/image-2.png" alt="image-2" style="width: 70%; height: auto; border-radius: 8px;">
+  <img src="imgs/image-2.png" alt="image-2" style="width: 70%; border-radius: 8px;">
 
   <h2>4. O Papel dos Headers</h2>
-  <p style="text-align: center; max-width: 70%; line-height: 1.6;">
+  <p style="max-width: 70%; line-height: 1.6;">
     Os cabeçalhos funcionam como os metadados da transação. Eles são responsáveis por passar credenciais de segurança (<code>Authorization</code>), definir os formatos de dados aceitos (<code>Accept</code>) e lidar com o cache, garantindo que o back-end e o front-end "falem a mesma língua".
   </p>
-  <img src="imgs/image-5.png" alt="image" style="width: 70%; height: auto; border-radius: 8px;">
+  <img src="imgs/image-5.png" alt="image" style="width: 70%; border-radius: 8px;">
 
   <h2>5. Do Código para a Rede</h2>
-  <p style="text-align: center; max-width: 70%; line-height: 1.6;">
+  <p style="max-width: 70%; line-height: 1.6;">
     Quando você utiliza funções nativas no front-end, como o <code>fetch()</code> em aplicações Vue.js ou React, muita complexidade é abstraída. O navegador pega sua chamada simples e a converte internamente na estrutura rigorosa do protocolo HTTP/1.1 antes de despachá-la para o servidor.
   </p>
-  <img src="imgs/image-4.png" alt="image-2" style="width: 70%; height: auto; border-radius: 8px;">
+  <img src="imgs/image-4.png" alt="image-2" style="width: 70%; border-radius: 8px;">
 
 </div>
 
