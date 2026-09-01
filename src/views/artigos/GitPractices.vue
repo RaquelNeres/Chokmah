@@ -17,86 +17,87 @@
     </button>
 
     <div class="max-w-2xl mx-auto mt-10">
-      <h1 class="font-bold text-[50px] text-center mb-10">Boas Práticas de Git</h1>
+      <header class="text-center mb-16">
+          <h1 class="font-bold text-[50px] text-center mb-3">
+            Boas Práticas de Git
+          </h1>
+
+          <div class="flex items-center justify-center gap-4 text-xs text-gray-500 font-mono">
+            <span>•••</span>
+            <span>Publicado em: 31 Ago 2026</span>
+            <span>•••</span>
+          </div>
+        </header>
 
       <div class="space-y-4">
-        <div class="bg-[#1e1b29] rounded p-5">
-          <h2 class="text-xl font-semibold mb-3">1. Mensagens de Commit Claras</h2>
+        <div class="rounded p-5">
+          <h2 class="text-xl font-semibold mb-3">Mensagens de Commit Claras</h2>
           <p class="text-sm text-gray-300 mb-3">Commits bem documentados facilitam o entendimento do histórico.</p>
-          <pre class="text-sm text-gray-300 bg-[#0f0f12] p-3 rounded overflow-x-auto"><code>❌ RUIM:
-git commit -m "fix"
-git commit -m "update"
-git commit -m "stuff"
 
-✅ BOM:
-git commit -m "feat: adicionar validação de email no formulário"
-git commit -m "fix: corrigir bug de renderização em mobile"
-git commit -m "docs: atualizar README com instruções de setup"</code></pre>
-          <p class="text-xs text-gray-400 mt-3"><strong>Padrão Convencional:</strong> type(scope): description</p>
-          <p class="text-xs text-gray-400">Types: feat, fix, docs, style, refactor, perf, test, chore</p>
+          <img class="mt-3 rounded" src="/img/git_commits.png" alt="Exemplo de mensagem de commit convencional">
         </div>
 
         <div class="bg-[#1e1b29] rounded p-5">
-          <h2 class="text-xl font-semibold mb-3">2. Git Flow - Fluxo de Branches</h2>
+          <h2 class="text-xl font-semibold mb-3">Git Flow - Fluxo de Branches</h2>
           <div class="text-sm text-gray-300">
             <p class="mb-3 font-semibold text-white">Estrutura recomendada para projetos em equipe:</p>
             <div class="space-y-2">
               <div class="border-l-2 border-blue-500 pl-3">
                 <p class="font-semibold">main</p>
-                <p class="text-xs">Produção estável. Só merges de release branches.</p>
+                <p class="text-xs">Produção estáveSó merges de release branches.</p>
               </div>
               <div class="border-l-2 border-green-500 pl-3">
                 <p class="font-semibold">develop</p>
-                <p class="text-xs">Próxima versão. Merges de feature branches.</p>
+                <p class="text-xs">Próxima versãMerges de feature branches.</p>
               </div>
               <div class="border-l-2 border-yellow-500 pl-3">
                 <p class="font-semibold">feature/nome-da-feature</p>
-                <p class="text-xs">Desenvolvimento de funcionalidade. Cria de: develop</p>
+                <p class="text-xs">Desenvolvimento de funcionalidadCria de: develop</p>
               </div>
               <div class="border-l-2 border-red-500 pl-3">
                 <p class="font-semibold">bugfix/nome-do-bug</p>
-                <p class="text-xs">Correção de bug. Cria de: develop</p>
+                <p class="text-xs">Correção de buCria de: develop</p>
               </div>
               <div class="border-l-2 border-purple-500 pl-3">
                 <p class="font-semibold">hotfix/nome-da-correção</p>
-                <p class="text-xs">Correção urgente em produção. Cria de: main</p>
+                <p class="text-xs">Correção urgente em produçãCria de: main</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="bg-[#1e1b29] rounded p-5">
-          <h2 class="text-xl font-semibold mb-3">3. Workflow Típico</h2>
-          <pre class="text-sm text-gray-300 bg-[#0f0f12] p-3 rounded overflow-x-auto"><code># 1. Atualize o develop
+        <div class="rounded p-5">
+          <h2 class="text-xl font-semibold mb-3">Workflow Típico</h2>
+          <pre class="text-sm text-gray-300 bg-[#0f0f12] p-3 rounded overflow-x-auto"><code># Atualize o develop
 git checkout develop
 git pull origin develop
 
-# 2. Crie uma feature branch
+# Crie uma feature branch
 git checkout -b feature/adicionar-login
 
-# 3. Faça commits pequenos e focados
+# Faça commits pequenos e focados
 git add .
 git commit -m "feat: adicionar campo de email"
 git commit -m "feat: adicionar validação de email"
 
-# 4. Envie para remoto
+# Envie para remoto
 git push origin feature/adicionar-login
 
-# 5. Abra um Pull Request (PR) no GitHub/GitLab
+# Abra um Pull Request (PR) no GitHub/GitLab
 
-# 6. Após aprovação, faça merge
+# Após aprovação, faça merge
 git checkout develop
 git pull origin develop
 git merge feature/adicionar-login
 git push origin develop
 
-# 7. Delete a branch
+# Delete a branch
 git branch -d feature/adicionar-login
 git push origin --delete feature/adicionar-login</code></pre>
         </div>
 
-        <div class="bg-[#1e1b29] rounded p-5">
-          <h2 class="text-xl font-semibold mb-3">4. Merge vs Rebase</h2>
+        <div class="rounded p-5">
+          <h2 class="text-xl font-semibold mb-3">Merge vs Rebase</h2>
           <div class="text-sm text-gray-300 space-y-4">
             <div>
               <p class="font-bold text-white mb-2">MERGE (mais seguro, recomendado)</p>
@@ -116,47 +117,8 @@ git push origin --delete feature/adicionar-login</code></pre>
           </div>
         </div>
 
-        <div class="bg-[#1e1b29] rounded p-5">
-          <h2 class="text-xl font-semibold mb-3">5. Commits Atômicos</h2>
-          <p class="text-sm text-gray-300 mb-3">Cada commit deve representar uma mudança lógica e independente.</p>
-          <div class="text-xs text-gray-300 space-y-2">
-            <p class="text-yellow-400">❌ RUIM: Um commit gigante com tudo</p>
-            <p class="text-green-400">✅ BOM: Vários commits pequenos:</p>
-            <ul class="list-disc pl-5 space-y-1">
-              <li>Commit 1: Adiciona nova função</li>
-              <li>Commit 2: Adiciona testes</li>
-              <li>Commit 3: Atualiza documentação</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="bg-[#1e1b29] rounded p-5">
-          <h2 class="text-xl font-semibold mb-3">6. .gitignore - Arquivos a Ignorar</h2>
-          <pre class="text-sm text-gray-300 bg-[#0f0f12] p-3 rounded overflow-x-auto"><code># Dependências
-node_modules/
-venv/
-__pycache__/
-
-# Variáveis de ambiente (NUNCA commitar!)
-.env
-.env.local
-
-# IDE
-.vscode/
-.idea/
-*.swp
-
-# Builds
-dist/
-build/
-
-# Logs
-*.log
-npm-debug.log*</code></pre>
-        </div>
-
-        <div class="bg-[#1e1b29] rounded p-5">
-          <h2 class="text-xl font-semibold mb-3">7. Desfazendo Mudanças</h2>
+        <div class="rounded p-5">
+          <h2 class="text-xl font-semibold mb-3">Desfazendo Mudanças</h2>
           <div class="text-sm text-gray-300 space-y-2 font-mono text-xs">
             <div class="bg-[#0f0f12] p-3 rounded">
               <p class="text-pink-400">git restore arquivo.js</p>
@@ -177,8 +139,8 @@ npm-debug.log*</code></pre>
           </div>
         </div>
 
-        <div class="bg-[#1e1b29] rounded p-5">
-          <h2 class="text-xl font-semibold mb-3">8. Colaboração - Pull Requests</h2>
+        <div class="rounded p-5">
+          <h2 class="text-xl font-semibold mb-3">Colaboração - Pull Requests</h2>
           <ul class="text-sm text-gray-300 space-y-2">
             <li>✅ Sempre trabalhe em branches separadas</li>
             <li>✅ Crie um Pull Request (PR) para revisão de código</li>
@@ -189,8 +151,8 @@ npm-debug.log*</code></pre>
           </ul>
         </div>
 
-        <div class="bg-[#1e1b29] rounded p-5">
-          <h2 class="text-xl font-semibold mb-3">9. Checklist para Um Bom Commit</h2>
+        <div class="rounded p-5">
+          <h2 class="text-xl font-semibold mb-3">Checklist para Um Bom Commit</h2>
           <ul class="text-sm text-gray-300 space-y-2">
             <li>☐ Uma mudança lógica por commit</li>
             <li>☐ Mensagem clara seguindo convenção</li>

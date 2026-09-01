@@ -1,10 +1,51 @@
-# 🌐 Documentação Interativa do Protocolo HTTP (/docs)
+# 🌐 Documentação Interativa do Protocolo HTTP 
 
+<div style="display: flex; flex-direction: column; align-items: center; gap:10px; font-family: sans-serif;">
+  
+  <h2>1. O Ciclo Básico: Cliente e Servidor</h2>
+  <p style="text-align: center; max-width: 70%; line-height: 1.6;">
+    Toda comunicação na web se baseia no modelo Cliente-Servidor. O navegador (cliente) envia uma requisição e aguarda a resposta do host (servidor) para renderizar a página ou atualizar os dados.
+  </p>
+  <img src="imgs/image-1.png" alt="image-1" style="width: 70%; height: auto; border-radius: 8px;">
+
+  <h2>2. Anatomia de uma Requisição</h2>
+  <p style="text-align: center; max-width: 70%; line-height: 1.6;">
+    Durante esse trajeto, a mensagem possui componentes distintos. Os <strong>Headers</strong> descrevem a requisição (como o tipo de conteúdo), enquanto o <strong>Body</strong> carrega o payload principal, viajando até que o servidor retorne um código de status, como <code>200 OK</code>.
+  </p>
+  <img src="imgs/image-3.png" alt="image" style="width: 70%; height: auto; border-radius: 8px;">
+
+  <h2>3. Idempotência no Design de APIs</h2>
+  <p style="text-align: center; max-width: 70%; line-height: 1.6;">
+    No consumo de APIs REST, entender a idempotência é crucial. Métodos como <strong>GET</strong>, <strong>PUT</strong> e <strong>DELETE</strong> são idempotentes: repetir a chamada não altera o estado do servidor além da primeira vez. Já o <strong>POST</strong> não é idempotente; repeti-lo pode causar efeitos colaterais indesejados, como duplicar o processamento de um pagamento.
+  </p>
+  <img src="imgs/image-2.png" alt="image-2" style="width: 70%; height: auto; border-radius: 8px;">
+
+  <h2>4. O Papel dos Headers</h2>
+  <p style="text-align: center; max-width: 70%; line-height: 1.6;">
+    Os cabeçalhos funcionam como os metadados da transação. Eles são responsáveis por passar credenciais de segurança (<code>Authorization</code>), definir os formatos de dados aceitos (<code>Accept</code>) e lidar com o cache, garantindo que o back-end e o front-end "falem a mesma língua".
+  </p>
+  <img src="imgs/image-5.png" alt="image" style="width: 70%; height: auto; border-radius: 8px;">
+
+  <h2>5. Do Código para a Rede</h2>
+  <p style="text-align: center; max-width: 70%; line-height: 1.6;">
+    Quando você utiliza funções nativas no front-end, como o <code>fetch()</code> em aplicações Vue.js ou React, muita complexidade é abstraída. O navegador pega sua chamada simples e a converte internamente na estrutura rigorosa do protocolo HTTP/1.1 antes de despachá-la para o servidor.
+  </p>
+  <img src="imgs/image-4.png" alt="image-2" style="width: 70%; height: auto; border-radius: 8px;">
+
+</div>
 
 ## 🛠️ Endpoints & Métodos HTTP
 
-### 🟩 `GET` `/api/v1/produtos`
+<details>
+<summary>
+🟩 <code>GET</code> <code>/api/v1/produtos</code> Quero obter
+
+</summary>
+
+###  🟩 `GET` `/api/v1/produtos`
+
 **Obter Todos os Produtos**
+
 Solicita o envio do recurso especificado do servidor para o cliente . Não altera dados no servidor (método de leitura pura) .
 
 #### 📥 Parâmetros de Consulta (Query Parameters)
@@ -78,10 +119,18 @@ def listar_produtos(limit: Optional = Query(None, description="Limite de itens")
     return PRODUTOS_DB[:l if limit else PRODUTOS_DB
 ```
 
----
+</details>
+
+
+<details>
+<summary>
+🟦 <code>POST</code> <code>/api/v1/produtos</code> Quero enviar
+
+</summary>
 
 ### 🟦 `POST` `/api/v1/produtos`
 **Criar Novo Produto**
+
 Solicita que o servidor aceite a entidade incluída no corpo da requisição para criar um novo recurso sob o caminho especificado [205,.
 
 #### 📥 Corpo da Requisição (Request Body)
@@ -149,11 +198,17 @@ def criar_produto(produto: ProdutoSchema):
     PRODUTOS_DB.append(novo_produto)
     return novo_produto
 ```
+</details>
 
----
+<details>
+<summary>
+🟨 <code>PUT</code> <code>/api/v1/produtos/{id}</code> Quero alterar
+
+</summary>
 
 ### 🟨 `PUT` `/api/v1/produtos/{id}`
 **Atualizar Produto Completamente**
+
 Requisita que o recurso correspondente ao `{id}` seja modificado ou completamente substituído pelas informações enviadas no corpo . Se o recurso não existir, o servidor pode criá-lo .
 
 #### 📥 Parâmetros de Caminho (Path Parameters)
@@ -226,11 +281,17 @@ def atualizar_produto(id: int, produto: ProdutoSchema):
     # Lança erro 404 caso o recurso não exista no banco de dados 
     raise HTTPException(status_code=404, detail="Produto não encontrado")
 ```
+</details>
 
----
+<details>
+<summary>
+🟥 <code>DELETE</code> <code>/api/v1/produtos/{id}</code> Quero remover
+
+</summary>
 
 ### 🟥 `DELETE` `/api/v1/produtos/{id}`
 **Remover um Produto**
+
 Solicita a exclusão do recurso mapeado na URI especificada .
 
 #### 📥 Parâmetros de Caminho (Path Parameters)
@@ -280,8 +341,13 @@ def deletar_produto(id: int):
         return {"message": "Produto deletado com sucesso!"}
     raise HTTPException(status_code=404, detail="Produto não encontrado")
 ```
+</details>
 
----
+<details>
+<summary>
+⬜ <code>HEAD</code> <code>/api/v1/produtos/{id}</code>
+
+</summary>
 
 ### ⬜ `HEAD` `/api/v1/produtos`
 **Obter Metadados dos Recursos**
@@ -314,11 +380,17 @@ try:
 except requests.exceptions.RequestException as e:
     print(f"Erro: {e}")
 ```
+</details>
 
----
+<details>
+<summary>
+🟪 <code>OPTIONS</code> <code>/api/v1/produtos/{id}</code>
+
+</summary>
 
 ### 🟪 `OPTIONS` `/api/v1/produtos`
 **Consultar Métodos Suportados**
+
 Retorna a lista de métodos HTTP que o servidor aceita e suporta para a URI especificada . Frequentemente disparado automaticamente por navegadores como uma consulta "Preflight" para políticas de segurança de compartilhamento de recursos de origens diferentes (CORS) [206,.
 
 #### 📤 Resposta Esperada (Response)
@@ -343,11 +415,10 @@ try:
 except requests.exceptions.RequestException as e:
     print(f"Erro: {e}")
 ```
-
----
+</details>
 
 ## 📋 Códigos de Resposta HTTP (Status Codes)
-Toda resposta contém um código de status para indicar o resultado final da solicitação [197,:
+Toda resposta contém um código de status para indicar o resultado final da solicitação :
 
 | Categoria | Exemplo de Código | Significado Teórico & Prático |
 | :--- | :--- | :--- |
@@ -356,8 +427,8 @@ Toda resposta contém um código de status para indicar o resultado final da sol
 | | **`204 No Content`**  | Sucesso, mas não há corpo de mensagem para retornar (comum em `DELETE`) . |
 | **`4xx` (Erro do Cliente)** | **`400 Bad Request`**  | O servidor não conseguiu entender a requisição devido à sintaxe inválida . |
 | | **`401 Unauthorized`**  | O cliente precisa se autenticar para obter a resposta solicitada . |
-| | **`403 Forbidden`**  | O cliente é conhecido, mas não tem permissões para esse recurso específico [212,. |
-| | **`404 Not Found`**  | O recurso solicitado não pôde ser encontrado no servidor [212,. |
+| | **`403 Forbidden`**  | O cliente é conhecido, mas não tem permissões para esse recurso específico . |
+| | **`404 Not Found`**  | O recurso solicitado não pôde ser encontrado no servidor . |
 | **`5xx` (Erro do Servidor)**| **`500 Internal Server`**  | O servidor encontrou uma situação inesperada que o impediu de processar . |  
 
 <br/>

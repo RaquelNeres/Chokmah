@@ -39,7 +39,7 @@
           </router-link>
           <p class="text-[14px]">Introdução aos princípios e práticas de desenvolvimento de software.</p>
         </div>
-
+        
         <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
           <p class="text-[12px] mb-1">HTTP</p>
           <a class="flex" href="https://github.com/RaquelNeres/Chokmah/blob/main/.md/HTTP.md" target="_blank">
