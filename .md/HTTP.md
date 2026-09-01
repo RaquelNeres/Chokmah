@@ -1,4 +1,4 @@
-# 🌐 Documentação Interativa do Protocolo HTTP 
+# Protocolo HTTP 
 
 <div align="center">
   
@@ -417,7 +417,9 @@ except requests.exceptions.RequestException as e:
 ```
 </details>
 
-## 📋 Códigos de Resposta HTTP (Status Codes)
+<br>
+
+## Códigos de Resposta HTTP (Status Codes)
 Toda resposta contém um código de status para indicar o resultado final da solicitação :
 
 | Categoria | Exemplo de Código | Significado Teórico & Prático |
@@ -433,7 +435,7 @@ Toda resposta contém um código de status para indicar o resultado final da sol
 
 <br/>
 
-## 🔍 Anatomia Estruturada de Mensagens HTTP
+## Anatomia Estruturada de Mensagens HTTP
 O tráfego de dados consiste puramente em texto estruturado :
 
 ### 1. Linha de Requisição (*Request Line*)
