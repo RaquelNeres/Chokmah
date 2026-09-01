@@ -1,6 +1,6 @@
 # 🌐 Documentação Interativa do Protocolo HTTP 
 
-<div style="display: flex; flex-direction: column; align-items: center; gap:10px; font-family: sans-serif; text-align: center">
+<div style="display: flex; flex-direction: column; align-items: center; gap:10px; font-family: sans-serif; align="center"">
   
   <h2>1. O Ciclo Básico: Cliente e Servidor</h2>
   <p style="text-align: center; max-width: 70%; line-height: 1.6;">
