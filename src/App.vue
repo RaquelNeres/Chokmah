@@ -45,7 +45,6 @@ const showSidebarFlag = computed(() => {
     '/backend/flask',
     '/backend/fastapi',
     '/backend/javascript',
-    '/artigos/git-practices',
     '/artigos/log',
     '/artigos/engenharia-software',
     '/geral'

@@ -47,7 +47,6 @@ const routes = [
   { path: '/geral', component: Geral },
   { path: '/artigos', component: Artigos },
   { path: '/artigos/artigos1', component: Artigos1 },
-  { path: '/artigos/git-practices', component: ArtGit },
   { path: '/artigos/log', component: ArtLog },
   { path: '/artigos/engenharia-software', component: ArtEngSof },
   { path: '/ferramentas', component: Ferramentas },
