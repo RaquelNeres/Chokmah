@@ -20,7 +20,6 @@ const BackPython = () => import('./views/back/Python.vue')
 const BackJS = () => import('./views/back/JS.vue')
 const Backend1 = () => import('./views/back/Back1.vue')
 
-const ArtGit = () => import('./views/artigos/GitPractices.vue')
 const ArtLog = () => import('./views/artigos/Log.vue')
 const ArtEngSof = () => import('./views/artigos/EngSoft.vue')
 const Artigos1 = () => import('./views/artigos/Artigos1.vue')
