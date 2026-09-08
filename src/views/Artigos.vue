@@ -25,14 +25,6 @@
         </div>
 
         <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
-          <p class="text-[12px] mb-1">GIT</p>
-          <router-link class="flex" to="/artigos/git-practices">
-            <h2 class="text-[24px] mb-5">Boas práticas de Git</h2>
-          </router-link>
-          <p class="text-[14px]">Fluxos de trabalho, commits, branches, merge e rebase.</p>
-        </div>
-
-        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
           <p class="text-[12px] mb-1">Engineering Software</p>
           <router-link class="flex" to="/artigos/engenharia-software">
             <h2 class="text-[24px] mb-5">Fundamentos de Engenharia de Software</h2>
@@ -46,6 +38,14 @@
             <h2 class="text-[24px] mb-5">Introdução ao HTTP</h2>
           </a>
           <p class="text-[14px]">Resumo sobre métodos, status codes, cabeçalhos e fluxo de requisições.</p>
+        </div>
+        
+        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
+          <p class="text-[12px] mb-1">log</p>
+          <router-link class="flex" to="/artigos/log">
+            <h2 class="text-[24px] mb-5">O(log n)</h2>
+          </router-link>
+          <p class="text-[14px]">texto</p>
         </div>
 
         <div class="flex justify-between w-full mt-1 mb-10">

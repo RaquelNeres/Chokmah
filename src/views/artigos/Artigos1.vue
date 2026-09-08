@@ -15,14 +15,6 @@
         <h1 class="mt-16 text-[50px] mb-1 text-amber-700">Artigos</h1>
 
         <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
-          <p class="text-[12px] mb-1">log</p>
-          <router-link class="flex" to="/artigos/log">
-            <h2 class="text-[24px] mb-5">O(log n)</h2>
-          </router-link>
-          <p class="text-[14px]">texto</p>
-        </div>
-
-        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
           <p class="text-[12px] mb-1">BD</p>
           <a class="flex" href="">
             <h2 class="text-[24px] mb-5">Fundamentos de Banco de Dados (router.js)</h2>

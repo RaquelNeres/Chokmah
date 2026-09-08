@@ -14,7 +14,7 @@
       <div class="text-[#D9D7E0] text-justify items-start h-full flex flex-col gap-7 w-full max-w-[590px] mx-auto ml-7">
         <h1 class="mt-16 text-[50px] mb-1">BackEnd</h1>
 
-        <div class="bg-[#070808] p-5 
+        <!-- <div class="bg-[#070808] p-5 
           border-2 border-solid rounded-xl">
             <p class="text-[12px] mb-1">
                 FEVEREIRO 2026
@@ -28,9 +28,9 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quis tempora doloribus quam voluptat
             </p>
             <a class="text-[#FFC107] hover:text-[#FFC107]/80" href="https://flask.palletsprojects.com/en/2.3.x/" target="_blank" rel="noopener noreferrer">Flask Docs</a >
-        </div>
+        </div> -->
 
-        <div class="bg-[#070808] p-5 
+        <!-- <div class="bg-[#070808] p-5 
         border-2 border-solid rounded-xl">
             <p class="text-[12px] mb-1">
                 FEVEREIRO 2026
@@ -44,7 +44,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quis tempora doloribus quam volup
             </p>
             <a class="text-[#FFC107] hover:text-[#FFC107]/80" href="https://docs.oracle.com/en/java/" target="_blank" rel="noopener noreferrer">Java Docs</a >
-        </div>
+        </div> -->
 
 
         <div class="flex justify-between w-full mt-1 mb-10">

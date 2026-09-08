@@ -15,7 +15,6 @@
 
       <div class="mt-10 max-w-[945px] px-6 text-justify w-full mx-auto">
         <h1 class="font-bold text-[50px] text-center text-white">Git & GitHub</h1>
-        <p class="text-center text-gray-400 mt-2 text-sm">Sistema de controle de versão distribuído que permite rastrear mudanças e colaborar com o time.</p>
 
         <ul class="space-y-5 mt-10">
           <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
@@ -32,8 +31,10 @@ git config --list</code></pre>
             <h3 class="text-xl font-bold mb-4">Começando um Repositório</h3>
             <pre class="bg-[#131217] p-4 rounded text-xs font-mono text-gray-300 overflow-x-auto"><code># Novo repositório local
 git init
+# Conectar a um repositório no github
+git remote add origin https://github.com/usuario/repo.git
 
-# Clonar repositório existente
+# CLONAR repositório existente
 git clone https://github.com/usuario/repo.git</code></pre>
           </li>
 
@@ -48,7 +49,7 @@ git pull             # Trazer mudanças do remoto</code></pre>
           </li>
 
           <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
-            <h3 class="text-xl font-bold mb-4">Branches (Ramificações)</h3>
+            <h3 class="text-xl font-bold mb-4">Branches</h3>
             <pre class="bg-[#131217] p-4 rounded text-xs font-mono text-gray-300 overflow-x-auto"><code>git branch                  # Lista branches locais
 git branch minha-feature    # Cria nova branch
 git checkout minha-feature  # Muda para a branch
@@ -58,13 +59,58 @@ git branch -d minha-feature # Deleta branch</code></pre>
           </li>
 
           <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
-            <h3 class="text-xl font-bold mb-4">Histórico e Desfazendo</h3>
+            <h3 class="text-xl font-bold mb-4">Commits</h3>
             <pre class="bg-[#131217] p-4 rounded text-xs font-mono text-gray-300 overflow-x-auto"><code>git log                 # Ver histórico de commits
 git log --oneline       # Versão resumida
-git diff                # Ver mudanças não preparadas
 git show id-commit      # Ver detalhes do commit
+git checkout id-commit     # Voltar para um commit específico (modo detached HEAD)
+git checkout --arquivo.js  # volta para a versão do arquivo no último commit
+
 git restore arquivo.js  # Descartar mudanças
 git reset --hard HEAD   # Desfazer último commit (cuidado!)</code></pre>
+          </li>
+
+          <img class="rounded h-64 justify-self-center" src="/img/git_commits.png" alt="Exemplo de mensagem de commit convencional">
+
+          <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
+            <h3 class="text-xl font-bold mb-4">Stash (Trabalho Temporário)</h3>
+            <pre class="bg-[#131217] p-4 rounded text-xs font-mono text-gray-300 overflow-x-auto"><code>git stash               # Guarda alterações não commitadas temporariamente
+git stash save "msg"    # Guarda alterações com mensagem
+git stash push "msg"    # Guarda alterações com mensagem e envia para remoto
+
+git stash list          # Lista todos os stashes guardados
+git stash pop           # Aplica o último stash e remove da lista
+git stash apply         # Aplica o último stash, mas o mantém na lista
+git stash apply stash@{2}  # Aplica um stash específico
+git stash clear         # Apaga todos os stashes</code></pre>
+          </li>
+
+          <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
+            <h3 class="text-xl font-bold mb-4">Sincronizando um Fork</h3>
+            <p class="text-sm text-gray-300 mb-3">Se o repositório original sofreu alterações e você precisa atualizar o seu fork local. <br><br><strong>Pré-requisito:</strong> Adicionar o repo original como "upstream" apenas uma vez com <code class="text-pink-400 font-mono">git remote add upstream URL_DO_ORIGINAL</code>.</p>
+            <pre class="bg-[#131217] p-4 rounded text-xs font-mono text-gray-300 overflow-x-auto"><code># 1. Busca todas as atualizações e novas branches do repositório original
+git fetch upstream
+
+# 2. Garante que você está na sua branch principal local
+git checkout main
+
+# 3. Mescla as alterações do original (upstream/main) na sua branch local
+git merge upstream/main</code></pre>
+          </li>
+
+          <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
+            <h3 class="text-xl font-bold mb-4">GitHub Issues</h3>
+            <ul class="text-sm text-gray-300 space-y-3 list-none">
+              <li>Ferramenta do GitHub para rastrear bugs, mudanças, sugestões de melhorias ou tarefas de um projeto.</li>
+              
+              <pre class="bg-[#131217] p-4 rounded text-xs font-mono text-gray-300 overflow-x-auto"><code>git checkout -b nova-funcionalidade     # Cria e muda de uma vez
+git add .     
+git commit -m "Adiciona nova funcionalidade. Closes #42"  # Fecha a Issue #42
+
+git checkout main    # Muda para a branch principal
+git merge nova-funcionalidade         # Mescla branch no atual
+git push</code></pre>
+            </ul>
           </li>
 
           <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">

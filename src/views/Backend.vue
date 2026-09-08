@@ -34,6 +34,23 @@
 
         <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
           <p class="text-[12px] mb-1">
+              AGOSTO 2026
+          </p>
+          <router-link class="flex" to="/backend/nodejs">
+              <h2 class="text-[24px] mb-5">Nodejs</h2>
+              <img class="h-5 ml-2 mt-1" src="/img/nodejs.png" alt="">
+          </router-link>
+          <p class="text-[14px]">
+              Conceitos aprofundados sobre Node.js
+          </p>
+          <a class="text-[#FFC107] hover:text-[#FFC107]/80"
+            href="https://nodejs.org/en/docs/" target="_blank" rel="noopener noreferrer">
+            Node.js Docs
+          </a >
+        </div>
+
+        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
+          <p class="text-[12px] mb-1">
               FEVEREIRO 2026
           </p>
           <router-link class="flex" to="/backend/python">
