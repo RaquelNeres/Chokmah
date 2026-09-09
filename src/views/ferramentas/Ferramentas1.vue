@@ -32,20 +32,6 @@
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit nihil u
             </p>
         </div>
-        <div class="bg-[#070808] p-5 
-        border-2 border-solid rounded-xl">
-            <p class="text-[12px] mb-1">
-                FEVEREIRO 2026
-            </p>
-            <a class="flex" href="../ferramentas/markdown">
-                <h2 class="text-[24px] mb-5">Markdown</h2>
-                <img class="h-6 ml-2 mt-1" src="/img/markdown.png" alt="">
-                <p class="ml-4 text-[24px]">(Em Breve)</p>
-            </a>
-            <p class="text-[14px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, voluptatum voluptatibus! Sunt voluptates minus est, voluptatum nostrum
-            </p>
-        </div>
 
         <div class="flex justify-between w-full mt-1 mb-10">
           <button @click="voltar" class="flex items-center">
