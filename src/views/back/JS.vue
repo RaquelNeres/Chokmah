@@ -178,7 +178,7 @@
                     <li class="bg-[#1e1b29] rounded-[0.5rem] p-4">
                         <a href="https://github.com/RaquelNeres/Chokmah/blob/main/.md/back/assincrono.md" target="_blank" rel="noopener noreferrer">
                             <h3 class="text-2xl font-bold">
-                                JavaScript Assíncrono
+                                JavaScript Assíncrono (Async/Await e req/res)
                             </h3>
                         </a>
                         

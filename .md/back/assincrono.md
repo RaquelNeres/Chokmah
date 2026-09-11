@@ -19,10 +19,10 @@ async function buscarDados() {
 }
 ```
 
-## 2. Consumindo APIs (O Fetch) e a Parte do Frontend
-O Frontend é onde o usuário interage (React, site, aplicativo). No dia a dia, usamos `async/await` no Frontend principalmente com o [`fetch`](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch) para buscar dados do Backend da empresa ou de outras APIs na internet.
+## 2. Consumindo APIs (O Fetch) 
+Usamos `async/await` principalmente com o [`fetch`](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch) para buscar dados do Backend da empresa ou de outras APIs na internet.
 
-> **Regra de Ouro do Fetch:** Quase sempre exige **dois** `awaits`. O primeiro para contactar o servidor, o segundo para extrair os dados (geralmente em formato JSON).
+> **Fetch:** Quase sempre exige **dois** `awaits`. O primeiro para contactar o servidor, o segundo para extrair os dados (geralmente em formato JSON).
 
 ```javascript
 async function carregarDashboard() {
