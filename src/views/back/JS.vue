@@ -45,6 +45,11 @@
                             </thead>
                             <tbody class="text-gray-200 text-sm">
                                 <tr class="border-b border-gray-700">
+                                    <td class="py-4 pr-4 font-mono text-pink-400">forEach</td>
+                                    <td class="py-4 pr-4">Quando quiser apenas fazer algo com cada item.</td>
+                                    <td class="py-4">Sempre retorna undefined. (Nada)</td>
+                                </tr>
+                                <tr class="border-b border-gray-700">
                                     <td class="py-4 pr-4 font-mono text-pink-400">map</td>
                                     <td class="py-4 pr-4">Preciso modificar/transformar cada item da lista.</td>
                                     <td class="py-4">Novo array do mesmo tamanho.</td>
@@ -70,7 +75,33 @@
                         <!-- Subtópicos dos Métodos -->
                         <details class="text-left bg-[#343048] rounded-[0.5rem] overflow-hidden mt-6">
                             <summary class="text-md font-semibold text-white cursor-pointer hover:bg-[#403b58] pl-5 py-3 transition-colors">
-                            1. map(): O Transformador
+                                1. forEach(): O Iterador
+                            </summary>
+                            <div class="px-5 pb-5 pt-5">
+                                <p>Ao usar o forEach, você fornece uma função (chamada de callback). O método pega essa função e a executa repetidas vezes, uma para cada item do array.</p>
+                                <pre class="bg-[#131217] p-4 rounded text-xs font-mono text-gray-300 overflow-x-auto mt-2"><code>array.<span class="text-blue-400">forEach</span>((elemento, indice, arrayOriginal) => {
+<span class="text-gray-500">// Ação a ser executada</span>
+});
+
+<span class="text-gray-500">// elemento (Obrigatório): O valor do item na iteração atual.
+// indice (Opcional): A posição numérica (index) do item no array.
+// arrayOriginal (Opcional): O array completo que está sendo percorrido.</span>
+
+<span class="text-purple-400">const</span> pessoas = [<span class="text-green-400">"Ana"</span>, <span class="text-green-400">"Bruno"</span>, <span class="text-green-400">"Carlos"</span>];
+
+pessoas.<span class="text-blue-400">forEach</span>((pessoa, index) => {
+  <span class="text-yellow-200">console</span>.<span class="text-blue-400">log</span>(<span class="text-green-400">`Posição ${index}: ${pessoa}`</span>);
+});
+
+// 2 iguais
+tarefasSalvas.<span class="text-blue-400">forEach</span>(tarefa => criarElementoNaTela(tarefa));
+tarefasSalvas.<span class="text-blue-400">forEach</span>(criarElementoTela);</code></pre>
+                            </div>
+                        </details>
+
+                        <details class="text-left bg-[#343048] rounded-[0.5rem] overflow-hidden mt-6">
+                            <summary class="text-md font-semibold text-white cursor-pointer hover:bg-[#403b58] pl-5 py-3 transition-colors">
+                            2. map(): O Transformador
                             </summary>
                             <div class="px-5 pb-5 pt-5">
                                 <p>O map passa por todos os itens do array, aplica uma transformação que você definir e devolve um novo array exatamente do mesmo tamanho.</p>
@@ -92,7 +123,7 @@
 
                         <details class="text-left bg-[#343048] rounded-[0.5rem] overflow-hidden mt-2">
                             <summary class="text-md font-semibold text-white cursor-pointer hover:bg-[#403b58] pl-5 py-3 transition-colors">
-                            2. filter(): Check In/Seletor
+                            3. filter(): Check In/Seletor
                             </summary>
                             <div class="px-5 pb-5 pt-5">
                                 <p>O filter avalia cada item do array contra uma condição (que deve ser Verdadeira ou Falsa). Ele devolve um novo array apenas com os itens que passaram no teste.</p>
@@ -109,7 +140,7 @@
 
                         <details class="text-left bg-[#343048] rounded-[0.5rem] overflow-hidden mt-2">
                             <summary class="text-md font-semibold text-white cursor-pointer hover:bg-[#403b58] pl-5 py-3 transition-colors">
-                            3. reduce(): O Acumulador
+                            4. reduce(): O Acumulador
                             </summary>
                             <div class="px-5 pb-5 pt-5">
                                 <p>Ele pega todos os itens do array e os "espreme" até devolver um único valor final. Esse valor pode ser um número, uma string, ou até mesmo um novo objeto.</p>
@@ -125,7 +156,7 @@
 
                         <details class="text-left bg-[#343048] rounded-[0.5rem] overflow-hidden mt-2">
                             <summary class="text-md font-semibold text-white cursor-pointer hover:bg-[#403b58] pl-5 py-3 transition-colors">
-                            4. find(): Primeira ocorrência
+                            5. find(): Primeira ocorrência
                             </summary>
                             <div class="px-5 pb-5 pt-5">
                                 <p>O find é mais direto: ele percorre o array e, assim que encontra o primeiro item que passa no teste, ele para a busca e te devolve exatamente aquele item.</p>
@@ -179,6 +210,15 @@
                         <a href="https://github.com/RaquelNeres/Chokmah/blob/main/.md/back/assincrono.md" target="_blank" rel="noopener noreferrer">
                             <h3 class="text-2xl font-bold">
                                 JavaScript Assíncrono (Async/Await e req/res)
+                            </h3>
+                        </a>
+                        
+                    </li>
+
+                    <li class="bg-[#1e1b29] rounded-[0.5rem] p-4">
+                        <a href="https://github.com/RaquelNeres/Chokmah/blob/main/.md/back/interfaces.md" target="_blank" rel="noopener noreferrer">
+                            <h3 class="text-2xl font-bold">
+                                DOM, Eventos e Local Storage
                             </h3>
                         </a>
                         
