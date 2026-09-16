@@ -12,16 +12,10 @@ O nome do projeto vem da palavra hebraica para "sabedoria" (חכמה), que repre
 
 O projeto foi construído e atualizado para uma arquitetura moderna baseada em componentes, utilizando:
 
-* **[Vue.js](https://vuejs.org/)** - Framework principal para a construção da interface.
-* **Vite** - Ferramenta de build rápida.
+* **[Vue.js](https://vuejs.org/)** 
+* **Vite** 
 * **JavaScript**
 * **HTML5 & Tailwind CSS**
-
-## 🛠️ Como executar localmente
-
-### Pré-requisitos
-Certifique-se de ter o [Node.js](https://nodejs.org/) instalado.
-Para o desenvolvimento, recomenda-se o uso do **VS Code** com a extensão **Vue (Official)** (desative o Vetur).
 
 ## Project Setup
 
