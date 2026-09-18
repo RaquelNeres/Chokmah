@@ -40,6 +40,15 @@
           <p class="text-[14px]">Ferramenta de construção de projetos de frontend para oferecer uma experiência de desenvolvimento mais rápida e leve para projetos de web modernos.</p>
         </div>
 
+         <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl">
+          <p class="text-[12px] mb-1">SETEMBRO 2026</p>
+          <a class="flex" href="https://ubuntu.com/tutorials/command-line-for-beginners#1-overview" target="_blank">
+            <h2 class="text-[24px] mb-5">The Linux command line</h2>
+            <img class="h-4 ml-2 mt-1" src="../../public/img/linux.png" alt="Linux Terminal">
+          </a>
+          <p class="text-[14px]">A linha de comando do Linux para iniciantes.</p>
+        </div>
+
         <div class="flex justify-between w-full mt-1 mb-10">
           <img src="../../public/img/seta.png" alt="Anterior" />
           <router-link to="/ferramentas/ferramentas1" class="flex items-center">

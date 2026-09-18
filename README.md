@@ -1,21 +1,21 @@
-# [Chokmah](https://chokmah-jade.vercel.app/)
+# Chokmah (חָכְמָה)
 
-## Recommended IDE Setup
+[![Website Oficial](https://img.shields.io/badge/Acessar-Website-coral?style=flat-square)](https://chokmah-coral.vercel.app/)
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 📖 Sobre o Projeto
 
-## Recommended Browser Setup
+O **Chokmah** é um caderno digital pessoal criado para registrar jornadas de aprendizado, organizar ideias e armazenar elementos importantes de diversos assuntos para fácil acesso. 
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+O nome do projeto vem da palavra hebraica para "sabedoria" (חכמה), que representa a segunda *sephirah* na Árvore da Vida da Cabala. Simboliza o intelecto celestial primordial — o ponto inicial de onde emana a sabedoria divina antes de ser moldada pela compreensão. Neste mesmo espírito, este espaço atua como o ponto de partida para o registro contínuo de conhecimentos em desenvolvimento full stack, engenharia de software e ciência de dados.
 
-## Customize configuration
+## 🚀 Tecnologias Utilizadas
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+O projeto foi construído e atualizado para uma arquitetura moderna baseada em componentes, utilizando:
+
+* **[Vue.js](https://vuejs.org/)** 
+* **Vite** 
+* **JavaScript**
+* **HTML5 & Tailwind CSS**
 
 ## Project Setup
 
