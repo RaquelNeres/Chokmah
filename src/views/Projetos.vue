@@ -15,23 +15,23 @@
         <h1 class="mt-16 text-[50px] mb-1">Projetos</h1>
 
         <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl">
-          <p class="text-[12px] mb-1">FEVEREIRO 2026</p>
-          <router-link class="flex" to="/frontend/tailwind">
-            <h2 class="text-[24px] mb-5">Tailwind</h2>
-            <img class="h-4 ml-2 mt-1" src="/img/tailwindcss.png" alt="" />
-          </router-link>
-          <p class="text-[14px]">Resumo simples dos elementos mais usados do tailwind para relembrar de facil modo.</p>
-          <a class="text-[#FFC107] hover:text-[#FFC107]/80" href="https://tailwindcss.com/docs/installation/using-vite" target="_blank" rel="noopener noreferrer">Tailwind Learn</a>
+          <p class="text-[12px] mb-1">SETEMBRO 2026</p>
+          <a class="flex" href="" target="_blank" rel="noopener noreferrer">
+            <h2 class="text-[24px] mb-5">Controle Financeiro</h2>
+            <img class="h-4 ml-2 mt-1" src="/img/js.png" alt="JavaScript" />
+          </a>
+          <p class="text-[14px]">Reunindo conceitos basicos de js em um projeto prático.</p>
+          <a class="text-[#FFC107] hover:text-[#FFC107]/80" href="" target="_blank" rel="noopener noreferrer">Código Fonte</a>
         </div>
 
         <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl">
-          <p class="text-[12px] mb-1">FEVEREIRO 2026</p>
-          <router-link class="flex" to="/frontend/vue">
-            <h2 class="text-[24px] mb-5">Vue</h2>
-            <img class="h-4 ml-2 mt-1" src="/img/vuejs.png" alt="" />
-          </router-link>
-          <p class="text-[14px]">Brilha nas aplicações que tem uma interação mais simples, poucas interações do usuario (blog, ecommerce)</p>
-          <a class="text-[#FFC107] hover:text-[#FFC107]/80" href="https://vuejs.org/guide/introduction.html" target="_blank" rel="noopener noreferrer">Vue Learn</a>
+          <p class="text-[12px] mb-1">AGOSTO 2025</p>
+          <a class="flex" href="https://raqueli-webmodelo.hf.space/" target="_blank" rel="noopener noreferrer">
+            <h2 class="text-[24px] mb-5">Web ML Model</h2>
+            <img class="h-4 ml-2 mt-1" src="/img/python.png" alt="Python" />
+          </a>
+          <p class="text-[14px]">Página do modelo de IA para análise de imagens desenvolvida em pesquisa.</p>
+          <a class="text-[#FFC107] hover:text-[#FFC107]/80" href="https://github.com/RaquelNeres/PagModelo/tree/main" target="_blank" rel="noopener noreferrer">Código Fonte</a>
         </div>
 
 
