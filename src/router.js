@@ -18,6 +18,7 @@ const BackFlask = () => import('./views/back/Flask.vue')
 const BackFastAPI = () => import('./views/back/FastAPI.vue')
 const BackPython = () => import('./views/back/Python.vue')
 const BackJS = () => import('./views/back/JS.vue')
+const BackNode = () => import('./views/back/Nodejs.vue')
 const Backend1 = () => import('./views/back/Back1.vue')
 
 const ArtLog = () => import('./views/artigos/Log.vue')
@@ -44,6 +45,7 @@ const routes = [
   { path: '/backend/fastapi', component: BackFastAPI },
   { path: '/backend/python', component: BackPython },
   { path: '/backend/javascript', component: BackJS },
+  { path: '/backend/nodejs', component: BackNode },
   { path: '/geral', component: Geral },
   { path: '/artigos', component: Artigos },
   { path: '/artigos/artigos1', component: Artigos1 },
