@@ -27,7 +27,11 @@
                         
                         <p><code class="text-pink-400">src="https://cdn.tailwindcss.com"</code>: No Script do html</p>
 
-                        <p><code class="text-pink-400">@tailwind;</code>: No arquivo CSS</p>
+                        <p><code class="text-pink-400">@import "tailwindcss";;</code>: No arquivo CSS</p>
+
+                        <p class="mt-5"><code class="text-pink-400">import tailwindcss from '@tailwindcss/vite'</code></p>
+                        <p><code class="text-pink-400">plugins: [vue(), tailwindcss()]</code>: No arquivo vite.config</p>
+
 
                     </div>
 
