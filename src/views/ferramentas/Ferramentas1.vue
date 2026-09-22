@@ -11,22 +11,19 @@
         alt="abrir barra lateral"
       />
 
-      <div class="text-[#D9D7E0] text-justify 
-              grid gap-7 justify-between
-              max-w-[703px] mx-auto px-5 ml-2 mr-10   
-          ">
+      <div class="text-[#D9D7E0] text-justify items-start h-full flex flex-col gap-7 w-full max-w-[590px] mx-auto ml-7">
         <h1 class="mt-16 text-[50px] mb-1">
             Ferramentas
         </h1>
-        <div class="bg-[#070808] p-5 
-        border-2 border-solid rounded-xl">
+
+        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
             <p class="text-[12px] mb-1">
-                FEVEREIRO 2026
+                SETEMBRO 2026
             </p>
-            <a class="flex" href="/ferramentas/sql">
+            <router-link class="flex" to="/ferramentas/sql">
                 <h2 class="text-[24px] mb-5">SQL</h2>
                 <img class="h-4 ml-2 mt-1" src="/img/docker.png" alt="">
-            </a>
+            </router-link>
             <p class="text-[14px]">
                 Comandos patrão SQL
             </p>

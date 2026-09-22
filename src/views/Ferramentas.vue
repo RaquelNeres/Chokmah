@@ -13,6 +13,7 @@
 
       <div class="text-[#D9D7E0] text-justify items-start h-full grid gap-7 justify-between w-full max-w-[703px] mx-auto px-5 ml-2 mr-10">
         <h1 class="mt-16 text-[50px] mb-1">Ferramentas</h1>
+        
         <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl">
           <p class="text-[12px] mb-1">FEVEREIRO 2026</p>
           <router-link class="flex" to="/ferramentas/git">

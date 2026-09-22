@@ -11,7 +11,7 @@
       />
       <router-link class="self-start ml-10 text-white py-2 px-6 border border-white rounded-full 
         hover:bg-white hover:text-black transition-colors duration-300" 
-          to="/backend">
+          to="/ferramentas/ferramentas1">
         Voltar
       </router-link>
 
