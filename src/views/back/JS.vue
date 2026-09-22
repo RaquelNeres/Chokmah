@@ -104,20 +104,29 @@ tarefasSalvas.<span class="text-blue-400">forEach</span>(criarElementoTela);</co
                             2. map(): O Transformador
                             </summary>
                             <div class="px-5 pb-5 pt-5">
-                                <p>O map passa por todos os itens do array, aplica uma transformação que você definir e devolve um novo array exatamente do mesmo tamanho.</p>
+                                <p>O map percorre cada item da lista original, aplica uma transformação que você definir e devolve um novo array exatamente do mesmo tamanho (cria uma nova lista baseada no que você retornar dentro dele).</p>
                                 <pre class="bg-[#131217] p-4 rounded text-xs font-mono text-gray-300 overflow-x-auto mt-2"><code><span class="text-gray-500">// Retornando apenas os nomes nome transformação (destaque com cor)</span>
-    <span class="text-purple-400">const</span> nomesDosProdutos = produtos.<span class="text-blue-400">map</span>(produto => produto.nome);
+<span class="text-purple-400">const</span> nomesDosProdutos = produtos.<span class="text-blue-400">map</span>(produto => produto.nome);
 
-    <span class="text-yellow-200">console</span>.<span class="text-blue-400">log</span>(nomesDosProdutos);
-    <span class="text-gray-500">// Saída: ["Notebook", "Mouse", "Teclado"]</span>
+<span class="text-yellow-200">console</span>.<span class="text-blue-400">log</span>(nomesDosProdutos);
+<span class="text-gray-500">// Saída: ["Notebook", "Mouse", "Teclado"]</span>
 
-    <span class="text-gray-500">// Aplicando 10% de desconto e criando objetos novos</span>
-    <span class="text-purple-400">const</span> produtosComDesconto = produtos.<span class="text-blue-400">map</span>(produto => {
-        <span class="text-purple-400">return</span> {
-            nome: produto.nome,
-            preco: produto.preco * <span class="text-orange-400">0.9</span> <span class="text-gray-500">// Multiplica por 0.9 para dar 10% de desconto</span>
-        };
-    });</code></pre>
+<span class="text-gray-500">// Aplicando 10% de desconto e criando objetos novos</span>
+<span class="text-purple-400">const</span> produtosComDesconto = produtos.<span class="text-blue-400">map</span>(produto => {
+    <span class="text-purple-400">return</span> {
+        nome: produto.nome,
+        preco: produto.preco * <span class="text-orange-400">0.9</span> <span class="text-gray-500">// Multiplica por 0.9 para dar 10% de desconto</span>
+    };
+});</code></pre>
+
+    <pre class="bg-[#131217] p-4 rounded text-xs font-mono text-gray-300 overflow-x-auto mt-2"><code><span class="text-purple-400">const</span> resultado = <span class="text-purple-400">await</span> <span class="text-blue-400">sql</span><span class="text-green-400">`SELECT * FROM aulas`</span>;
+
+<span class="text-purple-400">const</span> aulas = resultado.<span class="text-blue-400">map</span>(row => ({
+    id: row.id,
+    nome: row.nome,
+    descricao: row.descricao
+})); 
+<span class="text-gray-500">// O row representa cada item individual da lista</span></code></pre>
                             </div>
                         </details>
 
@@ -128,13 +137,13 @@ tarefasSalvas.<span class="text-blue-400">forEach</span>(criarElementoTela);</co
                             <div class="px-5 pb-5 pt-5">
                                 <p>O filter avalia cada item do array contra uma condição (que deve ser Verdadeira ou Falsa). Ele devolve um novo array apenas com os itens que passaram no teste.</p>
                                 <pre class="bg-[#131217] p-4 rounded text-xs font-mono text-gray-300 overflow-x-auto mt-2"><code><span class="text-gray-500">// Retorna apenas os produtos onde emEstoque é true</span>
-    <span class="text-purple-400">const</span> produtosDisponiveis = produtos.<span class="text-blue-400">filter</span>(produto => produto.emEstoque === <span class="text-orange-400">true</span>);
+<span class="text-purple-400">const</span> produtosDisponiveis = produtos.<span class="text-blue-400">filter</span>(produto => produto.emEstoque === <span class="text-orange-400">true</span>);
 
-    <span class="text-yellow-200">console</span>.<span class="text-blue-400">log</span>(produtosDisponiveis); <span class="text-gray-500">// Saída:</span>
-    <span class="text-gray-500">// [
-    // { id: 1, nome: "Notebook", preco: 4500, emEstoque: true },
-    // { id: 3, nome: "Teclado", preco: 300, emEstoque: true }
-    // ]</span></code></pre>
+<span class="text-yellow-200">console</span>.<span class="text-blue-400">log</span>(produtosDisponiveis); <span class="text-gray-500">// Saída:</span>
+<span class="text-gray-500">// [
+// { id: 1, nome: "Notebook", preco: 4500, emEstoque: true },
+// { id: 3, nome: "Teclado", preco: 300, emEstoque: true }
+// ]</span></code></pre>
                             </div>
                         </details>
 
@@ -145,12 +154,12 @@ tarefasSalvas.<span class="text-blue-400">forEach</span>(criarElementoTela);</co
                             <div class="px-5 pb-5 pt-5">
                                 <p>Ele pega todos os itens do array e os "espreme" até devolver um único valor final. Esse valor pode ser um número, uma string, ou até mesmo um novo objeto.</p>
                                 <pre class="bg-[#131217] p-4 rounded text-xs font-mono text-gray-300 overflow-x-auto mt-2"><code><span class="text-gray-500">// reduce(função(acumulador, itemAtual), valorInicialDoAcumulador)</span>
-    <span class="text-purple-400">const</span> valorTotal = produtos.<span class="text-blue-400">reduce</span>((acumulador, produto) => {
-        <span class="text-purple-400">return</span> acumulador + produto.preco;
-    }, <span class="text-orange-400">0</span>); <span class="text-gray-500">// 0 é o valor inicial do acumulador</span>
+<span class="text-purple-400">const</span> valorTotal = produtos.<span class="text-blue-400">reduce</span>((acumulador, produto) => {
+    <span class="text-purple-400">return</span> acumulador + produto.preco;
+}, <span class="text-orange-400">0</span>); <span class="text-gray-500">// 0 é o valor inicial do acumulador</span>
 
-    <span class="text-yellow-200">console</span>.<span class="text-blue-400">log</span>(valorTotal);
-    <span class="text-gray-500">// Saída: 4950 (4500 + 150 + 300)</span></code></pre>
+<span class="text-yellow-200">console</span>.<span class="text-blue-400">log</span>(valorTotal);
+<span class="text-gray-500">// Saída: 4950 (4500 + 150 + 300)</span></code></pre>
                             </div>
                         </details>
 
@@ -161,20 +170,20 @@ tarefasSalvas.<span class="text-blue-400">forEach</span>(criarElementoTela);</co
                             <div class="px-5 pb-5 pt-5">
                                 <p>O find é mais direto: ele percorre o array e, assim que encontra o primeiro item que passa no teste, ele para a busca e te devolve exatamente aquele item.</p>
                                 <pre class="bg-[#131217] p-4 rounded text-xs font-mono text-gray-300 overflow-x-auto mt-2"><code><span class="text-purple-400">const</span> produtos = [
-    { id: <span class="text-orange-400">1</span>, nome: <span class="text-green-400">"Notebook"</span>, preco: <span class="text-orange-400">4500</span> },
-    { id: <span class="text-orange-400">2</span>, nome: <span class="text-green-400">"Mouse"</span>, preco: <span class="text-orange-400">150</span> },
-    { id: <span class="text-orange-400">3</span>, nome: <span class="text-green-400">"Teclado"</span>, preco: <span class="text-orange-400">300</span> },
-    { id: <span class="text-orange-400">4</span>, nome: <span class="text-green-400">"Mousepad"</span>, preco: <span class="text-orange-400">50</span> }
-    ];
+{ id: <span class="text-orange-400">1</span>, nome: <span class="text-green-400">"Notebook"</span>, preco: <span class="text-orange-400">4500</span> },
+{ id: <span class="text-orange-400">2</span>, nome: <span class="text-green-400">"Mouse"</span>, preco: <span class="text-orange-400">150</span> },
+{ id: <span class="text-orange-400">3</span>, nome: <span class="text-green-400">"Teclado"</span>, preco: <span class="text-orange-400">300</span> },
+{ id: <span class="text-orange-400">4</span>, nome: <span class="text-green-400">"Mousepad"</span>, preco: <span class="text-orange-400">50</span> }
+];
 
-    <span class="text-gray-500">// Queremos encontrar as informações exatas do produto com ID 3</span>
-    <span class="text-purple-400">const</span> produtoDesejado = produtos.<span class="text-blue-400">find</span>(produto => produto.id === <span class="text-orange-400">3</span>);
-    <span class="text-yellow-200">console</span>.<span class="text-blue-400">log</span>(produtoDesejado);
-    <span class="text-gray-500">// Saída: { id: 3, nome: "Teclado", preco: 300 } // (Note que ele devolveu o objeto puro, e não um array)</span>
+<span class="text-gray-500">// Queremos encontrar as informações exatas do produto com ID 3</span>
+<span class="text-purple-400">const</span> produtoDesejado = produtos.<span class="text-blue-400">find</span>(produto => produto.id === <span class="text-orange-400">3</span>);
+<span class="text-yellow-200">console</span>.<span class="text-blue-400">log</span>(produtoDesejado);
+<span class="text-gray-500">// Saída: { id: 3, nome: "Teclado", preco: 300 } // (Note que ele devolveu o objeto puro, e não um array)</span>
 
-    <span class="text-purple-400">if</span> (!produtoDesejado) {
-    <span class="text-yellow-200">console</span>.<span class="text-blue-400">log</span>(<span class="text-green-400">"Erro: O produto que você buscou não existe no catálogo."</span>);
-    }</code></pre>
+<span class="text-purple-400">if</span> (!produtoDesejado) {
+<span class="text-yellow-200">console</span>.<span class="text-blue-400">log</span>(<span class="text-green-400">"Erro: O produto que você buscou não existe no catálogo."</span>);
+}</code></pre>
                             </div>
                         </details>
 
