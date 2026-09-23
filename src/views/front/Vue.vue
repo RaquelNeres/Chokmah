@@ -46,7 +46,7 @@
               </tr>
             </tbody>
           </table>
-          <p class="text-gray-400 text-sm mt-4">O Vue usa o <span class="text-green-400">create-vue</span> (baseado em Vite) como ferramenta oficial de scaffolding, assim como o React usa o Vite.</p>
+          <p class="text-gray-400 text-sm mt-4">O Vue utiliza o <span class="text-green-400">create-vue</span> (baseado em Vite) como ferramenta oficial de scaffolding para iniciar projetos rapidamente.</p>
         </div>
       </details>
 
@@ -54,12 +54,12 @@
 
         <!-- 2. SFC -->
         <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
-          <h3 class="text-xl font-bold mb-4">2. Exemplos Componentes — <code class="text-green-400 text-lg">.vue</code></h3>
+          <h3 class="text-xl font-bold mb-4">2. Exemplos de Componentes — <code class="text-green-400 text-lg">.vue</code></h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-            <!-- EXEMPLO 1: Esquerda (Novo exemplo de Props) -->
+            <!-- EXEMPLO 1: Esquerda (Exemplo de Props) -->
             <div v-pre class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300">
-              <p class="text-gray-500">// Filho.vue (Exemplo recebendo Props)</p>
+              <p class="text-gray-500">// Filho.vue (Recebendo Props)</p>
               <br>
               <p><span class="text-blue-400">&lt;script setup&gt;</span></p>
               <p class="pl-4"><span class="text-blue-400">const</span> props = <span class="text-yellow-300">defineProps</span>({</p>
@@ -76,7 +76,7 @@
               <p><span class="text-yellow-300">&lt;/style&gt;</span></p>
             </div>
             
-            <!-- EXEMPLO 2: Direita (Original Contador) -->
+            <!-- EXEMPLO 2: Direita (Contador Reativo) -->
             <div v-pre class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300">
               <p class="text-gray-500">// MeuComponente.vue (Exemplo de Estado)</p>
               <br>
@@ -102,11 +102,11 @@
         <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
           <h3 class="text-xl font-bold mb-4">4. Reatividade — <code class="text-green-400 text-lg">ref</code> e <code class="text-green-400 text-lg">reactive</code></h3>
           <div class="space-y-4">
-            <p class="text-sm text-gray-300">No Vue, o equivalente ao <code class="text-pink-400">useState</code> do React é o <code class="text-green-400">ref()</code>. Quando o valor muda, a interface atualiza automaticamente.</p>
+            <p class="text-sm text-gray-300">O sistema de reatividade do Vue rastreia alterações automaticamente e atualiza o DOM quando os dados sofrem mudanças.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="bg-[#131217] rounded p-4">
                 <p class="text-green-400 font-bold text-sm mb-2">ref()</p>
-                <p class="text-gray-400 text-xs mb-3">Para valores simples (string, number, boolean). Para alterar, use <code>.value</code> no script — no template, o Vue acessa automaticamente sem o <code>.value</code>.</p>
+                <p class="text-gray-400 text-xs mb-3">Para qualquer tipo de dado (especialmente primitivos como string, number, boolean). No script, acesse ou altere com <code>.value</code>; no template, o desembrulho é automático sem o <code>.value</code>.</p>
                 <div v-pre class="font-mono text-xs text-gray-300">
                   <p><span class="text-blue-400">const</span> nome = <span class="text-yellow-300">ref</span>(<span class="text-green-400">'Felipe'</span>)</p>
                   <p><span class="text-blue-400">const</span> count = <span class="text-yellow-300">ref</span>(0)</p>
@@ -120,7 +120,7 @@
               </div>
               <div class="bg-[#131217] rounded p-4">
                 <p class="text-green-400 font-bold text-sm mb-2">reactive()</p>
-                <p class="text-gray-400 text-xs mb-3">Para objetos completos. Não precisa de <code>.value</code> — acessa as propriedades diretamente. Melhor para agrupar estados relacionados.</p>
+                <p class="text-gray-400 text-xs mb-3">Apenas para objetos e coleções. Torna o objeto profundamente reativo sem exigir <code>.value</code>. Ideal para agrupar estados relacionados.</p>
                 <div v-pre class="font-mono text-xs text-gray-300">
                   <p><span class="text-blue-400">const</span> user = <span class="text-yellow-300">reactive</span>({</p>
                   <p class="pl-4">nome: <span class="text-green-400">'Felipe'</span>,</p>
@@ -141,66 +141,55 @@
         <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
           <h3 class="text-xl font-bold mb-4">5. Sintaxe do Template</h3>
           <div class="space-y-4">
-            <p class="text-sm text-gray-300">O template do Vue usa HTML com diretivas especiais. No React você usa JSX com JavaScript puro — no Vue você usa atributos prefixados com <code class="text-green-400">v-</code> ou símbolos como <code class="text-green-400">@</code> e <code class="text-green-400">:</code>.</p>
+            <p class="text-sm text-gray-300">Os templates do Vue estendem a sintaxe HTML com interpolações e diretivas especiais com prefixo <code class="text-green-400">v-</code> ou atalhos como <code class="text-green-400">@</code> e <code class="text-green-400">:</code>.</p>
             <div class="overflow-x-auto">
               <table class="w-full text-left text-sm text-gray-400">
                 <thead class="text-gray-200 uppercase bg-gray-700/50 text-xs">
                   <tr>
-                    <th class="px-4 py-3 min-w-[150px]">Sintaxe</th>
-                    <th class="px-4 py-3 min-w-[200px]">React equivalente</th>
+                    <th class="px-4 py-3 min-w-[220px]">Diretiva / Sintaxe</th>
                     <th class="px-4 py-3">Descrição</th>
                   </tr>
                 </thead>
                 <tbody v-pre class="divide-y divide-gray-700">
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">{{ valor }}</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">{valor}</td>
-                    <td class="px-4 py-3">Interpola um valor reativo no HTML.</td>
+                    <td class="px-4 py-3">Interpolação de texto: exibe o valor reativo renderizado no HTML.</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">v-bind:href ou :href</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">href={valor}</td>
-                    <td class="px-4 py-3">Vincula um atributo a um valor reativo.</td>
+                    <td class="px-4 py-3">Vincula dinamicamente um atributo do HTML a uma expressão ou variável reativa.</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">v-on:click ou @click</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">onClick={fn}</td>
-                    <td class="px-4 py-3">Escuta eventos do DOM (como o clique do usuário).</td>
+                    <td class="px-4 py-3">Escuta eventos nativos do DOM (como clique de botão) e executa métodos.</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">@keyup.enter</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">onKeyDown={e => e.key === 'Enter' && fn()}</td>
-                    <td class="px-4 py-3">Aciona a função <strong>somente</strong> quando o usuário apertar a tecla "Enter" (muito útil para campos de busca).</td>
+                    <td class="px-4 py-3">Modificador de evento de teclado: dispara a ação <strong>somente</strong> ao pressionar "Enter".</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
-                    <td class="px-4 py-3 font-mono text-green-400">v-if / v-else</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">{cond &amp;&amp; &lt;El /&gt;}</td>
-                    <td class="px-4 py-3">Renderização condicional. Remove o elemento completamente do HTML se a condição for falsa.</td>
+                    <td class="px-4 py-3 font-mono text-green-400">v-if / v-else-if / v-else</td>
+                    <td class="px-4 py-3">Renderização condicional estrutural: insere ou desmonta completamente o elemento do DOM.</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">v-show</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">style={ {display: cond ? 'block' : 'none'} }</td>
-                    <td class="px-4 py-3">Esconde o elemento usando CSS (<code>display: none</code>), mas ele <strong>continua existindo</strong> no código HTML. Melhor para elementos que aparecem e somem o tempo todo.</td>
+                    <td class="px-4 py-3">Alterna a visibilidade via CSS (<code>display: none</code>). O elemento continua montado no DOM.</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">v-for</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">{arr.map(...)}</td>
-                    <td class="px-4 py-3">Renderiza uma lista de elementos (loop).</td>
+                    <td class="px-4 py-3">Itera sobre arrays ou objetos para renderizar listas repetidas (requer o uso de <code>:key</code>).</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">v-model</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">value + onChange</td>
-                    <td class="px-4 py-3">Two-way binding: o que você digita no input atualiza a variável, e se a variável mudar, o input atualiza na hora.</td>
+                    <td class="px-4 py-3">Two-way data binding: sincroniza automaticamente o valor do input com a variável reativa.</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">@submit.prevent</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">e.preventDefault()</td>
-                    <td class="px-4 py-3">Usado em formulários (<code>&lt;form&gt;</code>). Ele <strong>impede que a página recarregue inteira</strong> (comportamento padrão) quando você clica no botão de enviar.</td>
+                    <td class="px-4 py-3">Modificador de formulário que executa <code>preventDefault()</code> para evitar o recarregamento da página.</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
-                    <td class="px-4 py-3 font-mono text-green-400">:class="{ativo: isAtivo}"</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">className={isAtivo ? 'ativo' : ''}</td>
-                    <td class="px-4 py-3">Adiciona ou remove classes CSS dependendo se a variável é verdadeira ou falsa.</td>
+                    <td class="px-4 py-3 font-mono text-green-400">:class="{ ativo: isAtivo }"</td>
+                    <td class="px-4 py-3">Vinculação dinâmica de classes CSS condicionadas a variáveis booleanas.</td>
                   </tr>
                 </tbody>
               </table>
@@ -209,7 +198,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-4">
               <!-- CÓDIGO -->
               <div v-pre class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300 border border-transparent">
-                <p class="text-gray-500 mb-2">// exemplos no template</p>
+                <p class="text-gray-500 mb-2">// Exemplos de uso no template</p>
                 <p><span class="text-green-400">&lt;p</span> <span class="text-yellow-300">:class=</span><span class="text-pink-400">"{ 'text-red': error, 'text-green': success }"</span><span class="text-green-400">&gt;</span>Classes Objeto<span class="text-green-400">&lt;/p&gt;</span></p>
                 <p><span class="text-green-400">&lt;div</span> <span class="text-yellow-300">:style=</span><span class="text-pink-400">"{ color: corAtiva, fontSize: tamanhoFonte + 'px' }"</span><span class="text-green-400">&gt;</span>Estilo Dinâmico<span class="text-green-400">&lt;/div&gt;</span></p>
                 <p><span class="text-green-400">&lt;a</span> <span class="text-yellow-300">:href=</span><span class="text-pink-400">"linkPerfil"</span><span class="text-green-400">&gt;</span>Link Reativo<span class="text-green-400">&lt;/a&gt;</span></p>
@@ -298,14 +287,14 @@
           </div>
         </li>
 
-        <!-- 6. PROPS -->
+        <!-- 6. PROPS E EVENTOS -->
         <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
-          <h3 class="text-xl font-bold mb-4">6. Props</h3>
+          <h3 class="text-xl font-bold mb-4">6. Props e Eventos</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div class="space-y-2 text-sm text-gray-300">
-              <p>Assim como no React, props passam dados do componente pai para o filho. No Vue com Composition API, você as declara com <code class="text-green-400">defineProps()</code>.</p>
-              <p>Para emitir eventos de volta ao pai (como um callback), usa-se <code class="text-green-400">defineEmits()</code> — o equivalente de passar uma função como prop no React.</p>
-              <p class="text-yellow-400 text-xs">⚠️ Props são <strong>somente leitura</strong> — nunca altere uma prop diretamente no filho.</p>
+              <p>Props passam dados unidirecionalmente do componente pai para o componente filho. Na Composition API (com <code>&lt;script setup&gt;</code>), são declaradas via macro <code class="text-green-400">defineProps()</code>.</p>
+              <p>Para comunicar mudanças ou ações de volta ao pai, o filho emite eventos customizados declarados por <code class="text-green-400">defineEmits()</code>.</p>
+              <p class="text-yellow-400 text-xs">⚠️ Props são <strong>somente leitura</strong> — nunca modifique o valor de uma prop diretamente no componente filho.</p>
             </div>
             <div v-pre class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300">
               <p class="text-gray-500">// Filho: TaskItem.vue</p>
@@ -395,31 +384,27 @@
         <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
           <h3 class="text-xl font-bold mb-4">7. Ciclo de Vida — <code class="text-green-400 text-lg">onMounted</code> e outros</h3>
           <div class="space-y-4">
-            <p class="text-sm text-gray-300">O equivalente ao <code class="text-pink-400">useEffect(fn, [])</code> do React (executar ao montar) é o <code class="text-green-400">onMounted()</code> do Vue.</p>
+            <p class="text-sm text-gray-300">Hooks do ciclo de vida permitem executar lógica em estágios específicos da vida de um componente no DOM.</p>
             <div class="overflow-x-auto">
               <table class="w-full text-left text-sm text-gray-400">
                 <thead class="text-gray-200 uppercase bg-gray-700/50 text-xs">
                   <tr>
-                    <th class="px-4 py-3">Hook Vue</th>
-                    <th class="px-4 py-3">React equivalente</th>
+                    <th class="px-4 py-3 min-w-[200px]">Hook Vue</th>
                     <th class="px-4 py-3">Quando é chamado</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-700">
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">onMounted()</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">useEffect(fn, [])</td>
-                    <td class="px-4 py-3">Após o componente ser inserido no DOM.</td>
+                    <td class="px-4 py-3">Após o componente ser inserido no DOM. Ideal para requisições iniciais e acesso a nós do DOM.</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">onUpdated()</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">useEffect(fn, [dep])</td>
-                    <td class="px-4 py-3">Após uma atualização reativa re-renderizar o componente.</td>
+                    <td class="px-4 py-3">Após uma alteração de estado reativo fazer a árvore de componentes re-renderizar o DOM.</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">onUnmounted()</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">useEffect(() =&gt; () =&gt; cleanup, [])</td>
-                    <td class="px-4 py-3">Quando o componente é removido do DOM. Ideal para limpar timers e listeners.</td>
+                    <td class="px-4 py-3">Quando o componente é destruído e removido do DOM. Utilizado para limpar timers e event listeners globais.</td>
                   </tr>
                 </tbody>
               </table>
@@ -434,7 +419,7 @@
               <p class="pl-4">tasks.value = <span class="text-blue-400">await</span> res.<span class="text-yellow-300">json</span>()</p>
               <p>})</p>
             </div>
-            <p class="text-yellow-400 text-xs">💡 Diferente do React, dentro do <code>onMounted</code> você pode usar <code>async</code> diretamente — sem precisar criar uma função interna.</p>
+            <p class="text-yellow-400 text-xs">💡 A função passada para <code>onMounted</code> pode ser declarada como <code>async</code> diretamente.</p>
           </div>
         </li>
 
@@ -443,9 +428,8 @@
           <h3 class="text-xl font-bold mb-4">8. Propriedades Computadas — <code class="text-green-400 text-lg">computed</code></h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div class="space-y-2 text-sm text-gray-300">
-              <p>Um valor derivado de um estado reativo. O Vue recalcula automaticamente quando a dependência muda — e armazena em cache até que mude de fato.</p>
-              <p>Equivale a um <code class="text-pink-400">useMemo()</code> do React, mas sem precisar declarar dependências manualmente.</p>
-              <p class="text-yellow-400 text-xs">⚠️ Não use <code>computed</code> para ações com efeito colateral (chamadas de API, alterar estado). Para isso, use <code class="text-green-400">watch</code>.</p>
+              <p>Valores derivados de um estado reativo. O Vue rastreia automaticamente suas dependências reativas e armazena o resultado em cache, recalculando apenas quando as dependências forem modificadas.</p>
+              <p class="text-yellow-400 text-xs">⚠️ Não realize efeitos colaterais (como requisições assíncronas ou mutação de estados) dentro de um <code>computed</code>. Para efeitos colaterais, utilize <code class="text-green-400">watch</code>.</p>
             </div>
             <div v-pre class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300">
               <p><span class="text-blue-400">import</span> { ref, computed } <span class="text-blue-400">from</span> <span class="text-green-400">'vue'</span></p>
@@ -468,8 +452,8 @@
           <h3 class="text-xl font-bold mb-4">9. Observadores — <code class="text-green-400 text-lg">watch</code></h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div class="space-y-2 text-sm text-gray-300">
-              <p>O <code class="text-green-400">watch</code> executa uma função toda vez que um valor reativo muda — o equivalente ao <code class="text-pink-400">useEffect(fn, [dep])</code> do React.</p>
-              <p>Use quando precisa reagir a mudanças com efeitos colaterais: salvar no localStorage, chamar APIs, iniciar animações.</p>
+              <p>O <code class="text-green-400">watch</code> observa fontes reativas e dispara uma função de callback quando o valor sofre alteração.</p>
+              <p>É indicado para lidar com efeitos colaterais decorrentes de mudanças de estado: persistência em <code>localStorage</code>, requisições a APIs ou disparo de animações.</p>
             </div>
             <div v-pre class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300">
               <p><span class="text-blue-400">import</span> { ref, watch } <span class="text-blue-400">from</span> <span class="text-green-400">'vue'</span></p>
@@ -485,7 +469,7 @@
               <p>}, { deep: <span class="text-blue-400">true</span> })</p>
             </div>
           </div>
-          <p class="text-yellow-400 text-xs mt-4">💡 O <code>{ deep: true }</code> faz o Vue observar mudanças dentro de objetos e arrays aninhados.</p>
+          <p class="text-yellow-400 text-xs mt-4">💡 O modificador <code>{ deep: true }</code> força o rastreamento profundo de propriedades dentro de objetos e arrays aninhados.</p>
         </li>
 
         <!-- 10. ROTEAMENTO -->
@@ -493,43 +477,37 @@
           <h3 class="text-xl font-bold mb-4">10. Roteamento — Vue Router</h3>
           <div class="space-y-4">
             <div class="text-sm text-gray-300 space-y-2">
-              <p>O equivalente ao React Router Dom é o <span class="text-white font-semibold">Vue Router</span> — a biblioteca oficial de roteamento do Vue.</p>
-              <p>Instale com: <code class="text-green-400">npm install vue-router@4</code></p>
+              <p>O <span class="text-white font-semibold">Vue Router</span> é a biblioteca oficial de roteamento do ecossistema Vue para gerenciar páginas em Single Page Applications (SPAs).</p>
+              <p>Instalação: <code class="text-green-400">npm install vue-router@4</code></p>
             </div>
             <div class="overflow-x-auto">
               <table class="w-full text-left text-sm text-gray-400">
                 <thead class="text-gray-200 uppercase bg-gray-700/50 text-xs">
                   <tr>
-                    <th class="px-4 py-3">Vue Router</th>
-                    <th class="px-4 py-3">React Router equivalente</th>
-                    <th class="px-4 py-3">Uso</th>
+                    <th class="px-4 py-3 min-w-[200px]">Recurso do Vue Router</th>
+                    <th class="px-4 py-3">Uso e Finalidade</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-700">
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">createRouter()</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">createBrowserRouter()</td>
-                    <td class="px-4 py-3">Cria o roteador com a lista de rotas.</td>
+                    <td class="px-4 py-3">Instancia o roteador com histórico e mapeamento das rotas da aplicação.</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">&lt;RouterView /&gt;</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">RouterProvider</td>
-                    <td class="px-4 py-3">Onde a página/componente da rota atual é renderizado.</td>
+                    <td class="px-4 py-3">Componente funcional que atua como ponto de saída (outlet) onde a view da rota ativa é renderizada.</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">&lt;RouterLink /&gt;</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">&lt;Link /&gt;</td>
-                    <td class="px-4 py-3">Link de navegação sem recarregar a página.</td>
+                    <td class="px-4 py-3">Componente de link para navegar entre páginas sem recarregar o navegador.</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">useRouter()</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">useNavigate()</td>
-                    <td class="px-4 py-3">Navega programaticamente entre rotas.</td>
+                    <td class="px-4 py-3">Composable para navegação programática (ex.: redirecionamentos com <code>router.push()</code> ou histórico com <code>router.back()</code>).</td>
                   </tr>
                   <tr class="hover:bg-gray-700/30">
                     <td class="px-4 py-3 font-mono text-green-400">useRoute()</td>
-                    <td class="px-4 py-3 font-mono text-pink-400">useSearchParams()</td>
-                    <td class="px-4 py-3">Acessa params e query da rota atual.</td>
+                    <td class="px-4 py-3">Composable para ler os metadados da rota atual, como parâmetros (<code>params</code>), queries e caminho.</td>
                   </tr>
                 </tbody>
               </table>
@@ -537,7 +515,7 @@
 
             <!-- EXEMPLO PRÁTICO: ROUTER.JS -->
             <div class="mt-4 bg-[#131217] rounded p-4 text-xs font-mono text-gray-300" v-pre>
-              <p class="text-gray-500">// router.js (Exemplo visual prático e reduzido)</p>
+              <p class="text-gray-500">// router.js (Configuração de rotas)</p>
               <p><span class="text-blue-400">import</span> { createRouter, createWebHistory } <span class="text-blue-400">from</span> <span class="text-green-400">'vue-router'</span></p>
               <br>
               <p class="text-gray-500">// Lazy loading dos componentes (Carrega apenas quando acessar a rota)</p>
