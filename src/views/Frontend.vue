@@ -56,7 +56,9 @@
 
         <div class="flex justify-between w-full mt-1 mb-10">
           <img src="/img/seta.png" alt="Anterior" />
-          <img class="-scale-x-100" src="/img/seta.png" alt="Próximo" />
+          <router-link to="/frontend/frontend1" class="flex items-center">
+            <img class="-scale-x-100" src="../../public/img/seta.png" alt="Próximo" />
+          </router-link>
         </div>
       </div>
     </div>

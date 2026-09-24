@@ -41,6 +41,7 @@ const showSidebarFlag = computed(() => {
     '/frontend/html',
     '/frontend/tailwind',
     '/frontend/vue',
+    '/frontend/quasar',
     '/backend/python',
     '/backend/flask',
     '/backend/fastapi',

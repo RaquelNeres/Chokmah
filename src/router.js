@@ -7,10 +7,12 @@ const Backend = () => import('./views/Backend.vue')
 const Artigos = () => import('./views/Artigos.vue')
 const Ferramentas = () => import('./views/Ferramentas.vue')
 
+const Frontend1 = () => import('./views/front/front1.vue')
 const FrontTailwind = () => import('./views/front/Tailwind.vue')
 const FrontVue = () => import('./views/front/Vue.vue')
 const FrontReact = () => import('./views/front/React.vue')
 const FrontHtml = () => import('./views/front/Html.vue')
+const FrontQuasar = () => import('./views/front/Quasar.vue')
 
 const Geral = () => import('./views/Geral.vue')
 
@@ -35,10 +37,12 @@ const routes = [
   { path: '/', component: Home },
   { path: '/projetos', component: Projetos },
   { path: '/frontend', component: Frontend },
+  { path: '/frontend/frontend1', component: Frontend1 },
   { path: '/frontend/tailwind', component: FrontTailwind },
   { path: '/frontend/vue', component: FrontVue },
   { path: '/frontend/react', component: FrontReact },
   { path: '/frontend/html', component: FrontHtml },
+  { path: '/frontend/quasar', component: FrontQuasar },
   { path: '/backend', component: Backend },
   { path: '/backend/backend1', component: Backend1 },
   { path: '/backend/flask', component: BackFlask },
