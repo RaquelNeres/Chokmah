@@ -16,7 +16,7 @@
             
             <ul class="space-y-5 mt-10">
                 
-                <details class="mt-10 text-left bg-[#1e1b29] rounded-[0.5rem] overflow-hidden">
+                <details class="text-left bg-[#1e1b29] rounded-lg overflow-hidden">
                     <summary class="text-xl font-semibold text-white cursor-pointer hover:bg-[#2a2738] pl-5 py-3 transition-colors">
                         Instalação & Setup Básico (Express)
                     </summary>
@@ -32,6 +32,44 @@
                         <p><code class="text-green-400">const app = express()</code>: Importa e inicializa o app no seu arquivo principal (ex: server.js).</p>
                     </div>
                 </details>
+
+                <details class="text-left bg-[#1e1b29] rounded-lg overflow-hidden">
+                    <summary class="text-xl font-semibold text-white cursor-pointer hover:bg-[#2a2738] pl-5 py-3 transition-colors">
+                        Vercel
+                    </summary>
+                    
+                    <div class="px-5 pb-5 pt-5">
+                        <div class="bg-[#131217] rounded p-4 text-xs font-mono text-gray-300">
+                            <p>{</p>
+                            <p class="pl-4"><span class="text-blue-400">"version"</span>: <span class="text-purple-400">2</span>,</p>
+                            <p class="pl-4"><span class="text-blue-400">"builds"</span>: [</p>
+                            <p class="pl-8">{ <span class="text-blue-400">"src"</span>: <span class="text-green-400">"server.js"</span>, <span class="text-blue-400">"use"</span>: <span class="text-green-400">"@vercel/node"</span> }</p>
+                            <p class="pl-4">],</p>
+                            <p class="pl-4"><span class="text-blue-400">"routes"</span>: [</p>
+                            <p class="pl-8">{ <span class="text-blue-400">"src"</span>: <span class="text-green-400">"/(.*)"</span>, <span class="text-blue-400">"dest"</span>: <span class="text-green-400">"/server.js"</span> }</p>
+                            <p class="pl-4">]</p>
+                            <p>}</p>
+                        </div>
+                    </div>
+                </details>
+
+                <li class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="bg-[#1e1b29] rounded-[0.5rem] p-3.5 flex items-center">
+                        <a href="https://github.com/RaquelNeres/Chokmah/blob/main/.md/back/assincrono.md" target="_blank" rel="noopener noreferrer">
+                            <h3 class="font-bold">
+                                Assíncrono (Async/Await e req/res)
+                            </h3>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-[#1e1b29] rounded-[0.5rem] p-3.5 flex items-center">
+                        <a href="https://github.com/RaquelNeres/Chokmah/blob/main/.md/HTTP.md" target="_blank" rel="noopener noreferrer">
+                            <h3 class="font-bold">
+                                Introdução ao HTTP
+                            </h3>
+                        </a>
+                    </div>
+                </li>
 
                 <li class="bg-[#1e1b29] rounded-[0.5rem] p-6">
                     <h3 class="text-xl font-bold mb-4">1. Roteamento (Endpoints)</h3>

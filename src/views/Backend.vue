@@ -65,17 +65,16 @@
 
         <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
             <p class="text-[12px] mb-1">
-                FEVEREIRO 2026
+                OUTUBRO 2026
             </p>
             <router-link class="flex" to="/backend/fastapi">
-                <h2 class="text-[24px] mb-5">FastAPI</h2>
-                <img class="h-4 ml-2 mt-1" src="/img/fastapi.svg" alt="">
+                <h2 class="text-[24px] mb-5">Kotlin</h2>
+                <img class="h-4 ml-2 mt-1" src="" alt="">
             </router-link>
-            <router-link target="_blank" to="https://fastapi.tiangolo.com/pt/tutorial/#install-fastapi">
-                <p class="text-[14px]">
-                    Tutorial completinho do proprio site do FastAPI
-                </p>
-            </router-link>
+            <p class="text-[14px]">
+              Utilizando kotlin no SDK
+            </p>
+            <a class="text-[#FFC107] hover:text-[#FFC107]/80" href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">Python Docs</a >
         </div>
         
 

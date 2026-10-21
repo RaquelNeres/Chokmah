@@ -14,6 +14,20 @@
       <div class="text-[#D9D7E0] text-justify items-start h-full flex flex-col gap-7 w-full max-w-[590px] mx-auto ml-7">
         <h1 class="mt-16 text-[50px] mb-1">BackEnd</h1>
 
+        <div class="bg-[#070808] p-5 border-2 border-solid rounded-xl w-full">
+            <p class="text-[12px] mb-1">
+                FEVEREIRO 2026
+            </p>
+            <router-link class="flex" to="/backend/fastapi">
+                <h2 class="text-[24px] mb-5">FastAPI</h2>
+                <img class="h-4 ml-2 mt-1" src="/img/fastapi.svg" alt="">
+            </router-link>
+            <router-link target="_blank" to="https://fastapi.tiangolo.com/pt/tutorial/#install-fastapi">
+                <p class="text-[14px]">
+                    Tutorial completinho do proprio site do FastAPI
+                </p>
+            </router-link>
+        </div>
         <!-- <div class="bg-[#070808] p-5 
           border-2 border-solid rounded-xl">
             <p class="text-[12px] mb-1">
