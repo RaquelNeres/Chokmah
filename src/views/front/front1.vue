@@ -7,7 +7,7 @@
         @click="showSidebar = true"
         id="menu-btn"
         class="fixed top-2 left-2 z-50 block md:hidden p-2 cursor-pointer bg-[#131217] hover:bg-gray-800"
-        src="../../public/img/opcao.png" 
+        src="/img/opcao.png" 
         alt="abrir barra lateral"
       />
 
